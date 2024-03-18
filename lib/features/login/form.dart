@@ -11,7 +11,9 @@ import 'package:rayik/features/signup/form.dart';
 import 'package:rayik/widgets/custom_button.dart';
 import '../../core/constants/strings.dart';
 import '../../widgets/custom_text_field.dart';
+import '../../widgets/skip_button.dart';
 import '../../widgets/terms_and_conditions.dart';
+import '../forget_password/form.dart';
 
 part 'utils/login_form.dart';
 
@@ -31,11 +33,18 @@ class LoginView extends StatelessWidget {
           child: ListView(
             children: [
               SizedBox(
-                height: 50.h,
+                height: 25.h,
               ),
-              Text(
-                Strings.login.tr(),
-                style: AppTextStyle.titleStyle,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    Strings.login.tr(),
+                    style: AppTextStyle.titleStyle,
+                  ),
+                  const SkipButton(),
+
+                ],
               ),
               SizedBox(
                 height: 10.h,
@@ -62,9 +71,14 @@ class LoginView extends StatelessWidget {
               SizedBox(
                 height: 8.h,
               ),
-              Text(
-                Strings.forgetPassword.tr(),
-                style: AppTextStyle.subtitleStyle,
+              GestureDetector(
+                onTap: () {
+                  MagicRouter.navigateTo(const ForgetPasswordForm());
+                },
+                child: Text(
+                  Strings.forgetPassword.tr(),
+                  style: AppTextStyle.subtitleStyle,
+                ),
               ),
               SizedBox(
                 height: 25.h,
@@ -110,3 +124,4 @@ class LoginView extends StatelessWidget {
     );
   }
 }
+

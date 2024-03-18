@@ -22,6 +22,20 @@ class Strings{
   static String confirmPassword = "confirm_password";
   static String bySigningUp = "by_signing_up";
   static String orSignupWith = "or_signup_with";
+  static String retrievePassword = "retrieve_password";
+  static String enterEmail = "enter_email";
+  static String theResetLink = "the_reset_link";
+  static String skip = "skip";
+  static String confirm = "confirm";
+  static String enterPin = "enter_pin";
+  static String pleaseEnterPin = "please_enter_pin";
+  static String resend = "resend";
+  static String didReceiveCode = "did_receive_code";
+  static String resendCode = "resend_code";
+  static String verify = "verify";
+  static String enterNewPassword = "enter_new_password";
+  static String pleaseEnterPassword = "please_enter_password_8";
+  static String confirmNewPassword = "confirm_new_password";
 
 
 }

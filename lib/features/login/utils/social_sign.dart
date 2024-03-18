@@ -47,6 +47,14 @@ class SocialSign extends StatelessWidget {
                 width: 30.w,
                 height: 30.h,
               ),
+              SizedBox(
+                width: 11.w,
+              ),
+              SvgPicture.asset(
+                IconManager.apple,
+                width: 32.w,
+                height: 32.h,
+              ),
             ],
           ),
         ),

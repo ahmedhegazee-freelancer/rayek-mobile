@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:platform/platform.dart';
 
 class AppConstants{
   final BuildContext? context;
@@ -12,4 +13,7 @@ class AppConstants{
   static  const String language='lang';
   static  const String token='token';
   static  const String isFirst='isFirst';
+
+  /// Device Info
+  static  const LocalPlatform  platform= LocalPlatform();
 }

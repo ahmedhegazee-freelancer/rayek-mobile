@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:rayik/core/constants/dimensions.dart';
 import 'package:rayik/core/router/router.dart';
 import 'package:rayik/features/login/utils/select_user_type.dart';
+import 'package:rayik/widgets/skip_button.dart';
 
 import '../../core/constants/color_manager.dart';
 import '../../core/constants/strings.dart';
@@ -33,11 +34,17 @@ class SignUpForm extends StatelessWidget {
           child: ListView(
             children: [
               SizedBox(
-                height: 50.h,
+                height: 25.h,
               ),
-              Text(
-                Strings.signUp.tr(),
-                style: AppTextStyle.titleStyle,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    Strings.signUp.tr(),
+                    style: AppTextStyle.titleStyle,
+                  ),
+                  const SkipButton()
+                ],
               ),
               SizedBox(
                 height: 10.h,

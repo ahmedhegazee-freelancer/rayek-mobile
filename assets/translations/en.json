@@ -20,5 +20,19 @@
   "last_name": "Last Name",
   "confirm_password": "Confirm Password",
   "or_signup_with": "Or sign up with",
-  "by_signing_up": "By signing up, you agree to our"
+  "by_signing_up": "By signing up, you agree to our",
+  "retrieve_password": "Retrieve Password",
+  "enter_email": "Enter your email to retrieve your password",
+  "the_reset_link": "The reset link will be sent to your email",
+  "skip": "Skip",
+  "confirm": "Confirm",
+  "enter_pin": "Enter PIN",
+  "please_enter_pin": "Please enter the PIN sent to your email",
+  "resend": "Resend",
+  "did_receive_code": "Didn't receive the code?",
+  "resend_code": "Resend code",
+    "verify": "Verify",
+  "enter_new_password": "Enter new password",
+  "please_enter_password_8": "Please enter a password with at least 8 characters and a number and special character",
+  "confirm_new_password": "Confirm new password"
 }

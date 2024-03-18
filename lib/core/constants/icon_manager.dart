@@ -7,4 +7,6 @@ class IconManager {
   static const String google = '${baseBase}google.svg';
   // eye
   static const String eye = '${baseBase}eye.svg';
+  // apple
+  static const String apple = '${baseBase}apple.svg';
 }
