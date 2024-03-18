@@ -29,13 +29,20 @@ class AppTextStyle {
   );
 
   static TextStyle subTitleOfTextField = TextStyle(
-    fontSize: 13.0.sp,
-    fontWeight: FontWeight.w400,
+    fontSize: 14.0.sp,
+    fontWeight: FontWeight.w500,
     color: ColorManager.blackTextColor,
   );
 
+  static TextStyle hintTextField = TextStyle(
+    fontSize: 13.0.sp,
+    fontWeight: FontWeight.w400,
+    color: ColorManager.lightGreyColor,
+  );
+
+
   static TextStyle h3 = TextStyle(
-    fontSize: 18.0.sp,
+    fontSize: 16.0.sp,
     fontWeight: FontWeight.w600,
     color: ColorManager.blackTextColor,
   );

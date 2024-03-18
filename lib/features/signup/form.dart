@@ -1,28 +1,30 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:rayik/core/constants/color_manager.dart';
 import 'package:rayik/core/constants/dimensions.dart';
 import 'package:rayik/core/router/router.dart';
-import 'package:rayik/core/theme/fonts_style.dart';
 import 'package:rayik/features/login/utils/select_user_type.dart';
-import 'package:rayik/features/login/utils/social_sign.dart';
-import 'package:rayik/features/signup/form.dart';
-import 'package:rayik/widgets/custom_button.dart';
+
+import '../../core/constants/color_manager.dart';
 import '../../core/constants/strings.dart';
+import '../../core/theme/fonts_style.dart';
+import '../../widgets/custom_button.dart';
 import '../../widgets/custom_text_field.dart';
 import '../../widgets/terms_and_conditions.dart';
+import '../login/form.dart';
+import '../login/utils/social_sign.dart';
 
-part 'utils/login_form.dart';
+part 'utils/signup_form.dart';
 
-class LoginView extends StatelessWidget {
-  const LoginView({Key? key}) : super(key: key);
+
+class SignUpForm extends StatelessWidget {
+  const SignUpForm({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return  Scaffold(
       body: Padding(
-        padding: EdgeInsets.all(Dimensions.defaultPadding),
+        padding:  EdgeInsets.all(Dimensions.defaultPadding),
         child: GestureDetector(
           onTap: () {
             // hide keyboard when user taps outside the text field
@@ -34,76 +36,57 @@ class LoginView extends StatelessWidget {
                 height: 50.h,
               ),
               Text(
-                Strings.login.tr(),
+                Strings.signUp.tr(),
                 style: AppTextStyle.titleStyle,
               ),
               SizedBox(
                 height: 10.h,
               ),
               Text(
-                Strings.welcomeBack.tr(),
+                Strings.signupNowAndStart.tr(),
                 style: AppTextStyle.subtitleStyle,
               ),
               SizedBox(
                 height: 25.h,
               ),
               const SelectUserType(),
+              const _SignUpDataForm(),
               SizedBox(
                 height: 25.h,
               ),
-              Text(
-                Strings.enterDetails.tr(),
-                style: AppTextStyle.h3,
-              ),
+              CustomButton(onTap: () {}, text: Strings.signUp.tr()),
               SizedBox(
                 height: 15.h,
               ),
-              const _LoginForm(),
-              SizedBox(
-                height: 8.h,
-              ),
-              Text(
-                Strings.forgetPassword.tr(),
-                style: AppTextStyle.subtitleStyle,
-              ),
-              SizedBox(
-                height: 25.h,
-              ),
-              CustomButton(onTap: () {}, text: Strings.login.tr()),
+              const SocialSign(isLogin: false),
               SizedBox(
                 height: 15.h,
               ),
-              const SocialSign(),
-              SizedBox(
-                height: 10.h,
-              ),
+
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    Strings.noAccount.tr(),
+                    Strings.alreadyHaveAccount.tr(),
                     style: AppTextStyle.h3,
                   ),
                   SizedBox(
-                    width: 5.w,),
-                  GestureDetector(
+                    width: 5.w,
+                  ),
+                  InkWell(
                     onTap: () {
-                      MagicRouter.navigateTo(const SignUpForm());
+                      MagicRouter.navigateTo(const LoginView());
                     },
                     child: Text(
-                      Strings.subscribeNow.tr(),
-                      style: AppTextStyle.subtitleStyle.copyWith(
-                        color: ColorManager.primaryColor,
-                      ),
+                      Strings.login.tr(),
+                      style: AppTextStyle.subtitleStyle,
                     ),
                   ),
                 ],
               ),
-              SizedBox(
-                height: 10.h,
-              ),
-              const TermsAndConditions(),
+              const TermsAndConditions(isLogin: false),
             ],
+
           ),
         ),
       ),
