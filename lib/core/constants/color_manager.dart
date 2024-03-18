@@ -15,7 +15,7 @@ class ColorManager {
   static const Color lightGreyColor = Color(0xff777E90);
   static const Color whiteGreyColor = Color(0xffD8D8D8);
   static const Color greyTextColor = Color(0xffA1A1A1);
-  static const Color greyButtonColor = Color.fromRGBO(128, 128, 128, 0.2);
+  static const Color greyButtonColor = Color.fromRGBO(128, 128, 128, 0.1);
 
 
   static const Color fadeGreyButtonColor = Color(0xffF4F6F9);

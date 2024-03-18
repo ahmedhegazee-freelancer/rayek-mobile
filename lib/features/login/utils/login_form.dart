@@ -31,11 +31,6 @@ class _LoginForm extends StatelessWidget {
             obscure: true,
             controller: null,
             textAlign: TextAlign.start,
-
-            suffixIcon: const Icon(
-              Icons.remove_red_eye_outlined,
-              color: ColorManager.fadeGreyBorderColor,
-            ),
             keyboardType: TextInputType.emailAddress,
             hasPrefix: false,
           ),

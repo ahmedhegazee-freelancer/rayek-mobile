@@ -28,6 +28,12 @@ class AppTextStyle {
     color: Colors.black,
   );
 
+  static TextStyle buttonWhiteWithOpacityStyle = TextStyle(
+    fontSize: 13.0.sp,
+    fontWeight: FontWeight.w700,
+    color: Colors.black12,
+  );
+
   static TextStyle subTitleOfTextField = TextStyle(
     fontSize: 14.0.sp,
     fontWeight: FontWeight.w500,

@@ -19,11 +19,13 @@ class CustomButton extends StatelessWidget {
   final Color? borderColor;
   final double? fontSize;
   final double? radius;
+  final double? borderWidth;
 
   const CustomButton(
       {Key? key,
       required this.onTap,
       this.textStyle,
+      this.borderWidth,
       this.iconData,
       required this.text,
       this.width,
@@ -53,7 +55,7 @@ class CustomButton extends StatelessWidget {
               borderRadius:
                   BorderRadius.circular(radius ?? Dimensions.buttonRadius),
               border: Border.all(
-                width: 1,
+                width:borderWidth?? 1,
                 color: borderColor ?? Colors.transparent,
               )),
           child: Center(

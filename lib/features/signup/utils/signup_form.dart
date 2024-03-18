@@ -56,11 +56,6 @@ class _SignUpDataForm extends StatelessWidget {
           obscure: true,
           controller: null,
           textAlign: TextAlign.start,
-
-          suffixIcon: const Icon(
-            Icons.remove_red_eye_outlined,
-            color: ColorManager.fadeGreyBorderColor,
-          ),
           keyboardType: TextInputType.emailAddress,
           hasPrefix: false,
         ),
@@ -75,11 +70,6 @@ class _SignUpDataForm extends StatelessWidget {
           obscure: true,
           controller: null,
           textAlign: TextAlign.start,
-
-          suffixIcon: const Icon(
-            Icons.remove_red_eye_outlined,
-            color: ColorManager.fadeGreyBorderColor,
-          ),
           keyboardType: TextInputType.emailAddress,
           hasPrefix: false,
         ),

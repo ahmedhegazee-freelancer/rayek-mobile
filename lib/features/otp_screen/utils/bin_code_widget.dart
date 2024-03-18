@@ -16,6 +16,8 @@ class PinCodeWidget extends StatelessWidget {
       length: 4,
       obscureText: false,
       animationType: AnimationType.fade,
+      // Input Type
+      keyboardType: TextInputType.number,
 
 
       pinTheme: PinTheme(
