@@ -15,7 +15,7 @@ class CustomBackButton extends StatelessWidget {
       alignment: Alignment.topLeft,
       child: IconButton(
         onPressed: () {
-          MagicRouter.goBack();
+         MagicRouter.goBack();
         },
         icon: Icon(
           context.locale.languageCode == 'ar'
