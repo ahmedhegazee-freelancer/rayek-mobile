@@ -31,12 +31,7 @@ void main() async {
             create: (context) => LanguageCubit(),
           ),
         ],
-        child: DevicePreview(
-          enabled: !kReleaseMode,
-          builder: (context) {
-            return const MyApp();
-          }
-        ),
+        child: const MyApp(),
       )));
 }
 

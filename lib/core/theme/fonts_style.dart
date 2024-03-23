@@ -10,6 +10,12 @@ class AppTextStyle {
     color: Colors.black,
   );
 
+  static TextStyle h1 = TextStyle(
+    fontSize: 22.0.sp,
+    fontWeight: FontWeight.bold,
+    color: Colors.black,
+  );
+
   static TextStyle subtitleStyle = TextStyle(
     fontSize: 13.0.sp,
     fontWeight: FontWeight.w400,
@@ -46,6 +52,13 @@ class AppTextStyle {
     color: ColorManager.lightGreyColor,
   );
 
+  static TextStyle underlineTextStyle = TextStyle(
+    fontSize: 14.0.sp,
+    fontWeight: FontWeight.w400,
+    color: ColorManager.primaryColor,
+    decoration: TextDecoration.underline,
+  );
+
 
   static TextStyle h3 = TextStyle(
     fontSize: 16.0.sp,
@@ -53,12 +66,16 @@ class AppTextStyle {
     color: ColorManager.blackTextColor,
   );
 
-  static TextStyle h4 = TextStyle(
+  static TextStyle h4Grey = TextStyle(
     fontSize: 12.0.sp,
     fontWeight: FontWeight.w700,
     color: ColorManager.lightGreyColor,
   );
-
+  static TextStyle h4Black = TextStyle(
+    fontSize: 15.0.sp,
+    fontWeight: FontWeight.w700,
+    color: ColorManager.blackTextColor,
+  );
   static TextStyle h6 = TextStyle(
     fontSize: 10.0.sp,
     fontWeight: FontWeight.w400,

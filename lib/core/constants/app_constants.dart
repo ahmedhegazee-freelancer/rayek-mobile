@@ -7,7 +7,7 @@ class AppConstants{
   AppConstants({this.context});
 
   ///CONSTANTS
-  static  const String currency_coin='currency_coin';
+  static  const String currencyCoin='currency_coin';
 
   ///sharedPreferences
   static  const String language='lang';

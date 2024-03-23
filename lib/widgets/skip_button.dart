@@ -19,7 +19,7 @@ class SkipButton extends StatelessWidget {
       },
       child: Text(
         Strings.skip.tr(),
-        style: AppTextStyle.h4,
+        style: AppTextStyle.h4Grey,
       ),
     );
   }

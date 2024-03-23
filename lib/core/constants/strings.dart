@@ -36,6 +36,33 @@ class Strings{
   static String enterNewPassword = "enter_new_password";
   static String pleaseEnterPassword = "please_enter_password_8";
   static String confirmNewPassword = "confirm_new_password";
+  static String viewAll = "view_all";
+  static String searchAbout = "search_about";
+  static String yourConsultant = "your_consultant";
+  static String categories = "categories";
+  static String sports = "sports";
+  static String education = "education";
+  static String law = "law";
+  static String topConsultants = "top_consultants";
+  static String home = "home";
+  static String experts = "experts";
+  static String settings = "settings";
+  static String call = "call";
+  static String chat = "chat";
+  static String description = "description";
+  static String reviews = "reviews";
+  static String experience = "experience";
+  static String consultations = "consultations";
+  static String availableServices = "available_services";
+  static String bookConsultation = "book_consultation";
+  static String audioCall = "audio_call";
+  static String videoCall = "video_call";
+  static String chatConsultation = "chat_consultation";
+  static String searchHere = "search_here";
+
+
+
+
 
 
 }

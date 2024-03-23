@@ -34,6 +34,8 @@ class CustomTextField extends StatelessWidget {
   final String? topText;
   final bool? isTopText;
   final double? gapTopText;
+  final String? svgIconSuffix;
+
 
   const CustomTextField(
       {super.key,
@@ -44,6 +46,7 @@ class CustomTextField extends StatelessWidget {
       this.heightOfTextField,
       this.borderRadius,
       this.svgIconPrefix,
+      this.svgIconSuffix,
       this.onSaved,
       this.validate,
       this.obscure = false,
@@ -55,6 +58,7 @@ class CustomTextField extends StatelessWidget {
       this.hasPrefix = true,
       this.maxLines,
       this.suffixIcon,
+
       this.textAlign,
       this.borderColor,
       this.borderWidth,
@@ -164,7 +168,10 @@ class CustomTextField extends StatelessWidget {
                                 ),
                               )
                         : const SizedBox(),
-                    suffixIcon: SizedBox(
+                    suffixIcon:
+
+
+                    SizedBox(
                       height: 8.76.h,
                       width: 14.02.w,
                       child: GestureDetector(
@@ -180,7 +187,17 @@ class CustomTextField extends StatelessWidget {
                                       : ColorManager.primaryColor
                                           .withOpacity(.5),
                                 )
-                            : const SizedBox(),
+                            : svgIconSuffix != null
+                                ? Padding(
+                                  padding: const EdgeInsets.all(12.0),
+                                  child: SvgPicture.asset(
+                                      svgIconSuffix ?? "",
+                                      color: ColorManager.lightGreyColor,
+                                      width: 10.w,
+                                      height: 10.h,
+                                    ),
+                                )
+                                : const SizedBox()
                       ),
                     ),
                     hintText: hintText,

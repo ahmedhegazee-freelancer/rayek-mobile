@@ -19,7 +19,7 @@ class SocialSign extends StatelessWidget {
             isLogin ?? true
                 ? Strings.orLoinWith.tr()
                 : Strings.orSignupWith.tr(),
-            style: AppTextStyle.h4,
+            style: AppTextStyle.h4Grey,
           ),
         ),
         SizedBox(

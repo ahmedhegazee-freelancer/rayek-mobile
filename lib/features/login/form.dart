@@ -14,6 +14,7 @@ import '../../widgets/custom_text_field.dart';
 import '../../widgets/skip_button.dart';
 import '../../widgets/terms_and_conditions.dart';
 import '../forget_password/form.dart';
+import '../mian_home/page.dart';
 
 part 'utils/login_form.dart';
 
@@ -83,7 +84,9 @@ class LoginView extends StatelessWidget {
               SizedBox(
                 height: 25.h,
               ),
-              CustomButton(onTap: () {}, text: Strings.login.tr()),
+              CustomButton(onTap: () {
+                MagicRouter.navigateTo(const MainProvider());
+              }, text: Strings.login.tr()),
               SizedBox(
                 height: 15.h,
               ),
