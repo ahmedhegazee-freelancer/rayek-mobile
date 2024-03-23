@@ -24,7 +24,7 @@ class SelectUserType extends StatelessWidget {
                 textStyle: state == UserType.consultant
                     ? AppTextStyle.buttonWhiteStyle
                     : AppTextStyle.buttonBlackStyle,
-                borderWidth: 1.5.w,
+                borderWidth: 0.w,
                 borderColor: state == UserType.consultant
                     ? Colors.transparent
                     : ColorManager.primaryColor,
@@ -39,7 +39,7 @@ class SelectUserType extends StatelessWidget {
             ),
             CustomButton(
                 width: 155.w,
-                borderWidth: 2.w,
+                borderWidth: 0.w,
                 borderColor: state == UserType.consultant
                     ? ColorManager.primaryColor
                     : Colors.transparent,
