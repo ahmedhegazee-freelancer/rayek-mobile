@@ -1,5 +1,4 @@
-part of'../form.dart';
-
+part of '../form.dart';
 
 class _UploadContainer extends StatefulWidget {
   @override
@@ -7,81 +6,117 @@ class _UploadContainer extends StatefulWidget {
 }
 
 class _UploadContainerState extends State<_UploadContainer> {
-  Future<void>? _uploadFuture;
+  File? _image;
 
-  Future<void> uploadImage() async {
-    final ImagePicker _picker = ImagePicker();
-    // Pick an image
-    final XFile? image = await _picker.pickImage(source: ImageSource.gallery);
+  Future getImage(ImageSource source) async {
+    final pickedFile = await ImagePicker().pickImage(source: source);
 
-    if (image == null) {
-      return;
-    }
+    setState(() {
+      if (pickedFile != null) {
+        _image = File(pickedFile.path);
+      } else {
+        debugPrint('No image selected.');
+      }
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 50.w),
-      // Image Profile
       child: GestureDetector(
         onTap: () {
-          setState(() {
-            _uploadFuture = uploadImage();
-          });
-        },
-        child: FutureBuilder<void>(
-          future: _uploadFuture,
-          builder: (BuildContext context, AsyncSnapshot<void> snapshot) {
-            if (snapshot.connectionState == ConnectionState.waiting) {
-              return Shimmer.fromColors(
-                baseColor: ColorManager.primaryColor.withOpacity(.1),
-                highlightColor: ColorManager.primaryColor.withOpacity(.2),
-                child: Container(
-                  height: 100.h,
-                  width: 100.w,
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: ColorManager.primaryColor.withOpacity(.5),
-                      width: 1.w,
-                    ),
-                    color: ColorManager.primaryColor.withOpacity(.1),
-                    borderRadius: BorderRadius.circular(Dimensions.buttonRadius),
-                  ),
-                ),
-              );
-            } else {
-              return Container(
-                height: 100.h,
-                width: 100.w,
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    color: ColorManager.primaryColor.withOpacity(.5),
-                    width: 1.w,
-                  ),
-                  color: ColorManager.primaryColor.withOpacity(.1),
-                  borderRadius: BorderRadius.circular(Dimensions.buttonRadius),
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Center(
-                      child: SvgPicture.asset(
-                        IconManager.uploadImage,
-                        height: 24.h,
-                        width: 24.w,
+          showModalBottomSheet(
+              context: context,
+              builder: (BuildContext bc) {
+                return Wrap(
+                  children: <Widget>[
+                    ListTile(
+                      leading: const Icon(
+                        Icons.photo_library_outlined,
+                        color: ColorManager.blackTextColor,
                       ),
+                      title:
+                          Text(Strings.gallery.tr(), style: AppTextStyle.h3),
+                      onTap: () {
+                        getImage(ImageSource.gallery);
+                        Navigator.of(context).pop();
+                      },
                     ),
-                    SizedBox(height: 5.h),
-                    Text(
-                      Strings.uploadImage.tr(),
-                      style: AppTextStyle.h3,
+                    ListTile(
+                      leading: const Icon(
+                        Icons.photo_camera_outlined,
+                        color: ColorManager.blackTextColor,
+                      ),
+                      title:
+                          Text(Strings.camera.tr(), style: AppTextStyle.h3),
+                      onTap: () {
+                        getImage(ImageSource.camera);
+                        Navigator.of(context).pop();
+                      },
                     ),
                   ],
+                );
+              });
+        },
+        child: Stack(
+          children: [
+            Container(
+              height: 100.h,
+              width: 1.sw,
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: ColorManager.primaryColor.withOpacity(.5),
+                  width: 1.w,
                 ),
-              );
-            }
-          },
+                color: ColorManager.primaryColor.withOpacity(.1),
+                borderRadius: BorderRadius.circular(Dimensions.buttonRadius),
+              ),
+              child: _image == null
+                  ? Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Center(
+                          child: SvgPicture.asset(
+                            IconManager.uploadImage,
+                            height: 24.h,
+                            width: 24.w,
+                          ),
+                        ),
+                        SizedBox(height: 5.h),
+                        Text(
+                          Strings.uploadImage.tr(),
+                          style: AppTextStyle.h3,
+                        ),
+                      ],
+                    )
+                  : Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(Dimensions.buttonRadius),
+                  ),
+                  child: Image.file(_image!)),
+            ),
+            if (_image != null)
+              Positioned(
+                right: 0,
+                child: IconButton(
+                  icon: CircleAvatar(
+                      radius: 10.r,
+                      backgroundColor:
+                          ColorManager.primaryColor.withOpacity(.5),
+                      child: Icon(
+                        Icons.close,
+                        color: ColorManager.whiteTextColor,
+                        size: 15.sp,
+                      )),
+                  onPressed: () {
+                    setState(() {
+                      _image = null;
+                    });
+                  },
+                ),
+              ),
+          ],
         ),
       ),
     );

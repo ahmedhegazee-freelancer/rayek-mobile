@@ -63,6 +63,17 @@
  "create_your_profile": "أنشئ ملفك الشخصي",
  "upload_image": "تحميل صورة ملفك الشخصي",
  "hide_status": "إخفاء الملف الشخصي",
- "save_data": "حفظ البيانات"
+ "save_data": "حفظ البيانات",
+ "gallery": "المعرض",
+    "camera": "الكاميرا",
+ "male": "ذكر",
+ "female": "أنثى",
+ "country": "الدولة",
+    "city": "المدينة",
+ "address": "العنوان",
+ "sex": "الجنس",
+ "phone_number": "رقم الهاتف"
+
+
 
 }

@@ -1,4 +1,7 @@
-import 'package:easy_localization/easy_localization.dart';
+import 'dart:io';
+
+import 'package:easy_localization/easy_localization.dart' as tr;
+import 'package:fl_country_code_picker/fl_country_code_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -10,9 +13,10 @@ import 'package:rayik/core/constants/icon_manager.dart';
 import 'package:rayik/core/theme/fonts_style.dart';
 import 'package:rayik/widgets/back_button.dart';
 import 'package:rayik/widgets/custom_button.dart';
-import 'package:shimmer/shimmer.dart';
+import 'package:rayik/widgets/custom_text_field.dart';
 import '../../core/constants/strings.dart';
 import '../consultant_page/form.dart';
+import 'package:flutter/services.dart';
 
 part 'utils/save_button.dart';
 part 'utils/hide_status.dart';
@@ -28,7 +32,7 @@ class EditProfileForm extends StatelessWidget {
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.all(Dimensions.defaultPadding),
-        child: ListView(
+        child: Column(
           children: [
             SizedBox(height: 20.h),
             Row(
@@ -48,24 +52,45 @@ class EditProfileForm extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 20.h),
-            Text(
-              Strings.updateProfile.tr(),
-              style: AppTextStyle.h1,
-            ),
-            SizedBox(height: 10.h),
-            Text(
-              Strings.createYourProfile.tr(),
-              style: AppTextStyle.h6,
-            ),
-            SizedBox(height: 25.h),
-            // Upload Image
-            _UploadContainer(),
-            SizedBox(height: 20.h),
-            const _HideStatus(),
-            SizedBox(height: 20.h),
-            _ButtonSave(),
+            Expanded(
+              child: ListView(
+                children: [
 
+                  SizedBox(height: 20.h),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        Strings.updateProfile.tr(),
+                        style: AppTextStyle.h1,
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 10.h),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        Strings.createYourProfile.tr(),
+                        style: AppTextStyle.h6,
+                      ),
+                    ],
+                  ),
+
+
+                  SizedBox(height: 25.h),
+                  // Upload Image
+                  _UploadContainer(),
+                  SizedBox(height: 20.h),
+                  const _HideStatus(),
+                  SizedBox(height: 20.h),
+                  _ProfileForm(),
+                  SizedBox(height: 20.h),
+                  _ButtonSave(),
+
+                ],
+              ),
+            ),
           ],
         ),
       ),

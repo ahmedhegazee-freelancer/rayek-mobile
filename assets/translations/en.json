@@ -64,5 +64,14 @@
   "create_your_profile": "Create your profile",
   "upload_image": "Upload your profile image",
   "hide_status": "Hide profile ",
-  "save_data": "Save data"
+  "save_data": "Save data",
+  "gallery": "Gallery",
+  "camera": "Camera",
+  "male": "Male",
+    "female": "Female",
+  "country": "Country",
+  "city": "City",
+  "address": "Address",
+  "sex": "Sex",
+  "phone_number": "Phone number"
 }

@@ -35,6 +35,7 @@ class CustomTextField extends StatelessWidget {
   final bool? isTopText;
   final double? gapTopText;
   final String? svgIconSuffix;
+  final String? value;
 
 
   const CustomTextField(
@@ -48,6 +49,7 @@ class CustomTextField extends StatelessWidget {
       this.svgIconPrefix,
       this.svgIconSuffix,
       this.onSaved,
+      this.value,
       this.validate,
       this.obscure = false,
       this.prefixIcon,
@@ -101,6 +103,7 @@ class CustomTextField extends StatelessWidget {
                   maxLines: maxLines ?? 1,
                   onFieldSubmitted: onFieldSubmitted,
                   controller: controller,
+
                   obscureText: obscure ? !secure : false,
                   onSaved: onSaved,
                   validator: validate,

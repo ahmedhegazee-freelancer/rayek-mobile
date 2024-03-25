@@ -1,6 +1,6 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/foundation.dart';
+import 'package:fl_country_code_picker/fl_country_code_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -11,6 +11,7 @@ import 'package:rayik/features/login/form.dart';
 import 'core/bloc/language_cubit/language_cubit.dart';
 import 'core/bloc/language_cubit/language_states.dart';
 import 'core/router/router.dart';
+import  'package:fl_country_code_picker/fl_country_code_picker.dart' as flc;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -51,10 +52,10 @@ class MyApp extends StatelessWidget {
             },
             builder: (context, state) {
               return MaterialApp(
+                supportedLocales: flc.CountryLocalizations.supportedLocales.map(Locale.new),
                 title: 'Rayik Consulting App',
                 theme: themeData,
                 localizationsDelegates: context.localizationDelegates,
-                supportedLocales: context.supportedLocales,
                 locale: context.locale,
                 builder: DevicePreview.appBuilder,
                 navigatorKey: navigatorKey,

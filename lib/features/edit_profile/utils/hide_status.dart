@@ -1,10 +1,17 @@
 part of'../form.dart';
 
 
-class _HideStatus extends StatelessWidget {
+class _HideStatus extends StatefulWidget {
   const _HideStatus({
-    super.key,
-  });
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  _HideStatusState createState() => _HideStatusState();
+}
+
+class _HideStatusState extends State<_HideStatus> {
+  bool _status = true;
 
   @override
   Widget build(BuildContext context) {
@@ -15,19 +22,22 @@ class _HideStatus extends StatelessWidget {
           Strings.hideStatus.tr(),
           style: AppTextStyle.h3,
         ),
-        SizedBox(
-          height: 10.h,
-          width: 50.w,
+        Directionality(
+          textDirection:
+          context.locale == const Locale('ar') ? TextDirection.rtl :
+          TextDirection.ltr,
           child: FlutterSwitch(
             height: 20.h,
-            width: 40.w,
-            value: true,
-            onToggle: (value) {},
+            width: 45.w,
+            value: _status,
+            onToggle: (value) {
+              setState(() {
+                _status = value;
+              });
+            },
             activeColor: ColorManager.primaryColor,
           ),
-
         ),
-
       ],
     );
   }

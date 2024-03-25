@@ -66,6 +66,17 @@ class Strings{
   static String uploadImage = "upload_image";
   static String hideStatus = "hide_status";
   static String saveData = "save_data";
+  static String gallery = "gallery";
+  static String camera = "camera";
+  static String male = "male";
+  static String female = "female";
+  static String country = "country";
+  static String city = "city";
+  static String address = "address";
+  static String sex = "sex";
+  static String phoneNumber = "phone_number";
+
+
 
 
 
