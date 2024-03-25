@@ -71,4 +71,6 @@ class IconManager {
   static const String cash = '${baseBase}cash.svg';
   // contact_us
   static const String contactUs = '${baseBase}contact_us.svg';
+  // star
+  static const String star = '${baseBase}star.svg';
 }

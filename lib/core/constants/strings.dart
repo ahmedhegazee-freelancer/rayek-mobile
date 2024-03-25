@@ -59,6 +59,8 @@ class Strings{
   static String videoCall = "video_call";
   static String chatConsultation = "chat_consultation";
   static String searchHere = "search_here";
+  static String online = "online";
+  static String offline = "offline";
 
 
 

@@ -1,31 +1,51 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../core/constants/color_manager.dart';
+import 'back_button.dart';
+
 class CustomSliverPage extends StatelessWidget {
-  const CustomSliverPage({Key? key}) : super(key: key);
+  final Widget? image;
+  final Widget? body;
+  final double? imageHeight;
+
+  const CustomSliverPage({Key? key, this.image, this.body, this.imageHeight})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       body: CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(
-            expandedHeight: 200.0,
+            leading: const SizedBox(),
+            backgroundColor: Colors.transparent,
+            actions: [
+
+              const Padding(
+                padding:  EdgeInsets.all(0.0),
+                child:  Center(
+                  child: CustomBackButton(
+                    iosOnly: true,
+                    color: ColorManager.blackTextColor,
+                    isColored: true,
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: 10.w,),
+            ], // change your color here
+            expandedHeight: imageHeight ?? 200.0,
             floating: false,
             pinned: true,
             flexibleSpace: FlexibleSpaceBar(
               centerTitle: true,
-              title: const Text("SliverAppBar Example",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16.0,
-                  )),
-              background: Image.network(
-                "https://images.unsplash.com/photo-1622838320000-4b3b3b3b3b3b",
-                fit: BoxFit.cover,
-              ),
+              title: const SizedBox(),
+              background: image ?? const SizedBox(),
             ),
           ),
-          const SliverFillRemaining(
-            child: Center(child: Text('Scroll to see the SliverAppBar in action')),
+          SliverToBoxAdapter(
+            child: body ?? const SizedBox(),
           ),
         ],
       ),

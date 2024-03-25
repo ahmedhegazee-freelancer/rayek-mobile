@@ -57,5 +57,7 @@
   "audio_call": "Audio call",
   "video_call": "Video call",
   "chat_consultation": "Chat consultation",
-  "search_here": "Search here ..."
+  "search_here": "Search here ...",
+  "online": "Online",
+    "offline": "Offline"
 }

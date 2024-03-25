@@ -23,7 +23,7 @@ class AppTextStyle {
   );
 
   static TextStyle buttonBlackStyle = TextStyle(
-    fontSize: 13.0.sp,
+    fontSize: 15.0.sp,
     fontWeight: FontWeight.w700,
     color: Colors.white,
   );
@@ -57,6 +57,7 @@ class AppTextStyle {
     fontWeight: FontWeight.w400,
     color: ColorManager.primaryColor,
     decoration: TextDecoration.underline,
+    decorationColor: ColorManager.primaryColor,
   );
 
 
@@ -74,6 +75,11 @@ class AppTextStyle {
   static TextStyle h4Black = TextStyle(
     fontSize: 15.0.sp,
     fontWeight: FontWeight.w700,
+    color: ColorManager.blackTextColor,
+  );
+  static TextStyle h5 = TextStyle(
+    fontSize: 13.0.sp,
+    fontWeight: FontWeight.normal,
     color: ColorManager.blackTextColor,
   );
   static TextStyle h6 = TextStyle(

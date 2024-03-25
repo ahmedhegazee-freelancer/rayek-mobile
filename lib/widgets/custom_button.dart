@@ -10,7 +10,7 @@ class CustomButton extends StatelessWidget {
   final String? text;
   final double? width;
   final double? height;
-  final IconData? iconData;
+  final Widget? iconData;
   final bool? isGap;
   final Color? color;
   final Color? txtColor;
@@ -30,7 +30,7 @@ class CustomButton extends StatelessWidget {
       required this.text,
       this.width,
       this.height,
-      this.isGap,
+      this.isGap = false,
       this.color,
       this.txtColor,
       this.radius,
@@ -62,7 +62,7 @@ class CustomButton extends StatelessWidget {
               child: Padding(
             padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 12.w),
             child: Row(
-              mainAxisAlignment: iconData == null
+              mainAxisAlignment: iconData == null || isGap == false
                   ? MainAxisAlignment.center
                   : MainAxisAlignment.spaceBetween,
               children: [
@@ -75,10 +75,7 @@ class CustomButton extends StatelessWidget {
                 ),
                 iconData == null
                     ? const SizedBox()
-                    : Icon(
-                        iconData!,
-                        color: txtColor ?? Colors.white,
-                      )
+                    : iconData!,
               ],
             ),
           ))),

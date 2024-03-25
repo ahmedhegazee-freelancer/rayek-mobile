@@ -27,7 +27,7 @@ class MainScreenPage extends StatelessWidget {
             if (navigationState is HomePageState) {
               screen = const MainScreenForm();
             } else if (navigationState is ExpertsPageState) {
-              screen = const Center(child: Text('Experts Page'));
+              screen = const Center(child: Text('Categories Page'));
             } else if (navigationState is ChatPageState) {
               screen = const Center(child: Text('Chat Page'));
             } else if (navigationState is CallPageState) {
@@ -87,8 +87,8 @@ class MainScreenPage extends StatelessWidget {
             ),
             BottomNavigationBarItem(
               icon: CustomNavBarItem(
-                title: Strings.experts.tr(),
-                icon: IconManager.experts,
+                title: Strings.categories.tr(),
+                icon: IconManager.categories,
                 isSelected: state is ExpertsPageState ? true : false,
               ),
               label: Strings.experts.tr(),
