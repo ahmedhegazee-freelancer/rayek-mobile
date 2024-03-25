@@ -58,6 +58,11 @@
     "chat_consultation": "دردشة",
  "search_here": "ابحث هنا",
  "online": "متصل",
-    "offline": "غير متصل"
+    "offline": "غير متصل",
+ "update_profile": "تحديث الملف الشخصي",
+ "create_your_profile": "أنشئ ملفك الشخصي",
+ "upload_image": "تحميل صورة ملفك الشخصي",
+ "hide_status": "إخفاء الملف الشخصي",
+ "save_data": "حفظ البيانات"
 
 }

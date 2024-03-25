@@ -59,5 +59,10 @@
   "chat_consultation": "Chat consultation",
   "search_here": "Search here ...",
   "online": "Online",
-    "offline": "Offline"
+    "offline": "Offline",
+  "update_profile": "Update Profile",
+  "create_your_profile": "Create your profile",
+  "upload_image": "Upload your profile image",
+  "hide_status": "Hide profile ",
+  "save_data": "Save data"
 }

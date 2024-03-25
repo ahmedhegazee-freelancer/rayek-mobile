@@ -61,6 +61,12 @@ class Strings{
   static String searchHere = "search_here";
   static String online = "online";
   static String offline = "offline";
+  static String updateProfile = "update_profile";
+  static String createYourProfile = "create_your_profile";
+  static String uploadImage = "upload_image";
+  static String hideStatus = "hide_status";
+  static String saveData = "save_data";
+
 
 
 

@@ -4,7 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:rayik/core/constants/dimensions.dart';
 import 'package:rayik/core/constants/icon_manager.dart';
+import 'package:rayik/core/router/router.dart';
 import 'package:rayik/features/consultant_page/utils/details_container.dart';
+import 'package:rayik/features/edit_profile/form.dart';
 import 'package:rayik/widgets/custom_button.dart';
 import 'package:rayik/widgets/sliver_page.dart';
 import '../../core/constants/color_manager.dart';
@@ -143,7 +145,8 @@ class ConsultantForm extends StatelessWidget {
 
               /////////////// Button
               SizedBox(height: 20.h),
-              const _BookButton(),
+              _BookButton(),
+
             ],
           )),
     );

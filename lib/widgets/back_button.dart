@@ -1,4 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:rayik/core/constants/app_constants.dart';
 import 'package:rayik/core/router/router.dart';
 import 'package:flutter/material.dart';
@@ -8,12 +9,14 @@ class CustomBackButton extends StatelessWidget {
   final bool? isColored;
   final bool? iosOnly;
   final double? radius;
+  final double? size;
 
   const CustomBackButton({
     this.color,
     this.isColored,
     this.iosOnly,
     this.radius,
+    this.size,
     super.key,
   });
 
@@ -38,6 +41,7 @@ class CustomBackButton extends StatelessWidget {
                       : Icons.arrow_back
                   : Icons.arrow_back_ios,
           color: isColored ?? false ? color : Colors.black,
+          size: size ?? 24.sp,
         ),
       ),
     );
