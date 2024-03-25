@@ -41,4 +41,34 @@ class IconManager {
   static const String searchIcon = '${baseBase}searchIcon.svg';
   // videoNav
   static const String videoNav = '${baseBase}videoNav.svg';
+  // moon
+  static const String moon = '${baseBase}moon.svg';
+  //morning
+  static const String morning = '${baseBase}morning.svg';
+  // night
+  static const String night = '${baseBase}night.svg';
+  // upload
+  static const String upload = '${baseBase}upload.svg';
+  // upload_image
+  static const String uploadImage = '${baseBase}upload_image.svg';
+  // filter
+  static const String filter = '${baseBase}filter.svg';
+  // language
+  static const String language = '${baseBase}lang.svg';
+  // sign_out
+  static const String signOut = '${baseBase}sign_out.svg';
+  // categories
+  static const String categories = '${baseBase}categories.svg';
+  // edit_profile
+  static const String editProfile = '${baseBase}edit_profile.svg';
+  // about
+  static const String about = '${baseBase}about.svg';
+  // appoints
+  static const String appoints = '${baseBase}appoints.svg';
+  // blog
+  static const String blog = '${baseBase}blog.svg';
+  // cash
+  static const String cash = '${baseBase}cash.svg';
+  // contact_us
+  static const String contactUs = '${baseBase}contact_us.svg';
 }
