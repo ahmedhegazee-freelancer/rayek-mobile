@@ -10,6 +10,7 @@ import '../../core/router/router.dart';
 import '../../core/theme/fonts_style.dart';
 import '../../widgets/custom_text_field.dart';
 import '../consultants_view/form.dart';
+import '../search_view/form.dart';
 
 part 'utils/search_area.dart';
 part 'utils/categories.dart';

@@ -12,6 +12,7 @@ import 'package:rayik/widgets/custom_text_field.dart';
 import '../../core/constants/color_manager.dart';
 import '../../core/constants/strings.dart';
 import '../../widgets/custom_item_nav.dart';
+import '../search_view/form.dart';
 part "utils/top_bar.dart";
 part 'utils/search_area.dart';
 part 'utils/view_all_row.dart';

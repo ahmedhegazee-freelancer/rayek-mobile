@@ -15,12 +15,18 @@ class _SearchArea extends StatelessWidget {
               SizedBox(
                 height: 10.h,
               ),
-              CustomTextField(
-                hintText: Strings.searchHere.tr(),
-                obscure: false,
-                hasPrefix: false,
-                svgIconSuffix: IconManager.searchIcon,
-                readonly: true,
+              GestureDetector(
+                onTap: () {
+                  debugPrint('SearchForm');
+                  MagicRouter.navigateTo(const SearchForm());
+                },
+                child: CustomTextField(
+                  hintText: Strings.searchHere.tr(),
+                  obscure: false,
+                  hasPrefix: false,
+                  svgIconSuffix: IconManager.searchIcon,
+                  readonly: true,
+                ),
               ),
               SizedBox(
                 height: 15.h,

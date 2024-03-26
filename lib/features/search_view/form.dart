@@ -1,24 +1,21 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:rayik/core/constants/dimensions.dart';
 
 import '../../core/constants/color_manager.dart';
-import '../../core/constants/dimensions.dart';
 import '../../core/constants/icon_manager.dart';
 import '../../core/constants/strings.dart';
-import '../../core/router/router.dart';
 import '../../core/theme/fonts_style.dart';
 import '../../widgets/back_button.dart';
-import '../../widgets/consultant_container.dart';
 import '../../widgets/custom_text_field.dart';
-import '../search_view/form.dart';
-
 
 part 'utils/search_area.dart';
-part 'utils/consultants.dart';
+part 'utils/filter_button.dart';
 
-class ConsultantsView extends StatelessWidget {
-  const ConsultantsView({super.key});
+class SearchForm extends StatelessWidget {
+  const SearchForm({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +24,9 @@ class ConsultantsView extends StatelessWidget {
         padding: EdgeInsets.all(Dimensions.defaultPadding),
         child: Column(
           children: [
-            SizedBox(height: 20.h),
+            SizedBox(
+              height: 20.h,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
@@ -48,11 +47,28 @@ class ConsultantsView extends StatelessWidget {
             SizedBox(
               height: 10.h,
             ),
-            const _SearchArea(),
+            const _TitleArea(),
             SizedBox(
-              height: 20.h,
+              width: 10.w,
             ),
-            const _ConsultantsListView(),
+            Row(
+              children: [
+                CustomTextField(
+                  hintText: Strings.searchHere.tr(),
+                  obscure: false,
+                  hasPrefix: false,
+                  svgIconSuffix: IconManager.searchIcon,
+                  readonly: false,
+                  heightOfTextField: 47.h,
+                  width: 0.69.sw,
+
+                ),
+                _FilterButton(),
+              ],
+            ),
+            SizedBox(
+              height: 10.h,
+            ),
           ],
         ),
       ),

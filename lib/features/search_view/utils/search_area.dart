@@ -1,7 +1,7 @@
-part of '../main_screen_form.dart';
+part of'../form.dart';
 
-class _SearchArea extends StatelessWidget {
-  const _SearchArea();
+class _TitleArea extends StatelessWidget {
+  const _TitleArea();
 
   @override
   Widget build(BuildContext context) {
@@ -27,19 +27,7 @@ class _SearchArea extends StatelessWidget {
               SizedBox(
                 height: 10.h,
               ),
-              GestureDetector(
-                onTap: () {
-                  debugPrint('SearchForm');
-                  MagicRouter.navigateTo(const SearchForm());
-                },
-                child: CustomTextField(
-                  hintText: Strings.searchHere.tr(),
-                  obscure: false,
-                  hasPrefix: false,
-                  svgIconSuffix: IconManager.searchIcon,
-                  readonly: true,
-                ),
-              )
+
 
 
             ]

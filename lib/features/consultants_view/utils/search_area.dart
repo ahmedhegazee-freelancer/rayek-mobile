@@ -21,6 +21,9 @@ class _SearchArea extends StatelessWidget {
                 hasPrefix: false,
                 svgIconSuffix: IconManager.searchIcon,
                 readonly: true,
+                onTap: () {
+                  MagicRouter.navigateTo(const SearchForm());
+                },
               ),
               SizedBox(
                 height: 20.h,

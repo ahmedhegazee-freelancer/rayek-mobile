@@ -36,6 +36,7 @@ class CustomTextField extends StatelessWidget {
   final double? gapTopText;
   final String? svgIconSuffix;
   final String? value;
+  final double? width;
 
 
   const CustomTextField(
@@ -43,6 +44,7 @@ class CustomTextField extends StatelessWidget {
       this.hintText,
       this.topText,
       this.isTopText,
+      this.width,
       this.gapTopText,
       this.heightOfTextField,
       this.borderRadius,
@@ -93,6 +95,7 @@ class CustomTextField extends StatelessWidget {
             ),
             Container(
               height: heightOfTextField ?? 47.h,
+              width: width ?? 1.sw,
               decoration: BoxDecoration(
                   border: Border.all(
                     color: borderColor ?? ColorManager.fadeGreyBorderColor,
