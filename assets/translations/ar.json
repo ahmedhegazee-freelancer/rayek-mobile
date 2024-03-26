@@ -73,7 +73,8 @@
  "address": "العنوان",
  "sex": "الجنس",
  "phone_number": "رقم الهاتف",
- "select_country": "اختر الدولة"
+ "select_country": "اختر الدولة",
+ "choose_category": "اختر القسم"
 
 
 

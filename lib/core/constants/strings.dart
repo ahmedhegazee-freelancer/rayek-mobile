@@ -76,6 +76,7 @@ class Strings{
   static String sex = "sex";
   static String phoneNumber = "phone_number";
   static String selectCountry = "select_country";
+  static String chooseCategory = "choose_category";
 
 
 

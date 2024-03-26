@@ -6,6 +6,7 @@ import 'package:rayik/features/home/main_screen_form.dart';
 import '../../core/constants/icon_manager.dart';
 import '../../core/constants/strings.dart';
 import '../../widgets/custom_item_nav.dart';
+import '../categories_view/form.dart';
 import 'cubit/cubit.dart';
 import 'cubit/events.dart';
 import 'cubit/states.dart';
@@ -27,7 +28,7 @@ class MainScreenPage extends StatelessWidget {
             if (navigationState is HomePageState) {
               screen = const MainScreenForm();
             } else if (navigationState is ExpertsPageState) {
-              screen = const Center(child: Text('Categories Page'));
+              screen = const CategoriesView();
             } else if (navigationState is ChatPageState) {
               screen = const Center(child: Text('Chat Page'));
             } else if (navigationState is CallPageState) {

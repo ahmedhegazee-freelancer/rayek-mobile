@@ -74,5 +74,6 @@
   "address": "Address",
   "sex": "Sex",
   "phone_number": "Phone number",
-  "select_country": "Select country"
+  "select_country": "Select country",
+  "choose_category": "Choose category"
 }
