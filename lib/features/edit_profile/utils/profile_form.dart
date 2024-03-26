@@ -12,6 +12,7 @@ class _ProfileFormState extends State<_ProfileForm> {
 
   String _country = '';
   String _flagC = 'KW';
+  String _code = '+965';
 
   static  List<String> arabicGenders = <String>[
     'ذكر',
@@ -94,61 +95,48 @@ class _ProfileFormState extends State<_ProfileForm> {
               ),
             ),
             SizedBox(height: 20.h),
-            // Container(
-            //   decoration: _containerDecoration(),
-            //   child: Center(
-            //     child: CustomTextField(
-            //       heightOfTextField: 46.h,
-            //
-            //       hintText: Strings.phoneNumber.tr(),
-            //       hasPrefix: false,
-            //       borderColor: Colors.transparent,
-            //     ),
-            //   ),
-            // ),
-            // Row(
-            //   children: [
-            //     GestureDetector(
-            //       onTap: () async {
-            //         // Show the phone code picker when tapped.
-            //         final picked = await countryPicker.showPicker(context: context);
-            //         // Null check
-            //         if (picked != null) {
-            //           setState(() {
-            //             _code = picked.dialCode;
-            //             _flagP = picked.code;
-            //           });
-            //         }
-            //       },
-            //       child: Container(
-            //         padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
-            //         margin: const EdgeInsets.symmetric(horizontal: 8.0),
-            //         decoration: const BoxDecoration(
-            //             borderRadius: BorderRadius.all(Radius.circular(5.0))),
-            //         child: CountryFlag.fromCountryCode(
-            //           _flagP,
-            //           width: 30.w,
-            //           height: 30.h,
-            //         ),
-            //       ),
-            //     ),
-            //     Expanded(
-            //       child: Container(
-            //         decoration: _containerDecoration(),
-            //         child: Center(
-            //           child: CustomTextField(
-            //             heightOfTextField: 46.h,
-            //             hintText: Strings.phoneNumber.tr(),
-            //             hasPrefix: false,
-            //             readonly: false,
-            //             controller: TextEditingController(text: _code),
-            //             borderColor: Colors.transparent,
-            //           ),
-            //         ),
-            //       ),
-            //     ),
-            //   ],
-            // ),
+            Row(
+              children: [
+                GestureDetector(
+                  onTap: () async {
+                    // Show the phone code picker when tapped.
+                    final picked = await countryPickerWifParams.showPicker(context: context);
+                    // Null check
+                    if (picked != null) {
+                      setState(() {
+                        _code = picked.dialCode;
+                      });
+                    }
+                  },
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+                    margin: const EdgeInsets.symmetric(horizontal: 8.0),
+                    decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(5.0))),
+                    child: Text(
+                      _code,
+                      style: AppTextStyle.h3,
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    decoration: _containerDecoration(),
+                    child: Center(
+                      child: CustomTextField(
+                        heightOfTextField: 46.h,
+                        hintText: Strings.phoneNumber.tr(),
+                        hasPrefix: false,
+                        readonly: false,
+                        keyboardType: TextInputType.phone,
+                        borderColor: Colors.transparent,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 20.h),
 
             Row(
               children: [
@@ -200,28 +188,6 @@ class _ProfileFormState extends State<_ProfileForm> {
             ),
             SizedBox(height: 20.h),
 
-            Container(
-              height: 50.h,
-              decoration: _containerDecoration(),
-              child: Center(
-                child: Padding(
-                  padding: const EdgeInsets.all(0.0),
-                  child: IntlPhoneField(
-                    controller: TextEditingController(text: '12345678'),
-                    // countries: [Country(code: 'KW', dialCode: '965', name: 'Kuwait', flag: 'KW',maxLength: 8,minLength: 8,nameTranslations: {'ar': 'الكويت', 'en': 'Kuwait'})],
-                    decoration: InputDecoration(
-                      labelText: Strings.phoneNumber.tr(),
-                      border: InputBorder.none,
-                    ),
-                    initialCountryCode: 'KW',
-                    onChanged: (phone) {
-                      debugPrint(phone.completeNumber);
-                    },
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(height: 20.h),
 
 
 

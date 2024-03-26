@@ -8,8 +8,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:intl_phone_field/countries.dart';
-import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:rayik/core/constants/color_manager.dart';
 import 'package:rayik/core/constants/dimensions.dart';
 import 'package:rayik/core/constants/icon_manager.dart';
@@ -19,7 +17,6 @@ import 'package:rayik/widgets/custom_button.dart';
 import 'package:rayik/widgets/custom_text_field.dart';
 import '../../core/constants/strings.dart';
 import '../consultant_page/form.dart';
-import 'package:flutter/services.dart';
 
 part 'utils/save_button.dart';
 part 'utils/hide_status.dart';
@@ -55,30 +52,32 @@ class EditProfileForm extends StatelessWidget {
                 ),
               ],
             ),
+
+            SizedBox(height: 20.h),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text(
+                  Strings.updateProfile.tr(),
+                  style: AppTextStyle.h1,
+                ),
+              ],
+            ),
+            SizedBox(height: 10.h),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text(
+                  Strings.createYourProfile.tr(),
+                  style: AppTextStyle.h6,
+                ),
+              ],
+            ),
+
             Expanded(
               child: ListView(
                 children: [
 
-                  SizedBox(height: 20.h),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Text(
-                        Strings.updateProfile.tr(),
-                        style: AppTextStyle.h1,
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 10.h),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Text(
-                        Strings.createYourProfile.tr(),
-                        style: AppTextStyle.h6,
-                      ),
-                    ],
-                  ),
 
 
                   SizedBox(height: 25.h),
