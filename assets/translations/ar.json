@@ -72,7 +72,8 @@
     "city": "المدينة",
  "address": "العنوان",
  "sex": "الجنس",
- "phone_number": "رقم الهاتف"
+ "phone_number": "رقم الهاتف",
+ "select_country": "اختر الدولة"
 
 
 

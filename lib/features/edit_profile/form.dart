@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:country_flags/country_flags.dart';
 import 'package:easy_localization/easy_localization.dart' as tr;
 import 'package:fl_country_code_picker/fl_country_code_picker.dart';
 import 'package:flutter/material.dart';
@@ -7,6 +8,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:intl_phone_field/countries.dart';
+import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:rayik/core/constants/color_manager.dart';
 import 'package:rayik/core/constants/dimensions.dart';
 import 'package:rayik/core/constants/icon_manager.dart';

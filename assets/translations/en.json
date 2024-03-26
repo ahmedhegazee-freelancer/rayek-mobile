@@ -73,5 +73,6 @@
   "city": "City",
   "address": "Address",
   "sex": "Sex",
-  "phone_number": "Phone number"
+  "phone_number": "Phone number",
+  "select_country": "Select country"
 }

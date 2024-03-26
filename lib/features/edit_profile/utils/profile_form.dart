@@ -9,14 +9,9 @@ class _ProfileForm extends StatefulWidget {
 
 class _ProfileFormState extends State<_ProfileForm> {
   final _formKey = GlobalKey<FormState>();
-  String _name = '';
-  String _email = '';
-  String _phoneNumber = '';
-  String _gender = '';
-  String _city = '';
-  String _state = '';
+
   String _country = '';
-  String _flag = '';
+  String _flagC = 'KW';
 
   static  List<String> arabicGenders = <String>[
     'ذكر',
@@ -33,14 +28,16 @@ class _ProfileFormState extends State<_ProfileForm> {
   final countryPickerWifParams =  FlCountryCodePicker(
     localize: true,
     showDialCode: true,
-    showSearchBar: true,
+    showSearchBar: false,
     // favoritesIcon: _yourIcon,
     // favorites: _yourFavorites,
-    title: Text('s', style: AppTextStyle.h3),
-    // filteredCountries: _yourFilters,
-    // countryTextStyle: _yourCountryTextStyle,
-    // dialCodeTextStyle: _yourdialCodeTextStyle,
-    // searchBarDecoration: _yourInputDecoration,
+    title: Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Text(
+        Strings.selectCountry.tr(),
+      style: AppTextStyle.h3),
+    ),
+    filteredCountries: ['KW', 'SA', 'AE', 'QA', 'OM', 'BH'],
   );
 
 
@@ -97,19 +94,139 @@ class _ProfileFormState extends State<_ProfileForm> {
               ),
             ),
             SizedBox(height: 20.h),
+            // Container(
+            //   decoration: _containerDecoration(),
+            //   child: Center(
+            //     child: CustomTextField(
+            //       heightOfTextField: 46.h,
+            //
+            //       hintText: Strings.phoneNumber.tr(),
+            //       hasPrefix: false,
+            //       borderColor: Colors.transparent,
+            //     ),
+            //   ),
+            // ),
+            // Row(
+            //   children: [
+            //     GestureDetector(
+            //       onTap: () async {
+            //         // Show the phone code picker when tapped.
+            //         final picked = await countryPicker.showPicker(context: context);
+            //         // Null check
+            //         if (picked != null) {
+            //           setState(() {
+            //             _code = picked.dialCode;
+            //             _flagP = picked.code;
+            //           });
+            //         }
+            //       },
+            //       child: Container(
+            //         padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+            //         margin: const EdgeInsets.symmetric(horizontal: 8.0),
+            //         decoration: const BoxDecoration(
+            //             borderRadius: BorderRadius.all(Radius.circular(5.0))),
+            //         child: CountryFlag.fromCountryCode(
+            //           _flagP,
+            //           width: 30.w,
+            //           height: 30.h,
+            //         ),
+            //       ),
+            //     ),
+            //     Expanded(
+            //       child: Container(
+            //         decoration: _containerDecoration(),
+            //         child: Center(
+            //           child: CustomTextField(
+            //             heightOfTextField: 46.h,
+            //             hintText: Strings.phoneNumber.tr(),
+            //             hasPrefix: false,
+            //             readonly: false,
+            //             controller: TextEditingController(text: _code),
+            //             borderColor: Colors.transparent,
+            //           ),
+            //         ),
+            //       ),
+            //     ),
+            //   ],
+            // ),
+
+            Row(
+              children: [
+                GestureDetector(
+                  onTap: () async {
+                    // Show the country code picker when tapped.
+                    final picked= await countryPickerWifParams.showPicker(context: context);
+                    // Null check
+                    if (picked!= null) {
+                      setState(() {
+                        _country = picked.name;
+                        _flagC = picked.code;
+                      });
+                    }
+                  },
+                  child: Container(
+                      padding: const  EdgeInsets.symmetric(
+                          horizontal: 8.0, vertical: 4.0),
+                      margin: const  EdgeInsets.symmetric(horizontal: 8.0),
+                      decoration: const  BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(5.0))),
+                      child: CountryFlag.fromCountryCode(
+                        _flagC,
+                        width: 30.w,
+                        height: 30.h,
+                      )
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    decoration: _containerDecoration(),
+                    child: Center(
+                      child: CustomTextField(
+                        heightOfTextField: 46.h,
+
+                        hintText: Strings.country.tr(),
+                        hasPrefix: false,
+                        readonly: true,
+                        controller: TextEditingController(text: _country),
+                        borderColor: Colors.transparent,
+                      ),
+                    ),
+                  ),
+                ),
+
+
+
+              ],
+            ),
+            SizedBox(height: 20.h),
+
             Container(
+              height: 50.h,
               decoration: _containerDecoration(),
               child: Center(
-                child: CustomTextField(
-                  heightOfTextField: 46.h,
-
-                  hintText: Strings.phoneNumber.tr(),
-                  hasPrefix: false,
-                  borderColor: Colors.transparent,
+                child: Padding(
+                  padding: const EdgeInsets.all(0.0),
+                  child: IntlPhoneField(
+                    controller: TextEditingController(text: '12345678'),
+                    // countries: [Country(code: 'KW', dialCode: '965', name: 'Kuwait', flag: 'KW',maxLength: 8,minLength: 8,nameTranslations: {'ar': 'الكويت', 'en': 'Kuwait'})],
+                    decoration: InputDecoration(
+                      labelText: Strings.phoneNumber.tr(),
+                      border: InputBorder.none,
+                    ),
+                    initialCountryCode: 'KW',
+                    onChanged: (phone) {
+                      debugPrint(phone.completeNumber);
+                    },
+                  ),
                 ),
               ),
             ),
             SizedBox(height: 20.h),
+
+
+
+
+
             Container(
               decoration: _containerDecoration(),
               child: Padding(
@@ -150,48 +267,7 @@ class _ProfileFormState extends State<_ProfileForm> {
               ),
             ),
             SizedBox(height: 20.h),
-            Row(
-              children: [
-                GestureDetector(
-                  onTap: () async {
-                    // Show the country code picker when tapped.
-                    final picked= await countryPicker.showPicker(context: context);
-                    // Null check
-                    if (picked!= null) {
-                      setState(() {
-                        _country = picked.name;
-                        _flag = "https://www.countryflags.io/${picked.code}/flat/64.png";
-                      });
-                    }
-                  },
-                  child: Container(
-                    padding: const  EdgeInsets.symmetric(
-                        horizontal: 8.0, vertical: 4.0),
-                    margin: const  EdgeInsets.symmetric(horizontal: 8.0),
-                    decoration: const  BoxDecoration(
-                        color: Colors.blue,
-                        borderRadius: BorderRadius.all(Radius.circular(5.0))),
-                    child: Container(
-                      height: 30.h,
-                      width: 30.w,
-                      child: Image.network(_flag),
-                    )
-                  ),
-                ),
-                Container(
-                  padding: const  EdgeInsets.symmetric(
-                      horizontal: 8.0, vertical: 4.0),
-                  margin: const  EdgeInsets.symmetric(horizontal: 8.0),
-                  decoration: const  BoxDecoration(
-                      color: Colors.blue,
-                      borderRadius: BorderRadius.all(Radius.circular(5.0))),
-                  child: Text('Selected Country: $_country', style: const  TextStyle(color: Colors.white)),
-                ),
 
-
-
-              ],
-            ),
 
 
 
