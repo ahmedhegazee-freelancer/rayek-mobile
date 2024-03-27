@@ -35,7 +35,7 @@ List<Widget> drawerItems = [
     icon: IconManager.appoints,
     onTap: () {
       MagicRouter.goBack(); // To close the drawer
-      MagicRouter.navigateTo(const Text("Appoints"));
+      MagicRouter.navigateTo(const MyAppointsView());
     },
   ),
   SizedBox(

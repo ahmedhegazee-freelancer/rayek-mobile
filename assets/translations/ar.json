@@ -85,7 +85,16 @@
  "your_are_one_step_from_contact_us": "أنت على بعد خطوة واحدة من الاتصال بنا",
     "subject": "الموضوع",
       "message": "الرسالة",
-      "send": "إرسال"
+      "send": "إرسال",
+  "pending": "قيد الانتظار",
+  "accepted": "قبلت",
+  "completed": "اكملت",
+  "cancelled": "ألغيت",
+  "appointments": "مواعيدي",
+  "unpaid": "غير مدفوعة الاجر",
+  "manageAndViewById": "إدارة ورؤية سجل المواعيد الخاصة بك",
+  "noPendingAppointmentsMessage": "ليس لديك أي مواعيد قيد الانتظار. اضغط على الزر أدناه للعثور على خبير للبدء!",
+"not_found": "لم يتم العثور على البيانات"
 
 
 

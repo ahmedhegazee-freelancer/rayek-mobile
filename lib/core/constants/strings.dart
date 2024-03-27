@@ -88,7 +88,15 @@ class Strings{
   static String subject = "subject";
   static String message = "message";
   static String send = "send";
-
+  static String pending = "pending";
+  static String accepted = "accepted";
+  static String completed = "completed";
+  static String cancelled = "cancelled";
+  static String appointments = "appointments";
+  static String unpaid = "unpaid";
+  static String manageAndViewById = "manageAndViewById";
+  static String noPendingAppointmentsMessage = "noPendingAppointmentsMessage";
+  static String notFound = "not_found";
 
 
 

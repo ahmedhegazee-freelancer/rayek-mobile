@@ -86,7 +86,18 @@
   "your_are_one_step_from_contact_us": "You are one step away from contacting us",
   "subject": "Subject",
   "message": "Message",
-  "send": "Send"
+  "send": "Send",
+  "pending": "Pending",
+  "accepted": "Accepted",
+  "completed": "Completed",
+  "cancelled": "Cancelled",
+  "appointments": "Appointments",
+  "unpaid": "Unpaid",
+  "manageAndViewById": "Manage and view your appointment history",
+  "noPendingAppointmentsMessage": "You have no pending appointments. Tap the button below to find an expert to start!",
+  "not_found": "Not found"
+
+
 
 
 }

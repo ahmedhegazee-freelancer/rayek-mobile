@@ -77,4 +77,6 @@ class IconManager {
   static const String email = '${baseBase}email.svg';
   // call
   static const String call = '${baseBase}call.svg';
+  // calender
+  static const String calender = '${baseBase}calender.svg';
 }
