@@ -68,7 +68,7 @@ List<Widget> drawerItems = [
     icon: IconManager.contactUs,
     onTap: () {
       MagicRouter.goBack(); // To close the drawer
-      MagicRouter.navigateTo(const Text("contactUs"));
+      MagicRouter.navigateTo(const ContactUsForm());
     },
   ),
   SizedBox(

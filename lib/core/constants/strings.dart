@@ -84,6 +84,10 @@ class Strings{
   static String signOut = "sign_out";
   static String aboutUs = "about_us";
   static String language = "language";
+  static String stepContact = "your_are_one_step_from_contact_us";
+  static String subject = "subject";
+  static String message = "message";
+  static String send = "send";
 
 
 

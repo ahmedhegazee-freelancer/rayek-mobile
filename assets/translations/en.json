@@ -82,7 +82,11 @@
     "blog": "Blog",
     "sign_out": "Sign out",
     "about_us": "About us",
-    "language": "Language"
+    "language": "Language",
+  "your_are_one_step_from_contact_us": "You are one step away from contacting us",
+  "subject": "Subject",
+  "message": "Message",
+  "send": "Send"
 
 
 }

@@ -28,8 +28,8 @@ class _CustomDrawer extends StatelessWidget {
             children: [
               SvgPicture.asset(
                 icon??'',
-                width: 24.w,
-                height: 24.h,
+                width: 20.w,
+                height: 20.h,
                 color: iconColor?? Colors.white,
               ),
               SizedBox(
@@ -39,6 +39,7 @@ class _CustomDrawer extends StatelessWidget {
                 title??'',
                 style: AppTextStyle.h3.copyWith(
                   color: Colors.white,
+                  fontSize: 14.sp,
                 ),
               ),
             ],
@@ -46,9 +47,13 @@ class _CustomDrawer extends StatelessWidget {
           SizedBox(
             height: 10.h,
           ),
-          Divider(
-            color: HexColor('#C3C1C1'),
-            thickness: 1,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10.0),
+            child: Divider(
+              color: HexColor('#C3C1C1'),
+              thickness: .5.w,
+
+            ),
           ),
 
         ],
