@@ -48,10 +48,8 @@ class SearchForm extends StatelessWidget {
               height: 10.h,
             ),
             const _TitleArea(),
-            SizedBox(
-              width: 10.w,
-            ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 CustomTextField(
                   hintText: Strings.searchHere.tr(),
@@ -60,8 +58,11 @@ class SearchForm extends StatelessWidget {
                   svgIconSuffix: IconManager.searchIcon,
                   readonly: false,
                   heightOfTextField: 47.h,
-                  width: 0.69.sw,
+                  width: 0.72.sw,
 
+                ),
+                SizedBox(
+                  width: 9.w,
                 ),
                 _FilterButton(),
               ],

@@ -47,7 +47,7 @@ class _Categories extends StatelessWidget {
             crossAxisCount: 3,
             childAspectRatio: 1.75,
             crossAxisSpacing: 3.w,
-            mainAxisSpacing: 25.h
+            mainAxisSpacing: 15.h
         ),
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),

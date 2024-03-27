@@ -24,7 +24,12 @@ class ConsultantsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.all(Dimensions.defaultPadding),
+        padding: EdgeInsets.
+        only(
+          left: Dimensions.defaultPadding,
+          right: Dimensions.defaultPadding,
+          top: Dimensions.defaultPadding,
+        ),
         child: Column(
           children: [
             SizedBox(height: 20.h),

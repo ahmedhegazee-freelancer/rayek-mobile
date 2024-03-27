@@ -5,8 +5,6 @@ import 'package:rayik/core/constants/dimensions.dart';
 import 'package:rayik/core/router/router.dart';
 import 'package:rayik/features/login/utils/select_user_type.dart';
 import 'package:rayik/widgets/skip_button.dart';
-
-import '../../core/constants/color_manager.dart';
 import '../../core/constants/strings.dart';
 import '../../core/theme/fonts_style.dart';
 import '../../widgets/custom_button.dart';

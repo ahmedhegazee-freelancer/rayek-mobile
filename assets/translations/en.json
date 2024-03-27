@@ -75,5 +75,14 @@
   "sex": "Sex",
   "phone_number": "Phone number",
   "select_country": "Select country",
-  "choose_category": "Choose category"
+  "choose_category": "Choose category",
+  "appoints": "Appointments",
+  "wallet": "Wallet",
+  "contact_us": "Contact us",
+    "blog": "Blog",
+    "sign_out": "Sign out",
+    "about_us": "About us",
+    "language": "Language"
+
+
 }

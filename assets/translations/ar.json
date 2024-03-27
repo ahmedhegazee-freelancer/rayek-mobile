@@ -74,7 +74,15 @@
  "sex": "الجنس",
  "phone_number": "رقم الهاتف",
  "select_country": "اختر الدولة",
- "choose_category": "اختر القسم"
+ "choose_category": "اختر القسم",
+ "appoints": "المواعيد",
+ "wallet": "المحفظة",
+"contact_us": "اتصل بنا",
+    "blog": "المدونة",
+    "sign_out": "تسجيل الخروج",
+      "about_us": "معلومات عنا",
+    "language": "اللغة"
+
 
 
 

@@ -4,14 +4,14 @@ class _FilterButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: Dimensions.defaultPadding),
-      child: Row(
-        children: [
+    return Row(
+      children: [
 
 
 
-          Container(
+        Padding(
+          padding: EdgeInsets.only(top: 12.0.h), // To Make the icon in the center and same line with the text field
+          child: Container(
               width: 45.w,
               height: 45.h,
               decoration: BoxDecoration(
@@ -19,11 +19,11 @@ class _FilterButton extends StatelessWidget {
                   border: Border.all(color: Colors.grey.withOpacity(0.5), width: 2.w, style: BorderStyle.solid),
               ),
               child: Padding(
-                padding: const EdgeInsets.all(5.0),
-                child: SvgPicture.asset(IconManager.filter, width: 20.w, height: 20.h,),
+                padding: const EdgeInsets.all(10.0),
+                child: SvgPicture.asset(IconManager.filter, width: 15.w, height: 15.h,),
               )),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

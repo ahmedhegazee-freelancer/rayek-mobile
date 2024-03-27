@@ -84,7 +84,7 @@ class MainScreenPage extends StatelessWidget {
                 icon: IconManager.home,
                 isSelected: state is HomePageState ? true : false,
               ),
-              label: Strings.home.tr(),
+              label: '',
             ),
             BottomNavigationBarItem(
               icon: CustomNavBarItem(
@@ -92,7 +92,7 @@ class MainScreenPage extends StatelessWidget {
                 icon: IconManager.categories,
                 isSelected: state is ExpertsPageState ? true : false,
               ),
-              label: Strings.experts.tr(),
+              label: '',
             ),
             BottomNavigationBarItem(
               icon: CustomNavBarItem(
@@ -100,7 +100,7 @@ class MainScreenPage extends StatelessWidget {
                 icon: IconManager.chatNav,
                 isSelected: state is ChatPageState ? true : false,
               ),
-              label: Strings.chat.tr(),
+              label: '',
             ),
             BottomNavigationBarItem(
               icon: CustomNavBarItem(
@@ -108,7 +108,7 @@ class MainScreenPage extends StatelessWidget {
                 icon: IconManager.videoNav,
                 isSelected: state is CallPageState ? true : false,
               ),
-              label: Strings.call.tr(),
+              label: '',
             ),
             BottomNavigationBarItem(
               icon: CustomNavBarItem(
@@ -116,7 +116,7 @@ class MainScreenPage extends StatelessWidget {
                 icon: IconManager.settings,
                 isSelected: state is SettingsPageState ? true : false,
               ),
-              label: Strings.settings.tr(),
+              label: '',
 
             ),
           ],

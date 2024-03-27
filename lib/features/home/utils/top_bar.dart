@@ -10,13 +10,17 @@ class _TopHomeBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Icon(Icons.menu, size: 35.sp,),
+          GestureDetector(
+            onTap: () {
+              Scaffold.of(context).openDrawer();
+            },
+            child: Icon(Icons.menu, size: 35.sp,),
+          ),
           SvgPicture.asset(
             IconManager.notification,
             width: 22.w,
             height: 22.h,
             color: ColorManager.lightGreyColor,
-
           )
         ],
       ),

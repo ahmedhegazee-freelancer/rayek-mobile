@@ -77,6 +77,13 @@ class Strings{
   static String phoneNumber = "phone_number";
   static String selectCountry = "select_country";
   static String chooseCategory = "choose_category";
+  static String appoints = "appoints";
+  static String wallet = "wallet";
+  static String contactUs = "contact_us";
+  static String blog = "blog";
+  static String signOut = "sign_out";
+  static String aboutUs = "about_us";
+  static String language = "language";
 
 
 

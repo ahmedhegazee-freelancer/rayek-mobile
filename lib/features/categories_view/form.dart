@@ -8,6 +8,7 @@ import '../../core/constants/icon_manager.dart';
 import '../../core/constants/strings.dart';
 import '../../core/router/router.dart';
 import '../../core/theme/fonts_style.dart';
+import '../../widgets/back_button.dart';
 import '../../widgets/custom_text_field.dart';
 import '../consultants_view/form.dart';
 import '../search_view/form.dart';
@@ -16,7 +17,9 @@ part 'utils/search_area.dart';
 part 'utils/categories.dart';
 
 class CategoriesView extends StatelessWidget {
-  const CategoriesView({Key? key}) : super(key: key);
+  final bool? isFromDrawer;
+
+  const CategoriesView({Key? key, this.isFromDrawer}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,14 +29,36 @@ class CategoriesView extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(
-              height: 20.h,
+              height: isFromDrawer ?? false ? 20.h : 0,
+            ),
+            isFromDrawer ?? false
+                ? Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      CircleAvatar(
+                        radius: 15.r,
+                        backgroundColor:
+                            ColorManager.primaryColor.withOpacity(.2),
+                        child: Center(
+                          child: CustomBackButton(
+                            size: 15.sp,
+                            color: ColorManager.primaryColor,
+                            isColored: true,
+                            iosOnly: true,
+                          ),
+                        ),
+                      ),
+                    ],
+                  )
+                : Container(),
+            SizedBox(
+              height: isFromDrawer?? false? 10.h: 20.h,
             ),
             const _SearchArea(),
             SizedBox(
               height: 10.h,
             ),
             const _Categories(),
-
           ],
         ),
       ),
