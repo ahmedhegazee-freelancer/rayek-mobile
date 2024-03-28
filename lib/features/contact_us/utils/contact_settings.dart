@@ -80,8 +80,8 @@ class _ContactSettings extends StatelessWidget {
                   SvgPicture.asset(
                     IconManager.email,
                     color: ColorManager.whiteTextColor,
-                    width: 25.w,
-                    height: 25.h,
+                    width: 20.w,
+                    height: 20.h,
                   ),
                   SizedBox(
                     width: 10.w,
