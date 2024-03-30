@@ -1,10 +1,7 @@
 part of'../form.dart';
 
 class _ConsultantImage extends StatelessWidget {
-  const _ConsultantImage({
-    super.key,
-  });
-
+  const _ConsultantImage({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Stack(

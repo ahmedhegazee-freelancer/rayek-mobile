@@ -96,7 +96,14 @@
   "manageAndViewById": "Manage and view your appointment history",
   "noPendingAppointmentsMessage": "You have no pending appointments. Tap the button below to find an expert to start!",
   "not_found": "Not found",
-  "not_paid": "Not paid"
+  "not_paid": "Not paid",
+  "paid": "paid",
+  "book_appointment": "book appointment",
+  "select_date": "select date",
+  "select_time": "select time",
+  "select_service": "select service",
+  "easy_steps": "through some easy steps",
+  "step": "step"
 
 
 

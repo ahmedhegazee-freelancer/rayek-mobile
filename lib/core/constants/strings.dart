@@ -98,6 +98,13 @@ class Strings{
   static String noPendingAppointmentsMessage = "noPendingAppointmentsMessage";
   static String notFound = "not_found";
   static String notPaid = "not_paid";
+  static String paid = "paid";
+  static String bookAppointment = "book_appointment";
+  static String selectDate = "select_date";
+  static String selectTime = "select_time";
+  static String selectService = "select_service";
+  static String easySteps = "easy_steps";
+  static String step1 = "step";
 
 
 

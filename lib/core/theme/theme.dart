@@ -9,6 +9,10 @@ ThemeData themeData = ThemeData(
   colorScheme: ThemeData().colorScheme.copyWith(
     primary: ColorManager.primaryColor,
   ),
+  datePickerTheme: const DatePickerThemeData(
+   // header bg color
+
+  ),
 );
 
 BoxDecoration containerDecoration() {

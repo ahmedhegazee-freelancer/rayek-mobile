@@ -33,6 +33,7 @@ class MainScreenForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: Drawer(
+        width: 1.sw,
         child: LayoutBuilder(
           builder: (context, constraints) {
             return AnimatedContainer(

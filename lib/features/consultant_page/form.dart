@@ -13,6 +13,7 @@ import '../../core/constants/color_manager.dart';
 import '../../core/constants/strings.dart';
 import '../../core/theme/fonts_style.dart';
 import '../../widgets/custom_cached_image.dart';
+import '../book_service/form.dart';
 
 part 'utils/consultant_name.dart';
 part 'utils/description.dart';

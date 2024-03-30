@@ -6,7 +6,7 @@ class _BookButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomButton(
       onTap: () {
-        MagicRouter.navigateTo(const EditProfileForm());
+        MagicRouter.navigateTo(const BookServiceTitle());
       },
       text: Strings.bookConsultation.tr(),
       textStyle: AppTextStyle.buttonBlackStyle,
