@@ -97,6 +97,7 @@ class Strings{
   static String manageAndViewById = "manageAndViewById";
   static String noPendingAppointmentsMessage = "noPendingAppointmentsMessage";
   static String notFound = "not_found";
+  static String notPaid = "not_paid";
 
 
 

@@ -141,7 +141,9 @@ class ConsultantContainer extends StatelessWidget {
                                   IconManager.chat,
                                   width: 20.w,
                                   height: 20.h,
-                                  color: ColorManager.lightGreyColor,
+                                  colorFilter: const ColorFilter.mode(
+                                      ColorManager.lightGreyColor,
+                                      BlendMode.srcIn),
                                 ),
                               ],
                             ),
