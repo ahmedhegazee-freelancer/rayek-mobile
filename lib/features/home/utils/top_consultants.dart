@@ -11,7 +11,7 @@ class TopConsultantsListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: .42.sh,
+      height: .37.sh,
       width: 1.sw,
       child: ListView.builder(
           itemCount: 5,

@@ -21,19 +21,24 @@ class CustomSliverPage extends StatelessWidget {
             leading: const SizedBox(),
             backgroundColor: Colors.transparent,
             actions: [
-
-              const Padding(
-                padding:  EdgeInsets.all(0.0),
-                child:  Center(
-                  child: CustomBackButton(
-                    iosOnly: true,
-                    color: ColorManager.blackTextColor,
-                    isColored: true,
+              Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: CircleAvatar(
+                  radius: 15.r,
+                  backgroundColor: ColorManager.greyTextColor.withOpacity(.2),
+                  child: Center(
+                    child: CustomBackButton(
+                      size: 15.sp,
+                      color: ColorManager.greyTextColor,
+                      isColored: true,
+                      iosOnly: true,
+                    ),
                   ),
                 ),
               ),
               SizedBox(
-                width: 10.w,),
+                width: 10.w,
+              ),
             ], // change your color here
             expandedHeight: imageHeight ?? 200.0,
             floating: false,

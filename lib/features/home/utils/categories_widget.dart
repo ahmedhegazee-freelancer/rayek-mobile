@@ -5,7 +5,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:rayik/core/constants/dimensions.dart';
 import 'package:rayik/core/constants/icon_manager.dart';
 import 'package:rayik/core/theme/fonts_style.dart';
+import 'package:rayik/features/consultants_view/form.dart';
 import '../../../core/constants/strings.dart';
+import '../../../core/router/router.dart';
 
 
 class CategoriesWidget extends StatelessWidget {
@@ -51,7 +53,8 @@ class CategoriesWidget extends StatelessWidget {
           itemBuilder: (context, index) {
             return GestureDetector(
               onTap: () {
-                // MagicRouter.navigateTo(const Text("Category"));
+                MagicRouter.navigateTo(const ConsultantsView());
+
               },
               child: Container(
                 height: 44.h,
