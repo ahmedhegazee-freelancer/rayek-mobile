@@ -105,6 +105,14 @@ class Strings{
   static String selectService = "select_service";
   static String easySteps = "easy_steps";
   static String step1 = "step";
+  // continue
+  static String continueText = "continue";
+  // morning
+  static String morning = "morning";
+  // afternoon
+  static String afternoon = "afternoon";
+  // evening
+  static String evening = "evening";
 
 
 

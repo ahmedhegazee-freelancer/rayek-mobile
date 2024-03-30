@@ -102,7 +102,11 @@
   "select_time": "اختيار الوقت",
   "select_service": "اختيار الخدمة",
   "easy_steps": "من خلال بعض خطوات بسيطه",
-  "step": "خطوة"
+  "step": "خطوة",
+  "continue": "استمر",
+  "morning": "صباحا",
+    "evening": "مساء",
+    "afternoon": "بعد الظهيره"
 
 
 

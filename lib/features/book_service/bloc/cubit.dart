@@ -1,38 +1,12 @@
 import 'package:bloc/bloc.dart';
-
-abstract class ServiceState {}
-
-class ServiceInitial extends ServiceState {}
-
-class ServiceAudioSelected extends ServiceState {}
-
-class ServiceVideoSelected extends ServiceState {}
-
-class ServiceChatSelected extends ServiceState {}
-
-class ServiceDateSelected extends ServiceState {
-  final DateTime date;
-
-  ServiceDateSelected(this.date);
-}
-
-class ServiceTimeSelected extends ServiceState {
-  final String time;
-
-  ServiceTimeSelected(this.time);
-}
-
-class ServiceSlotSelected extends ServiceState {
-  final String slot;
-
-  ServiceSlotSelected(this.slot);
-}
+import 'package:rayik/features/book_service/bloc/states.dart';
 
 enum Period { morning, afternoon, evening }
+
 class ServiceCubit extends Cubit<ServiceState> {
   // Add a DateTime field to your cubit.
   DateTime? selectedDate;
-
+  Period? selectedPeriod;
 
   ServiceCubit() : super(ServiceInitial());
 
@@ -55,7 +29,16 @@ class ServiceCubit extends Cubit<ServiceState> {
 
   void selectTime(String time) {
     // update enum to string
-
+    if (time == 'morning') {
+      selectedPeriod = Period.morning;
+      emit(PeriodSelected(selectedPeriod));
+    } else if (time == 'afternoon') {
+      selectedPeriod = Period.afternoon;
+      emit(PeriodSelected(selectedPeriod));
+    } else if (time == 'evening') {
+      selectedPeriod = Period.evening;
+      emit(PeriodSelected(selectedPeriod));
+    }
   }
 
   void selectSlot(String slot) {

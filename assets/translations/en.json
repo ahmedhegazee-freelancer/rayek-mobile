@@ -103,7 +103,11 @@
   "select_time": "select time",
   "select_service": "select service",
   "easy_steps": "through some easy steps",
-  "step": "step"
+  "step": "step",
+  "continue": "Continue",
+  "morn": "Morning",
+    "afternoon": "Afternoon",
+    "evening": "Evening"
 
 
 
