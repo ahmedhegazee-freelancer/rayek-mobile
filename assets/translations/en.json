@@ -107,7 +107,11 @@
   "continue": "Continue",
   "morn": "Morning",
     "afternoon": "Afternoon",
-    "evening": "Evening"
+    "evening": "Evening",
+  "download": "Download",
+  "consultation_topic":  "Consultation topic",
+  "upload_file": "Upload file",
+  "if_found": "If found"
 
 
 

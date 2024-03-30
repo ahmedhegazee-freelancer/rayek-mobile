@@ -66,6 +66,7 @@ class _PeriodTimeState extends State<_PeriodTime> {
                                   return GestureDetector(
                                     onTap: () {
                                       setState(() {
+
                                         selectedSlot = index;
                                       });
                                     },
@@ -86,7 +87,7 @@ class _PeriodTimeState extends State<_PeriodTime> {
                                                       ? Colors.white
                                                       : Colors.black,
                                                   fontSize: 12.sp,
-                                                  fontWeight: FontWeight.w700)),
+                                                  fontWeight: FontWeight.normal)),
                                         ),
                                       ),
                                     ),
@@ -99,7 +100,11 @@ class _PeriodTimeState extends State<_PeriodTime> {
                       : Container(),
                   selectedSlot != null
                       ? CustomButton(
-                          onTap: () {},
+                          onTap: () {
+                            MagicRouter.navigateTo(
+                              const ConsultationTopicForm(),
+                            );
+                          },
                           text: Strings.continueText.tr(),
                           isGap: true,
                           iconData: const BackIconInButton(),

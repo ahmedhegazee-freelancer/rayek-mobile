@@ -113,6 +113,11 @@ class Strings{
   static String afternoon = "afternoon";
   // evening
   static String evening = "evening";
+  static String download = "download";
+  static String consultationTopic = "consultation_topic";
+  static String uploadFile = "upload_file";
+  static String ifFound = "if_found";
+
 
 
 
