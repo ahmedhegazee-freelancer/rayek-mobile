@@ -9,7 +9,7 @@ class _UploadFileForm extends StatefulWidget {
 }
 
 class _UploadFileFormState extends State<_UploadFileForm> {
-  FilePickerResult? _pickedFile;
+  final List<FilePickerResult> _pickedFiles = [];
 
   @override
   Widget build(BuildContext context) {
@@ -46,32 +46,71 @@ class _UploadFileFormState extends State<_UploadFileForm> {
           ],
         ),
         SizedBox(height: 20.h),
-        CustomButton(
-          onTap: () async {
-            FilePickerResult? result = await FilePicker.platform.pickFiles(type: FileType.custom, allowedExtensions: ['pdf', 'doc', 'docx', 'jpg', 'jpeg', 'png']);
-
-            if(result != null) {
+        ..._pickedFiles.map((file) => ListTile(
+          title: Text(file.files.single.name),
+          trailing: IconButton(
+            icon: const Icon(Icons.close),
+            onPressed: () {
               setState(() {
-                _pickedFile = result;
+                _pickedFiles.remove(file);
               });
-            } else {
-              // User canceled the picker
+            },
+          ),
+        )),
+        InkWell(
+          onTap: () async {
+            final result = await FilePicker.platform.pickFiles(allowedExtensions: ['pdf', 'doc', 'docx', 'ppt', 'pptx', 'xls', 'xlsx', 'txt', 'jpg', 'jpeg', 'png' ]);
+            try {
+              if (result != null) {
+                setState(() {
+                  _pickedFiles.add(result);
+                });
+              }
+            } catch (e) {
+              debugPrint(e.toString());
             }
           },
-          text: Strings.download.tr(),
-          isGap: false,
-          iconData: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: SvgPicture.asset(
-              IconManager.uploadImage,
-              colorFilter: const ColorFilter.mode(ColorManager.whiteTextColor, BlendMode.srcIn),
-              height: 20.h,
-              width: 20.w,
+          child: Container(
+            height: 100.h,
+            width: 1.sw,
+            decoration: BoxDecoration(
+              border: Border.all(
+                color: ColorManager.primaryColor.withOpacity(.5),
+                width: 1.w,
+              ),
+              color: ColorManager.primaryColor.withOpacity(.1),
+              borderRadius: BorderRadius.circular(Dimensions.buttonRadius),
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Center(
+                  child: SvgPicture.asset(
+                    IconManager.uploadImage,
+                    height: 24.h,
+                    width: 24.w,
+                  ),
+                ),
+                SizedBox(height: 5.h),
+                Text(
+                  Strings.uploadFile.tr(),
+                  style: AppTextStyle.h3,
+                ),
+              ],
             ),
           ),
         ),
-        if (_pickedFile != null)
-          Text('Picked File: ${_pickedFile!.files.single.name}'),
+        SizedBox(height: 5.h),
+        // Text for supported file types
+        Text(
+          "PDF, DOC, DOCX, PPT, PPTX, XLS, XLSX, TXT, JPG, JPEG, PNG",
+          style: AppTextStyle.h6,
+        ),
+        SizedBox(
+          height: 20.h
+        ),
+
+
       ],
     );
   }

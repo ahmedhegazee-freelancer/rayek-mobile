@@ -34,21 +34,21 @@ class _PeriodTimeState extends State<_PeriodTime> {
                     ],
                   ),
                   state is PeriodSelected
-                      ? Container(
+                      ? SizedBox(
                           height: 70.h,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(50),
-                            shape: BoxShape.rectangle,
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.2),
-                                spreadRadius: 1,
-                                blurRadius: 1,
-                                offset: const Offset(0, 1),
-                              ),
-                            ],
-                          ),
+                          // decoration: BoxDecoration(
+                          //   color: Colors.white,
+                          //   borderRadius: BorderRadius.circular(50),
+                          //   shape: BoxShape.rectangle,
+                          //   boxShadow: [
+                          //     BoxShadow(
+                          //       color: Colors.grey.withOpacity(0.2),
+                          //       spreadRadius: 1,
+                          //       blurRadius: 1,
+                          //       offset: const Offset(0, 1),
+                          //     ),
+                          //   ],
+                          // ),
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: SizedBox(
