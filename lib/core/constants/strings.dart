@@ -117,6 +117,11 @@ class Strings{
   static String consultationTopic = "consultation_topic";
   static String uploadFile = "upload_file";
   static String ifFound = "if_found";
+  // showAllReviews
+  static String showAllReviews = "show_all_reviews";
+  static String allReviewsAreTrusted = "all_reviews_are_trusted";
+  // no_reviews
+  static String noReviews = "no_reviews";
 
 
 

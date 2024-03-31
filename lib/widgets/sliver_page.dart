@@ -19,17 +19,17 @@ class CustomSliverPage extends StatelessWidget {
         slivers: <Widget>[
           SliverAppBar(
             leading: const SizedBox(),
-            backgroundColor: Colors.transparent,
+            backgroundColor: ColorManager.primaryColor,
             actions: [
               Padding(
-                padding: const EdgeInsets.all(12.0),
+                padding: const EdgeInsets.all(0.0),
                 child: CircleAvatar(
                   radius: 15.r,
-                  backgroundColor: ColorManager.greyTextColor.withOpacity(.2),
+                  backgroundColor: ColorManager.whiteTextColor.withOpacity(.2),
                   child: Center(
                     child: CustomBackButton(
                       size: 15.sp,
-                      color: ColorManager.greyTextColor,
+                      color: ColorManager.blackTextColor,
                       isColored: true,
                       iosOnly: true,
                     ),

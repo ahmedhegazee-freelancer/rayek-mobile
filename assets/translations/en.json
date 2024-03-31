@@ -111,7 +111,11 @@
   "download": "Download",
   "consultation_topic":  "Consultation topic",
   "upload_file": "Upload file",
-  "if_found": "If found"
+  "if_found": "If found",
+  "show_all_reviews": "Show all reviews",
+  "no_reviews": "No reviews",
+  "all_reviews_are_trusted": "All reviews are trusted"
+
 
 
 

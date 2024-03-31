@@ -110,8 +110,10 @@
   "download": "تحميل",
   "consultation_topic": "موضوع الاستشارة",
   "upload_file": "تحميل الملف",
-  "if_found": "إذا وجدت"
-
+  "if_found": "إذا وجدت",
+  "show_all_reviews": "عرض جميع التقييمات",
+    "no_reviews": "لا توجد تقييمات",
+  "all_reviews_are_trusted": "جميع التقييمات موثوقة "
 
 
 
