@@ -1,8 +1,9 @@
-part of '../main_screen_form.dart';
+part of '../form.dart';
 
 class _TopHomeBar extends StatelessWidget {
-  const _TopHomeBar();
+  final GlobalKey<ScaffoldState>? scaffoldKey;
 
+  const _TopHomeBar({this.scaffoldKey});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -12,7 +13,7 @@ class _TopHomeBar extends StatelessWidget {
         children: [
           GestureDetector(
             onTap: () {
-              Scaffold.of(context).openDrawer();
+              scaffoldKey!.currentState!.openDrawer();
             },
             child: Icon(Icons.menu, size: 35.sp,),
           ),
@@ -20,7 +21,10 @@ class _TopHomeBar extends StatelessWidget {
             IconManager.notification,
             width: 22.w,
             height: 22.h,
-            color: ColorManager.lightGreyColor,
+            colorFilter: const ColorFilter.mode(
+              ColorManager.lightGreyColor,
+              BlendMode.srcIn,
+            )
           )
         ],
       ),

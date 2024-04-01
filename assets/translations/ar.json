@@ -113,7 +113,9 @@
   "if_found": "إذا وجدت",
   "show_all_reviews": "عرض جميع التقييمات",
     "no_reviews": "لا توجد تقييمات",
-  "all_reviews_are_trusted": "جميع التقييمات موثوقة "
+  "all_reviews_are_trusted": "جميع التقييمات موثوقة ",
+  "select_language_subtitle": "اختر لغتك المفضلة",
+    "select_language": "اختر اللغة"
 
 
 

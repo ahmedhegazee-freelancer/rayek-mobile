@@ -37,9 +37,9 @@ class CustomBackButton extends StatelessWidget {
                       : Icons.arrow_forward
               : AppConstants.platform.isAndroid
                   ? iosOnly ?? false
-                      ? Icons.arrow_back_ios
+                      ? Icons.arrow_forward_ios
                       : Icons.arrow_back
-                  : Icons.arrow_back_ios,
+                  : Icons.arrow_forward_ios,
           color: isColored ?? false ? color : Colors.black,
           size: size ?? 24.sp,
         ),

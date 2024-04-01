@@ -1,5 +1,9 @@
-abstract class LanguageState{
-}
+abstract class LanguageState {}
 
-class SelectLanguage extends LanguageState{}
-class InitLanguageState extends LanguageState{}
+class InitLanguageState extends LanguageState {}
+
+class SelectLanguage extends LanguageState {}
+
+class EnglishLanguageState extends LanguageState {}
+
+class ArabicLanguageState extends LanguageState {}

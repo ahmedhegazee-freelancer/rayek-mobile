@@ -6,7 +6,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:rayik/core/constants/dimensions.dart';
 import 'package:rayik/core/constants/hexa_color.dart';
 import 'package:rayik/core/constants/icon_manager.dart';
-import 'package:rayik/core/constants/image_manager.dart';
 import 'package:rayik/core/router/router.dart';
 import 'package:rayik/core/theme/fonts_style.dart';
 import 'package:rayik/features/categories_view/form.dart';
@@ -20,7 +19,7 @@ import '../../widgets/back_button.dart';
 import '../contact_us/form.dart';
 import '../edit_profile/form.dart';
 import '../search_view/form.dart';
-part "utils/top_bar.dart";
+import '../select_language_form/form.dart';
 part 'utils/search_area.dart';
 part 'utils/view_all_row.dart';
 part 'utils/image_drawer.dart';
@@ -32,73 +31,48 @@ class MainScreenForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(
-        width: 1.sw,
-        child: LayoutBuilder(
-          builder: (context, constraints) {
-            return AnimatedContainer(
-              width: constraints.maxWidth,
-              duration: const Duration(seconds: 2),
-              curve: Curves.fastOutSlowIn,
-              decoration:const  BoxDecoration(
-                color: Colors.black,
-                image: DecorationImage(
-                  image: AssetImage(ImageManager.backDrawer),
-                  fit: BoxFit.cover,
-                ),
-              ),
-              child: Padding(
-                padding: EdgeInsets.all(Dimensions.defaultPadding),
-                child: ListView(
-                  padding: EdgeInsets.zero,
-                  children: drawerItems,
-                ),
-              ),
-            );
-          },
-        ),
-      ),
-      body: Column(
+      body: Stack(
         children: [
+          Column(
+            children: [
 
-          SizedBox(
-            height: 12.h,
-          ),
-          const _TopHomeBar(),
-          SizedBox(
-            height: 18.h,
-          ),
-          const _SearchArea(),
-          SizedBox(
-            height: 3.h,
-          ),
-          Expanded(
-            child: ListView(
-              physics: const BouncingScrollPhysics(),
-              children: [
-            
 
-                _ViewAllRow(
-                  title: Strings.categories.tr(),
-                  route: const CategoriesView(isFromDrawer: true),
+              SizedBox(
+                height: 18.h,
+              ),
+              const _SearchArea(),
+              SizedBox(
+                height: 3.h,
+              ),
+              Expanded(
+                child: ListView(
+                  physics: const BouncingScrollPhysics(),
+                  children: [
 
+
+                    _ViewAllRow(
+                      title: Strings.categories.tr(),
+                      route: const CategoriesView(isFromDrawer: true),
+
+                    ),
+                    SizedBox(
+                      height: 5.h,
+                    ),
+                    const CategoriesWidget(),
+                    SizedBox(
+                      height: 12.h,
+                    ),
+                    _ViewAllRow(
+                      title: Strings.topConsultants.tr(),
+                    ),
+                    SizedBox(
+                      height: 5.h,
+                    ),
+                    const TopConsultantsListView()
+                  ],
                 ),
-                SizedBox(
-                  height: 5.h,
-                ),
-                const CategoriesWidget(),
-                SizedBox(
-                  height: 12.h,
-                ),
-                _ViewAllRow(
-                  title: Strings.topConsultants.tr(),
-                ),
-                SizedBox(
-                  height: 5.h,
-                ),
-                const TopConsultantsListView()
-              ],
-            ),
+              ),
+            ],
           ),
         ],
       ),

@@ -114,7 +114,9 @@
   "if_found": "If found",
   "show_all_reviews": "Show all reviews",
   "no_reviews": "No reviews",
-  "all_reviews_are_trusted": "All reviews are trusted"
+  "all_reviews_are_trusted": "All reviews are trusted",
+  "select_language_subtitle": "Select the language you want to use",
+    "select_language": "Select language"
 
 
 

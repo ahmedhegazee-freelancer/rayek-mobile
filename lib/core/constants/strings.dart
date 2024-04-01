@@ -122,6 +122,10 @@ class Strings{
   static String allReviewsAreTrusted = "all_reviews_are_trusted";
   // no_reviews
   static String noReviews = "no_reviews";
+  // selectLanguage
+  static String selectLanguage = "select_language";
+  // selectLanguageSubtitle
+  static String selectLanguageSubtitle = "select_language_subtitle";
 
 
 

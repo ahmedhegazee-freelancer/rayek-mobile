@@ -35,7 +35,7 @@ class BackIconInButton extends StatelessWidget {
       radius: 15.r,
       child: Icon(
         context.locale == const Locale('en')
-            ? Icons.arrow_back_ios
+            ? Icons.arrow_forward_ios
             : Icons.arrow_forward_ios,
         color: Colors.white,
         size: 10.w,

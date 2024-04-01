@@ -1,6 +1,5 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:fl_country_code_picker/fl_country_code_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -10,12 +9,14 @@ import 'package:rayik/core/theme/theme.dart';
 import 'package:rayik/features/login/form.dart';
 import 'core/bloc/language_cubit/language_cubit.dart';
 import 'core/bloc/language_cubit/language_states.dart';
+import 'core/helper/cache_helper.dart';
 import 'core/router/router.dart';
 import  'package:fl_country_code_picker/fl_country_code_picker.dart' as flc;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
+  await CacheHelper.init();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   Bloc.observer = AppBlocObserver();
   runApp(EasyLocalization(
@@ -24,13 +25,13 @@ void main() async {
       fallbackLocale: const Locale('ar'),
       startLocale: const Locale('ar'),
       saveLocale: true,
-
-
       child: MultiBlocProvider(
         providers: [
           BlocProvider<LanguageCubit>(
             create: (context) => LanguageCubit(),
           ),
+
+
         ],
         child: const MyApp(),
       )));
