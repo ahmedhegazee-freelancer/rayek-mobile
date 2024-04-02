@@ -127,6 +127,7 @@ class HeaderCustomization extends StatefulWidget {
 
 class _HeaderCustomizationState extends State<HeaderCustomization> {
   final DateRangePickerController _controller = DateRangePickerController();
+  final ScrollController _scrollController = ScrollController();
   String headerString = '';
 
   Map<String, String> monthsInArabic = {
@@ -165,8 +166,8 @@ class _HeaderCustomizationState extends State<HeaderCustomization> {
     final double width = MediaQuery.of(context).size.width;
     final double cellWidth = width / 12;
 
-    return SizedBox(
-      height: 10,
+    return SingleChildScrollView(
+      controller: _scrollController,
       child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
@@ -253,6 +254,19 @@ class _HeaderCustomizationState extends State<HeaderCustomization> {
                     controller: _controller,
                     view: DateRangePickerView.month,
                     headerHeight: 0.h,
+                    onSelectionChanged: (DateRangePickerSelectionChangedArgs args) {
+                      final DateTime selectedDate = args.value;
+                      final DateTime today = DateTime.now();
+                      _scrollDown();
+                      debugPrint("Selected Date: $selectedDate");
+                      if (selectedDate.isBefore(today)) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                                content: Text('Please select a valid date')));
+                      } else {
+                        context.read<ServiceCubit>().selectDate(selectedDate);
+                      }
+                    },
 
                     backgroundColor: Colors.white,
                     onViewChanged: viewChanged,
@@ -287,4 +301,14 @@ class _HeaderCustomizationState extends State<HeaderCustomization> {
       setState(() {});
     });
   }
+
+
+  void _scrollDown() {
+    _scrollController.animateTo(
+      _scrollController.position.maxScrollExtent,
+      duration: const Duration(seconds: 1),
+      curve: Curves.fastOutSlowIn,
+    );
+  }
 }
+
