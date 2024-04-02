@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -34,7 +35,11 @@ class BookServiceTitle extends StatelessWidget {
       create: (context) => ServiceCubit(),
       child: Scaffold(
         body: Padding(
-          padding: EdgeInsets.all(Dimensions.defaultPadding),
+          padding: EdgeInsets.only(
+              left: Dimensions.defaultPadding,
+              right: Dimensions.defaultPadding,
+              top: Dimensions.defaultPadding
+          ),
           child: Column(
             children: [
               SizedBox(height: 35.h),
@@ -54,9 +59,10 @@ class BookServiceTitle extends StatelessWidget {
                           return Column(
                             children: [
                               Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                 children: [
-                                  _buildServiceContainer(context, 'audio', IconManager.audio, Strings.audioCall.tr(), state is ServiceAudioSelected),
-                                  _buildServiceContainer(context, 'video', IconManager.video, Strings.videoCall.tr(), state is ServiceVideoSelected),
+                                  _buildServiceContainer(context, 'audio', IconManager.audio, "Audio", state is ServiceAudioSelected),
+                                  _buildServiceContainer(context, 'video', IconManager.video, "Video", state is ServiceVideoSelected),
                                   _buildServiceContainer(context, 'chat', IconManager.chat, Strings.chat.tr(), state is ServiceChatSelected),
                                 ],
                               ),
@@ -72,7 +78,7 @@ class BookServiceTitle extends StatelessWidget {
                                 Padding(
                                   padding: const EdgeInsets.all(1.0),
                                   child: Container(
-                                    height: 220.h,
+                                    height: 327.h,
                                     decoration: BoxDecoration(
                                       color: Colors.white,
                                       borderRadius: BorderRadius.circular(
@@ -86,51 +92,7 @@ class BookServiceTitle extends StatelessWidget {
                                         ),
                                       ],
                                     ),
-                                    child: SfDateRangePicker(
-                                      // header color
-                                      headerHeight: 40.h,
-
-                                      backgroundColor: Colors.white,
-                                      //  view: DateRangePickerView.month,
-                                      monthViewSettings:
-                                          const DateRangePickerMonthViewSettings(
-                                              dayFormat: 'EEE',
-                                              firstDayOfWeek: 6,
-                                              viewHeaderStyle:
-                                                  DateRangePickerViewHeaderStyle(
-                                                backgroundColor: Colors.white,
-                                              )),
-                                      //  selectionMode:
-                                      //      DateRangePickerSelectionMode.single,
-                                      monthCellStyle:
-                                          DateRangePickerMonthCellStyle(
-                                        textStyle: AppTextStyle.h3,
-                                      ),
-
-                                      headerStyle: DateRangePickerHeaderStyle(
-                                        textStyle: AppTextStyle.h3,
-                                      ),
-                                      minDate: DateTime.now(),
-                                      maxDate: DateTime.now().add(
-                                        const Duration(days: 365),
-                                      ),
-
-                                      selectionRadius: 30.0.r,
-                                      selectionTextStyle:
-                                          AppTextStyle.h3.copyWith(
-                                        color: Colors.white,
-                                      ),
-                                      selectionColor: ColorManager.primaryColor,
-                                      onSelectionChanged:
-                                          (DateRangePickerSelectionChangedArgs
-                                              args) {
-                                        day = args.value.toString().split(' ')[0];
-                                        context
-                                            .read<ServiceCubit>()
-                                            .selectDate(args.value);
-                                        debugPrint(args.value.toString());
-                                      },
-                                    ),
+                                    child: const HeaderCustomization(),
                                   ),
                                 ),
 
@@ -151,5 +113,120 @@ class BookServiceTitle extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+
+
+
+class HeaderCustomization extends StatefulWidget {
+  const HeaderCustomization({Key? key}) : super(key: key);
+  @override
+  _HeaderCustomizationState createState() => _HeaderCustomizationState();
+}
+
+class _HeaderCustomizationState extends State<HeaderCustomization> {
+  final DateRangePickerController _controller = DateRangePickerController();
+  String headerString = '';
+
+  @override
+  Widget build(BuildContext context) {
+    final double width = MediaQuery.of(context).size.width;
+    final double cellWidth = width / 12;
+
+    return SizedBox(
+      height: 10,
+      child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Row(
+                children: <Widget>[
+                  Container(
+                    color: ColorManager.whiteTextColor,
+                    height: cellWidth,
+                    width: cellWidth * 4.5,
+                    child: Text(headerString,
+                        textAlign: TextAlign.center,
+                        style: AppTextStyle.h3),
+                  ),
+
+                  const Spacer(),
+                  Row(
+                    children: [
+                      IconButton(
+                        icon: const Center(
+                          child: Icon(Icons.arrow_back_ios_rounded,color:
+
+
+                            ColorManager.primaryColor
+                            ,),
+                        ),
+                        color: Colors.white,
+                        iconSize: 20,
+                        highlightColor: ColorManager.primaryColor.withOpacity(.3),
+                        onPressed: () {
+                          setState(() {
+                            _controller.backward!();
+                          });
+                        },
+                      ),
+                      SizedBox(width: 10.w),
+                      IconButton(
+                        icon: const Center(child: Icon(Icons.arrow_forward_ios_rounded,
+
+                        color: ColorManager.primaryColor,
+                        )),
+                        color: Colors.white,
+                        highlightColor: ColorManager.primaryColor.withOpacity(.3),
+                        onPressed: () {
+                          setState(() {
+                            _controller.forward!();
+                          });
+                        },
+                      ),
+
+                    ],
+                  )
+
+                ],
+              ),
+              Card(
+                child: SfDateRangePicker(
+                    controller: _controller,
+                    view: DateRangePickerView.month,
+                    headerHeight: 0.h,
+
+                    backgroundColor: Colors.white,
+                    onViewChanged: viewChanged,
+                    minDate: DateTime.now(),
+                    monthViewSettings: const DateRangePickerMonthViewSettings(
+                        dayFormat: 'EEE',
+                        firstDayOfWeek: 6,
+                        viewHeaderStyle: DateRangePickerViewHeaderStyle(
+                            backgroundColor: Colors.white)),
+                    monthCellStyle: DateRangePickerMonthCellStyle(
+                        textStyle: AppTextStyle.h3,
+                        cellDecoration: const BoxDecoration(color: ColorManager.whiteTextColor),
+                        leadingDatesDecoration: const
+                        BoxDecoration(color: ColorManager.primaryColor),
+                        trailingDatesDecoration: const
+                        BoxDecoration(color: ColorManager.primaryColor))),
+              )
+            ],
+          ),
+    );
+  }
+
+  void viewChanged(DateRangePickerViewChangedArgs args) {
+    final DateTime visibleStartDate = args.visibleDateRange.startDate!;
+    final DateTime visibleEndDate = args.visibleDateRange.endDate!;
+    final int totalVisibleDays =
+    (visibleStartDate.difference(visibleEndDate).inDays);
+    final DateTime midDate =
+    visibleStartDate.add(Duration(days: totalVisibleDays ~/ 2));
+    headerString = DateFormat('MMMM yyyy').format(midDate).toString();
+    SchedulerBinding.instance.addPostFrameCallback((duration) {
+      setState(() {});
+    });
   }
 }

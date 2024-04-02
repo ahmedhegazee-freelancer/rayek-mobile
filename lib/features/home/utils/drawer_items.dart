@@ -115,6 +115,9 @@ class DrawerItems extends StatelessWidget {
       SizedBox(
         height: 20.h,
       ),
+      SizedBox(
+        height: 50.h,
+      ),
       _CustomDrawer(
         title: Strings.home.tr(),
         icon: IconManager.home,

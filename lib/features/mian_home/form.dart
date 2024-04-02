@@ -46,10 +46,10 @@ class MainScreenPage extends StatelessWidget {
                   topRight: Radius.circular(0),
                   bottomRight: Radius.circular(0),
                 ),
-                image: DecorationImage(
-                  image: AssetImage(ImageManager.backDrawer),
-                  fit: BoxFit.cover,
-                ),
+                // image: DecorationImage(
+                //   image: AssetImage(ImageManager.backDrawer),
+                //   fit: BoxFit.cover,
+                // ),
               ),
               child: Padding(
                 padding: EdgeInsets.all(

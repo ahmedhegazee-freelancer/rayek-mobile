@@ -7,6 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:rayik/core/constants/hexa_color.dart';
 import 'package:rayik/core/router/router.dart';
+import 'package:rayik/features/appointment_details/form.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:toggle_switch/toggle_switch.dart';
 import '../../core/constants/color_manager.dart';

@@ -15,7 +15,7 @@ class _TopHomeBar extends StatelessWidget {
             onTap: () {
               scaffoldKey!.currentState!.openDrawer();
             },
-            child: Icon(Icons.menu, size: 35.sp,),
+            child: Icon(Icons.menu, size: 25.sp,),
           ),
           SvgPicture.asset(
             IconManager.notification,

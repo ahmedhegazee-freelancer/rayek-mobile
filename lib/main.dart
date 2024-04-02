@@ -6,7 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:rayik/core/bloc/bloc_observer.dart';
 import 'package:rayik/core/theme/theme.dart';
-import 'package:rayik/features/login/form.dart';
+import 'package:rayik/features/splash/form.dart';
 import 'core/bloc/language_cubit/language_cubit.dart';
 import 'core/bloc/language_cubit/language_states.dart';
 import 'core/helper/cache_helper.dart';
@@ -53,6 +53,7 @@ class MyApp extends StatelessWidget {
             },
             builder: (context, state) {
               return MaterialApp(
+                debugShowCheckedModeBanner: false, // debug banner
                 supportedLocales: flc.CountryLocalizations.supportedLocales.map(Locale.new),
                 title: 'Rayik Consulting App',
                 theme: themeData,
@@ -60,7 +61,10 @@ class MyApp extends StatelessWidget {
                 locale: context.locale,
                 builder: DevicePreview.appBuilder,
                 navigatorKey: navigatorKey,
-                home: const LoginView(),
+                home: const SplashForm(),
+                // debug banner
+
+
               );
             },
           );

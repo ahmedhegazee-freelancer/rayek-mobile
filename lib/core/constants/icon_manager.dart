@@ -81,4 +81,8 @@ class IconManager {
   static const String calender = '${baseBase}calender.svg';
   // close
   static const String close = '${baseBase}close.svg';
+  // logo1
+  static const String logo1 = '${baseBase}logo1.svg';
+  // logo2
+  static const String logo2 = '${baseBase}logo2.svg';
 }

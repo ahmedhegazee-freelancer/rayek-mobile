@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -12,9 +13,20 @@ import '../features/consultant_page/form.dart';
 
 class ConsultantContainer extends StatelessWidget {
   final bool? isTopConsultant;
+  final String? consultantName;
+  final String? consultantImage;
+
+  // final String? consultantSpecialization;
+  // final String? consultantRating;
+  // final String? consultantChatCount;
+
+
 
   const ConsultantContainer({
     this.isTopConsultant = false,
+    this.consultantName,
+    this.consultantImage,
+
     Key? key,
   }) : super(key: key);
 
@@ -60,7 +72,8 @@ class ConsultantContainer extends StatelessWidget {
                 ),
                 child: CachedNetworkImage(
                   imageUrl:
-                      "https://th.bing.com/th/id/OIP.fFXk1pO4lPpkEKMLKKq2lwHaHa?w=1000&h=1000&rs=1&pid=ImgDetMain",
+                      consultantImage ??
+                      "https://www.sbusinesslondon.ac.uk/blog/wp-content/uploads/2020/07/Consultant-scaled.jpg",
                   fit: BoxFit.fill,
                   placeholder: (context, url) =>
                       const Center(child: CircularProgressIndicator()),
@@ -78,7 +91,10 @@ class ConsultantContainer extends StatelessWidget {
                         children: [
                           Expanded(
                             child: Text(
-                              "مصطفي السيد",
+
+                              context.locale.toString() == 'ar'
+                                  ? " محمد عبد الله"
+                                  : "Mohamed Abdullah",
                               style: isTopConsultant ?? true
                                   ? AppTextStyle.h1
                                   : AppTextStyle.h3,
@@ -95,7 +111,10 @@ class ConsultantContainer extends StatelessWidget {
                         children: [
                           Expanded(
                             child: Text(
-                              "متخصص في المحاماه",
+                              context.locale.toString() == 'ar'
+                                  ? "متخصص في المحاماه"
+                                  :
+                              "Specialized in law",
                               style: AppTextStyle.hintTextField,
                             ),
                           ),

@@ -24,7 +24,7 @@ class TopConsultantsListView extends StatelessWidget {
                 ? SizedBox(
                     width: Dimensions.defaultPadding,
                   )
-                : const ConsultantContainer();
+                :  ConsultantContainer(consultantImage: index ==2 ?"https://entail-assets.com/mayple/social_media_consutant-1701329397518.jpg":null,);
           }),
     );
   }

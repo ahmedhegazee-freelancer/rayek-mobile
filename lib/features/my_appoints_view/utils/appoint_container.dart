@@ -52,7 +52,7 @@ class AppointsContainer extends StatelessWidget {
                           padding: const EdgeInsets.all(1.0),
                           child: CachedNetworkImage(
                             imageUrl:
-                            'https://th.bing.com/th/id/OIP.fFXk1pO4lPpkEKMLKKq2lwHaHa?w=1000&h=1000&rs=1&pid=ImgDetMain',
+                            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBAvSxX7U3UvBVAggUW0Ec3jcFKbnB-V74vTSIuJzFu2gjqKeW70uMwo0TldPUKCOTuPQ&usqp=CAU',
                             height: 64.h,
                             width: 75.w,
                             fit: BoxFit.fill,
@@ -82,7 +82,10 @@ class AppointsContainer extends StatelessWidget {
                       CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'احمد محمد',
+                          context.locale.languageCode ==
+                              'en'
+                              ? 'Dr. Ahmed Ali'
+                              : 'د. أحمد علي',
                           style: AppTextStyle.h1.copyWith(
                             fontWeight: FontWeight.w600,
                           ),
@@ -91,7 +94,10 @@ class AppointsContainer extends StatelessWidget {
                           height: 5.h,
                         ),
                         Text(
-                          'مستشار',
+                          context.locale.languageCode ==
+                              'en'
+                              ? 'Dermatologist'
+                              : 'طبيب جلدية',
                           style: AppTextStyle.h4Grey
                               .copyWith(
                             fontSize: 14.sp,
@@ -122,6 +128,11 @@ class AppointsContainer extends StatelessWidget {
                       .withOpacity(.2),
                   child: Center(
                     child: CustomBackButton(
+                      isBack: false,
+                      onPressed: () {
+                        MagicRouter.navigateTo(
+                            const AppointmentDetailsForm());
+                      },
                       size: 14.sp,
                       color: ColorManager.greyTextColor,
                       isColored: true,

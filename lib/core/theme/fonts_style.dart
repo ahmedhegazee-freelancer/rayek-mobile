@@ -11,7 +11,7 @@ class AppTextStyle {
   );
 
   static TextStyle h1 = TextStyle(
-    fontSize: 22.0.sp,
+    fontSize: 20.0.sp,
     fontWeight: FontWeight.bold,
     color: Colors.black,
   );

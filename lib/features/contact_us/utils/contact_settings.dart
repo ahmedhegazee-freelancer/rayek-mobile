@@ -12,7 +12,7 @@ class _ContactSettings extends StatelessWidget {
         // Contact Us Email
         GestureDetector(
           onTap: () {
-            _makePhoneCall(phone??"+966 123 456");
+            _makePhoneCall(phone ?? "+966 123 456");
           },
           child: Container(
             decoration: BoxDecoration(
@@ -28,9 +28,10 @@ class _ContactSettings extends StatelessWidget {
                   ),
                   SvgPicture.asset(
                     IconManager.call,
-                    color: ColorManager.whiteTextColor,
-                    width: 25.w,
-                    height: 25.h,
+                    colorFilter:
+                        const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+                    width: 20.w,
+                    height: 20.h,
                   ),
                   SizedBox(
                     width: 10.w,
@@ -47,13 +48,11 @@ class _ContactSettings extends StatelessWidget {
                         height: 5.h,
                       ),
                       Text(
-                        phone??
-                        "+966 123 456",
+                        phone ?? "+966 123 456",
                         style: AppTextStyle.h4Grey,
                       ),
                     ],
                   ),
-
                 ],
               ),
             ),
@@ -65,7 +64,7 @@ class _ContactSettings extends StatelessWidget {
         // Contact Us Phone
         GestureDetector(
           onTap: () {
-            _sendEmail(email??"");
+            _sendEmail(email ?? "");
           },
           child: Container(
             decoration: BoxDecoration(
@@ -76,42 +75,48 @@ class _ContactSettings extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: Row(
                 children: [
-                  SizedBox(width: 10.w,),
+                  SizedBox(
+                    width: 10.w,
+                  ),
                   SvgPicture.asset(
                     IconManager.email,
-                    color: ColorManager.whiteTextColor,
-                    width: 20.w,
-                    height: 20.h,
+                    colorFilter:
+                        const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+                    width: 15.w,
+                    height: 15.h,
                   ),
                   SizedBox(
                     width: 10.w,
                   ),
                   Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Text(
-                        Strings.email.tr(),
-                        style: AppTextStyle.h3.copyWith(
-                          color: ColorManager.whiteTextColor,
-                        ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text(
+                            Strings.email.tr(),
+                            style: AppTextStyle.h3.copyWith(
+                              color: ColorManager.whiteTextColor,
+                            ),
+                          ),
+                        ],
                       ),
                       SizedBox(
                         height: 5.h,
                       ),
                       Text(
-                        email??
-                        "contactus@rayik.com",
+                        email ?? "contactus@rayik.com",
                         style: AppTextStyle.h4Grey,
                       ),
                     ],
                   ),
-
                 ],
               ),
             ),
           ),
         ),
       ],
-
     );
   }
 }

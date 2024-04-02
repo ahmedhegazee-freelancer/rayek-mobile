@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:rayik/core/constants/dimensions.dart';
 import 'package:rayik/core/router/router.dart';
-import 'package:rayik/features/login/form.dart';
+import 'package:rayik/features/splash/form.dart';
 
 import '../../core/bloc/language_cubit/language_cubit.dart';
 import '../../core/bloc/language_cubit/language_states.dart';
@@ -78,7 +78,7 @@ class SelectLanguageForm extends StatelessWidget {
                                 title: Text('Language Change',
                                   style: AppTextStyle.h1.copyWith(color: Colors.black)),
                                 content: Text('The app will restart from the first screen to update the language to English.',
-                                  style: AppTextStyle.h3.copyWith(color: Colors.black)),
+                                  style: AppTextStyle.h3.copyWith(color: Colors.black, fontSize: 12.sp)),
                                 actions: <Widget>[
 
                                   // Cancel Button
@@ -96,7 +96,7 @@ class SelectLanguageForm extends StatelessWidget {
                                   InkWell(
                                     child: Text('OK', style: AppTextStyle.h3.copyWith(color: ColorManager.primaryColor)),
                                     onTap: () {
-                                      MagicRouter.navigateAndPopAll(const LoginView());
+                                      MagicRouter.navigateAndPopAll(const SplashForm());
                                       context.read<LanguageCubit>().isSelected(context, true);
                                     },
                                   ),
@@ -156,7 +156,7 @@ class SelectLanguageForm extends StatelessWidget {
                               return AlertDialog(
                                 title: Text('تغيير اللغة', style: AppTextStyle.h1.copyWith(color: Colors.black)),
                                 content: Text('سيتم إعادة تشغيل التطبيق من الشاشة الأولى لتحديث اللغة إلى العربية.'
-                                , style: AppTextStyle.h3.copyWith(color: Colors.black)),
+                                , style: AppTextStyle.h3.copyWith(color: Colors.black,fontSize: 12.sp)),
                                 actions: <Widget>[
 
                                   // Cancel Button
@@ -172,7 +172,7 @@ class SelectLanguageForm extends StatelessWidget {
                                   InkWell(
                                     child: Text('موافق', style: AppTextStyle.h3.copyWith(color: ColorManager.primaryColor)),
                                     onTap: () {
-                                      MagicRouter.navigateAndPopUntilFirstPage(const LoginView());
+                                      MagicRouter.navigateAndPopUntilFirstPage(const SplashForm());
                                       context.read<LanguageCubit>().isSelected(context, false);
                                     },
                                   ),

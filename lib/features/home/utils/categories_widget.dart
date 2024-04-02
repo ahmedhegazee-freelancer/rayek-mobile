@@ -76,10 +76,10 @@ class CategoriesWidget extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      SvgPicture.asset(
-                        categoriesIcon[index],
-                        height: 30.h,
-                      ),
+                      // SvgPicture.asset(
+                      //   categoriesIcon[index],
+                      //   height: 30.h,
+                      // ),
                       SizedBox(
                         width: 5.w,
                       ),

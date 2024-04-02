@@ -1,5 +1,6 @@
 
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -43,10 +44,16 @@ class ReviewItem extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'دعاء رياض',
+                          context.locale.toString() == 'en'
+                              ? 'Ahmed Ali'
+                              :
+                          'احمد علي',
                           style: AppTextStyle.h3,
                         ),
                         Text(
+                          context.locale.toString() == 'en'
+                              ? 'Since 3 days'
+                              :
                           'منذ 3 ايام',
                           style: AppTextStyle.h4Grey,
                         ),
@@ -79,6 +86,9 @@ class ReviewItem extends StatelessWidget {
                 ),
                 SizedBox(height: 10.h),
                 Text(
+                  context.locale.toString() == 'en'
+                      ? 'This text is an example of text that can be replaced in the same space, this text was generated from the Arabic text generator'
+                      :
                   'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى',
                   style: AppTextStyle.h4Grey,
                 ),

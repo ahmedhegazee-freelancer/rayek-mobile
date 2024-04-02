@@ -8,10 +8,10 @@ class _ConsultantImage extends StatelessWidget {
       children: [
         const CustomCachedImage(
           imageUrl:
-          'https://th.bing.com/th/id/OIP.fFXk1pO4lPpkEKMLKKq2lwHaHa?w=1000&h=1000&rs=1&pid=ImgDetMain',
+          'https://www.sbusinesslondon.ac.uk/blog/wp-content/uploads/2020/07/Consultant-scaled.jpg',
         ),
         Positioned(
-          top: 160.h,
+          top: 125.h,
           child: Container(
               height: 26.h,
               width: 70.w,

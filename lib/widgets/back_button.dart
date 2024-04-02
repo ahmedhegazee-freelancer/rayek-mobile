@@ -10,6 +10,9 @@ class CustomBackButton extends StatelessWidget {
   final bool? iosOnly;
   final double? radius;
   final double? size;
+  final bool? isBack;
+  // pass function to the constructor
+  final Function()? onPressed;
 
   const CustomBackButton({
     this.color,
@@ -17,6 +20,8 @@ class CustomBackButton extends StatelessWidget {
     this.iosOnly,
     this.radius,
     this.size,
+    this.isBack,
+    this.onPressed,
     super.key,
   });
 
@@ -26,7 +31,7 @@ class CustomBackButton extends StatelessWidget {
       alignment: Alignment.topLeft,
       child: IconButton(
         onPressed: () {
-          MagicRouter.goBack();
+          isBack ?? true ? MagicRouter.goBack() : onPressed!();
         },
         icon: Icon(
           context.locale.languageCode == 'ar'

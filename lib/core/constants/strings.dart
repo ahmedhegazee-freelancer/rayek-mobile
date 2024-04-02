@@ -126,7 +126,28 @@ class Strings{
   static String selectLanguage = "select_language";
   // selectLanguageSubtitle
   static String selectLanguageSubtitle = "select_language_subtitle";
-
+  // logo1
+  static String logo1 = "logo1";
+  // logo2
+  static String logo2 = "logo2";
+  static String appointmentDetails = "appointment_details";
+  static String name = "name";
+  static String date = "date";
+  static String time = "time";
+  static String service = "service";
+  static String price = "price";
+  static String dateOfSubmission = "date_of_submission";
+  static String question = "question";
+  // file
+  static String file = "file";
+  // consultantInfo
+  static String consultantInfo = "consultant_info";
+  // cancelAppointment
+  static String cancelAppointment = "cancel_appointment";
+  // nationality
+  static String nationality = "nationality";
+ // ratings
+ static String ratings = "ratings";
 
 
 

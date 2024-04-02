@@ -19,21 +19,22 @@ class _ImageDrawer extends StatelessWidget {
       children: [
         Row(
           children: [
-            CircleAvatar(
-              radius: 30.r,
-              backgroundColor: ColorManager.primaryColor.withOpacity(.2),
-              //backgroundImage: const AssetImage(ImageManager.profileImage),
-              child: Center(
-                child: GestureDetector(
-                  onTap: () {
-                    MagicRouter.goBack();
-                    MagicRouter.navigateTo(const EditProfileForm());
-                  },
+            Center(
+              child: GestureDetector(
+                onTap: () {
+                  MagicRouter.goBack();
+                  MagicRouter.navigateTo(const EditProfileForm());
+                },
+                child: Container(
+                  // shape circle
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                  ),
                   child: CachedNetworkImage(
                     imageUrl:
 
                     image ??
-                        'https://www.pngkey.com/png/full/114-1149878_setting-user-avatar-in-specific-size-without-breaking.png',
+    'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fHww',
                     imageBuilder: (context, imageProvider) => Container(
                       width: 60.w,
                       height: 60.h,

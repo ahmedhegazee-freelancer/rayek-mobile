@@ -12,7 +12,9 @@ class _SearchArea extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Text(Strings.searchAbout.tr(), style: AppTextStyle.h4Grey,),
+                  Text(Strings.searchAbout.tr(), style: AppTextStyle.h3.copyWith(
+                    color: ColorManager.greyTextColor,
+                  ),),
                 ],
               ),
               SizedBox(

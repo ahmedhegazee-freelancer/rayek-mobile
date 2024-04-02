@@ -25,7 +25,11 @@ class CategoriesView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.all(Dimensions.defaultPadding),
+        padding: EdgeInsets.only(
+          left: Dimensions.defaultPadding,
+          right: Dimensions.defaultPadding,
+          top: Dimensions.defaultPadding
+        ),
         child: Column(
           children: [
             SizedBox(
@@ -56,7 +60,7 @@ class CategoriesView extends StatelessWidget {
             ),
             const _SearchArea(),
             SizedBox(
-              height: 10.h,
+              height: 0.h,
             ),
             const _Categories(),
           ],

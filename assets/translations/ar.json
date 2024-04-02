@@ -115,7 +115,20 @@
     "no_reviews": "لا توجد تقييمات",
   "all_reviews_are_trusted": "جميع التقييمات موثوقة ",
   "select_language_subtitle": "اختر لغتك المفضلة",
-    "select_language": "اختر اللغة"
+    "select_language": "اختر اللغة",
+  "appointment_details": "تفاصيل الموعد",
+  "name": "الاسم",
+  "date": "التاريخ",
+  "time": "الوقت",
+  "service": "الخدمة",
+  "price": "السعر",
+  "date_of_submission": "تاريخ التسجيل",
+  "consultant_info": "معلومات المستشار",
+  "file": "الملف",
+  "question": "السؤال",
+  "cancel_appointment": "إلغاء الموعد",
+  "nationality": "الجنسية",
+  "ratings": "التقييم"
 
 
 

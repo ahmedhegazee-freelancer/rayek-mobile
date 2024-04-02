@@ -7,7 +7,7 @@
   "login": "Log in",
   "user" : "User",
   "consultant" : "Consultant",
-  "email": "Email",
+  "email": "Email address",
     "password": "Password",
     "forgot_password": "Forgot password?",
     "or_login_with": "Or log in with",
@@ -116,7 +116,20 @@
   "no_reviews": "No reviews",
   "all_reviews_are_trusted": "All reviews are trusted",
   "select_language_subtitle": "Select the language you want to use",
-    "select_language": "Select language"
+    "select_language": "Select language",
+  "appointment_details": "Appointment details",
+  "name": "Name",
+    "date": "Date",
+    "time": "Time",
+    "service": "Service",
+  "price": "Price",
+  "date_of_submission": "Date of submission",
+  "consultant_info": "Consultant info",
+  "file": "File",
+  "question": "Question",
+  "cancel_appointment": "Cancel appointment",
+  "nationality": "Nationality",
+  "ratings": "Rating"
 
 
 
