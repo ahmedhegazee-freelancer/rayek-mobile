@@ -129,8 +129,39 @@ class _HeaderCustomizationState extends State<HeaderCustomization> {
   final DateRangePickerController _controller = DateRangePickerController();
   String headerString = '';
 
+  Map<String, String> monthsInArabic = {
+    'January': 'يناير',
+    'February': 'فبراير',
+    'March': 'مارس',
+    'April': 'أبريل',
+    'May': 'مايو',
+    'June': 'يونيو',
+    'July': 'يوليو',
+    'August': 'أغسطس',
+    'September': 'سبتمبر',
+    'October': 'أكتوبر',
+    'November': 'نوفمبر',
+    'December': 'ديسمبر',
+  };
+
+
   @override
   Widget build(BuildContext context) {
+    Map<String, String> monthsInArabic = {
+      'January': 'يناير',
+      'February': 'فبراير',
+      'March': 'مارس',
+      'April': 'أبريل',
+      'May': 'مايو',
+      'June': 'يونيو',
+      'July': 'يوليو',
+      'August': 'أغسطس',
+      'September': 'سبتمبر',
+      'October': 'أكتوبر',
+      'November': 'نوفمبر',
+      'December': 'ديسمبر',
+    };
+
     final double width = MediaQuery.of(context).size.width;
     final double cellWidth = width / 12;
 
@@ -145,9 +176,36 @@ class _HeaderCustomizationState extends State<HeaderCustomization> {
                     color: ColorManager.whiteTextColor,
                     height: cellWidth,
                     width: cellWidth * 4.5,
-                    child: Text(headerString,
-                        textAlign: TextAlign.center,
-                        style: AppTextStyle.h3),
+                    child:
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal:
+                          8.0),
+                      child: Row(
+                        children: [
+                          Text(
+                            context.locale.languageCode == 'ar'
+                                ? monthsInArabic[headerString.split(
+                              context.locale.languageCode == 'ar'
+                                  ? ' '
+                                  : '2'
+
+                            )[0]] ?? 'Unknown month'
+                                : headerString.split(context.locale.languageCode == 'ar'
+                                ? ' '
+                                : '2')[0],
+                            textAlign: TextAlign.center,
+                            style: AppTextStyle.h3,
+                          ),
+                          const SizedBox(width: 5),
+                          Text(
+                            DateTime.now().year.toString(),
+                            textAlign: TextAlign.center,
+                            style: AppTextStyle.h3,
+                          ),
+                        ],
+                      ),
+                    )
                   ),
 
                   const Spacer(),
