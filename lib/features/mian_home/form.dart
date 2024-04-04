@@ -3,15 +3,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:rayik/core/router/router.dart';
 import 'package:rayik/features/home/main_screen_form.dart';
+import 'package:rayik/features/search_view/form.dart';
 
 import '../../core/constants/color_manager.dart';
 import '../../core/constants/dimensions.dart';
 import '../../core/constants/icon_manager.dart';
-import '../../core/constants/image_manager.dart';
 import '../../core/constants/strings.dart';
 import '../../widgets/custom_item_nav.dart';
 import '../categories_view/form.dart';
+import '../video_calls/form.dart';
 import 'cubit/cubit.dart';
 import 'cubit/events.dart';
 import 'cubit/states.dart';
@@ -73,7 +75,7 @@ class MainScreenPage extends StatelessWidget {
                           SizedBox(
                             height: 20.h,
                           ),
-                          _TopHomeBar(scaffoldKey: scaffoldKey),
+                          _TopHomeBar(scaffoldKey: scaffoldKey, index: 0,),
                           const Expanded(child: MainScreenForm()),
                         ],
                       ),
@@ -83,7 +85,17 @@ class MainScreenPage extends StatelessWidget {
                   } else if (navigationState is ChatPageState) {
                     screen = const Center(child: Text('Chat Page'));
                   } else if (navigationState is CallPageState) {
-                    screen = const Center(child: Text('Call Page'));
+                    screen = Scaffold(
+                      body: Column(
+                        children: [
+                          SizedBox(
+                            height: 20.h,
+                          ),
+                          _TopHomeBar(scaffoldKey: scaffoldKey, index: 3,),
+                          const Expanded(child: VideoCallsForm()),
+                        ],
+                      ),
+                    );;
                   } else if (navigationState is SettingsPageState) {
                     screen = const Center(child: Text('Settings Page'));
                   }

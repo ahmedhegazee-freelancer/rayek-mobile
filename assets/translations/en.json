@@ -133,5 +133,10 @@
   "explore_popular_articles": "Explore Popular Articles",
   "most_popular_articles": "Most Popular Articles",
   "for_you": "For You",
-  "no_articles": "No articles"
+  "no_articles": "No articles",
+  "calls": "Calls",
+  "manageAndViewByIdCalls": "Manage and view your call history",
+  "previous": "Previous Calls",
+    "next": "Next Calls",
+  "noPreviousCallsMessage": "You have no calls. Tap the button below to find an expert to start!"
 }

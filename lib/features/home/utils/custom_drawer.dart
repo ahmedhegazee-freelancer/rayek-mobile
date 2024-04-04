@@ -1,8 +1,6 @@
-part of'../main_screen_form.dart';
-
+part of '../main_screen_form.dart';
 
 class _CustomDrawer extends StatelessWidget {
-
   final Function? onTap;
   final String? title;
   final String? icon;
@@ -23,20 +21,22 @@ class _CustomDrawer extends StatelessWidget {
         onTap!();
       },
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SvgPicture.asset(
-                icon??'',
-                width: 20.w,
-                height: 20.h,
-                color: iconColor?? Colors.white,
-              ),
+              SvgPicture.asset(icon ?? '',
+                  width: 20.w,
+                  height: 20.h,
+                  colorFilter: ColorFilter.mode(
+                      iconColor ?? Colors.white, BlendMode.srcIn)),
               SizedBox(
                 width: 15.w,
               ),
               Text(
-                title??'',
+                title ?? '',
                 style: AppTextStyle.h3.copyWith(
                   color: Colors.white,
                   fontSize: 14.sp,
@@ -48,14 +48,12 @@ class _CustomDrawer extends StatelessWidget {
             height: 10.h,
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10.0),
+            padding: const EdgeInsets.symmetric(horizontal: 50.0),
             child: Divider(
               color: HexColor('#C3C1C1'),
               thickness: .5.w,
-
             ),
           ),
-
         ],
       ),
     );

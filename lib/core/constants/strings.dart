@@ -151,8 +151,16 @@ class Strings{
  static String explorePopularArticles = "explore_popular_articles";
   static String mostPopularArticles = "most_popular_articles";
   static String forYou = "for_you";
-  // لا توجد مقالات
   static String noArticles = "no_articles";
+
+  // calls
+  static String calls = "calls";
+  static String manageAndViewByIdCalls = "manageAndViewByIdCalls";
+
+  static String previous = "previous";
+  static String next = "next";
+  // noPreviousCallsMessage
+  static String noPreviousCallsMessage = "noPreviousCallsMessage";
 
 
 

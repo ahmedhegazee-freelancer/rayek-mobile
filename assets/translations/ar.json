@@ -132,7 +132,12 @@
   "explore_popular_articles": "استكشاف المقالات الشهيرة",
   "most_popular_articles": "المقالات الأكثر شهرة",
   "for_you": " من أجلك",
-  "no_articles": "لا توجد مقالات"
+  "no_articles": "لا توجد مقالات",
+  "calls": "المكالمات",
+  "manageAndViewByIdCalls": "إدارة وعرض سجل المكالمات الخاص بك",
+  "previous": "المكالمات السابقة",
+    "next": "المكالمات القادمة",
+  "noPreviousCallsMessage": "ليس لديك أي مكالمات . اضغط على الزر أدناه للعثور على خبير للبدء!"
 
 
 
