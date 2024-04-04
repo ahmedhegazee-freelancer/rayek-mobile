@@ -148,6 +148,11 @@ class Strings{
   static String nationality = "nationality";
  // ratings
  static String ratings = "ratings";
+ static String explorePopularArticles = "explore_popular_articles";
+  static String mostPopularArticles = "most_popular_articles";
+  static String forYou = "for_you";
+  // لا توجد مقالات
+  static String noArticles = "no_articles";
 
 
 

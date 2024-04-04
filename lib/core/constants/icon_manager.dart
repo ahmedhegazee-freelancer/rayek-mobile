@@ -85,4 +85,6 @@ class IconManager {
   static const String logo1 = '${baseBase}logo1.svg';
   // logo2
   static const String logo2 = '${baseBase}logo2.svg';
+  // timer
+  static const String timer = '${baseBase}timer.svg';
 }

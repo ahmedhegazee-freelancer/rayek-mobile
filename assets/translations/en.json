@@ -129,10 +129,9 @@
   "question": "Question",
   "cancel_appointment": "Cancel appointment",
   "nationality": "Nationality",
-  "ratings": "Rating"
-
-
-
-
-
+  "ratings": "Rating",
+  "explore_popular_articles": "Explore Popular Articles",
+  "most_popular_articles": "Most Popular Articles",
+  "for_you": "For You",
+  "no_articles": "No articles"
 }

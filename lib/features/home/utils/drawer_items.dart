@@ -166,7 +166,7 @@ class DrawerItems extends StatelessWidget {
         icon: IconManager.blog,
         onTap: () {
           MagicRouter.goBack(); // To close the drawer
-          MagicRouter.navigateTo(const Text("blog"));
+          MagicRouter.navigateTo(const BlogsForm());
         },
       ),
       SizedBox(
