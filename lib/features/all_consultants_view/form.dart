@@ -16,7 +16,6 @@ part 'utils/consultants_list_view.dart';
 part 'utils/title.dart';
 
 class AllConsultantsViewForm extends StatelessWidget {
-  // Tap Controller
   const AllConsultantsViewForm({super.key});
 
   @override
@@ -82,23 +81,7 @@ class AllConsultantsViewForm extends StatelessWidget {
                   unselectedLabelColor: ColorManager.greyTextColor,
                   tabs: [
                     Tab(
-                      //text: Strings.viewAll.tr(),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                              color: ColorManager.blackTextColor, width: 1.sp),
-                        ),
-                        width: 1.sw,
-                        child: Center(
-                          child: Text(
-                            Strings.viewAll.tr(),
-                            style: TextStyle(
-                              fontSize: 16.sp,
-                              color: ColorManager.blackTextColor,
-                            ),
-                          ),
-                        ),
-                      ),
+                      text: Strings.viewAll.tr(),
                     ),
                     Tab(
                       text: Strings.sports.tr(),

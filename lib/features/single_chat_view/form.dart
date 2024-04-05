@@ -119,17 +119,21 @@ class SingleChatFrom extends StatelessWidget {
                       height: 47.h,
                       decoration: BoxDecoration(
                         color: ColorManager.whiteTextColor,
-                        borderRadius: BorderRadius.circular(10.r),
+                        borderRadius: BorderRadius.circular(Dimensions.defaultPadding),
+                        border: Border.all(color: ColorManager.greyTextColor),
                       ),
                       child: Row(
                         children: [
                           Expanded(
-                            child: TextField(
-                              decoration: InputDecoration(
-                                hintText: 'Type a message',
-                                hintStyle: AppTextStyle.h5.copyWith(color: ColorManager.greyTextColor),
-                                border: InputBorder.none,
-                                contentPadding: EdgeInsets.only(left: 10.w),
+                            child: Padding(
+                              padding: const EdgeInsets.all(3.0),
+                              child: TextField(
+                                decoration: InputDecoration(
+                                  hintText: context.locale.languageCode == 'ar' ? 'اكتب رسالتك هنا' : 'Type your message here',
+                                  hintStyle: AppTextStyle.h5.copyWith(color: ColorManager.greyTextColor),
+                                  border: InputBorder.none,
+                                  contentPadding: EdgeInsets.only(left: 10.w),
+                                ),
                               ),
                             ),
                           ),
