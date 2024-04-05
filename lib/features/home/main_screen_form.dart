@@ -16,6 +16,7 @@ import 'package:rayik/widgets/custom_text_field.dart';
 import '../../core/constants/color_manager.dart';
 import '../../core/constants/strings.dart';
 import '../../widgets/back_button.dart';
+import '../all_consultants_view/form.dart';
 import '../blogs/form.dart';
 import '../contact_us/form.dart';
 import '../edit_profile/form.dart';
@@ -65,6 +66,7 @@ class MainScreenForm extends StatelessWidget {
                     ),
                     _ViewAllRow(
                       title: Strings.topConsultants.tr(),
+                      route: const AllConsultantsViewForm(),
                     ),
                     SizedBox(
                       height: 5.h,

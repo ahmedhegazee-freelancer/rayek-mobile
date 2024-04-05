@@ -1,7 +1,7 @@
 part of '../form.dart';
 
 class _ConsultantsListView extends StatelessWidget {
-  const _ConsultantsListView({super.key});
+  const _ConsultantsListView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
