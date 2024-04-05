@@ -152,7 +152,6 @@ class Strings{
   static String mostPopularArticles = "most_popular_articles";
   static String forYou = "for_you";
   static String noArticles = "no_articles";
-
   // calls
   static String calls = "calls";
   static String manageAndViewByIdCalls = "manageAndViewByIdCalls";
@@ -161,7 +160,10 @@ class Strings{
   static String next = "next";
   // noPreviousCallsMessage
   static String noPreviousCallsMessage = "noPreviousCallsMessage";
-
+  static String chats = "chats";
+  static String manageAndViewByIdChats = "manageAndViewByIdChats";
+  //noPreviousChatsMessage
+  static String noPreviousChatsMessage = "noPreviousChatsMessage";
 
 
 

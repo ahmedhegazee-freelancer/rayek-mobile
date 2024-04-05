@@ -89,4 +89,6 @@ class IconManager {
   static const String timer = '${baseBase}timer.svg';
   // noCalls
   static const String noCalls = '${baseBase}noCalls.svg';
+  // noChats
+  static const String noChats = '${baseBase}chats.svg';
 }

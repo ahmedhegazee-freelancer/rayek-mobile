@@ -1,15 +1,12 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:rayik/core/constants/dimensions.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:toggle_switch/toggle_switch.dart';
-
 import '../../core/constants/color_manager.dart';
 import '../../core/constants/icon_manager.dart';
 import '../../core/constants/strings.dart';
@@ -17,10 +14,8 @@ import '../../core/router/router.dart';
 import '../../core/theme/fonts_style.dart';
 import '../../core/theme/theme.dart';
 import '../../widgets/custom_button.dart';
-import '../../widgets/custom_text_field.dart';
 import '../consultant_page/form.dart';
 import '../mian_home/page.dart';
-import '../search_view/form.dart';
 import 'cubit/toggle_cubit/cubit.dart';
 
 part 'utils/title.dart';

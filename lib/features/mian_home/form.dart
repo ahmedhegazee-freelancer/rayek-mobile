@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:rayik/core/router/router.dart';
+import 'package:rayik/features/chats_screen/form.dart';
 import 'package:rayik/features/home/main_screen_form.dart';
 import 'package:rayik/features/search_view/form.dart';
 
@@ -83,7 +84,8 @@ class MainScreenPage extends StatelessWidget {
                   }else if (navigationState is ExpertsPageState) {
                     screen = const CategoriesView();
                   } else if (navigationState is ChatPageState) {
-                    screen = const Center(child: Text('Chat Page'));
+                    screen = const Center(child: Scaffold(body:
+                    ChatsForm()));
                   } else if (navigationState is CallPageState) {
                     screen = Scaffold(
                       body: Column(
@@ -95,7 +97,7 @@ class MainScreenPage extends StatelessWidget {
                           const Expanded(child: VideoCallsForm()),
                         ],
                       ),
-                    );;
+                    );
                   } else if (navigationState is SettingsPageState) {
                     screen = const Center(child: Text('Settings Page'));
                   }
