@@ -87,17 +87,7 @@ class MainScreenPage extends StatelessWidget {
                     screen = const Center(child: Scaffold(body:
                     ChatsForm()));
                   } else if (navigationState is CallPageState) {
-                    screen = Scaffold(
-                      body: Column(
-                        children: [
-                          SizedBox(
-                            height: 20.h,
-                          ),
-                          _TopHomeBar(scaffoldKey: scaffoldKey, index: 3,),
-                          const Expanded(child: VideoCallsForm()),
-                        ],
-                      ),
-                    );
+                    screen = const VideoCallsForm();
                   } else if (navigationState is SettingsPageState) {
                     screen = const Center(child: Text('Settings Page'));
                   }
