@@ -1,4 +1,4 @@
-part of '../main_screen_form.dart';
+part of '../form.dart';
 
 
 class DrawerItems extends StatelessWidget {
@@ -98,12 +98,23 @@ class DrawerItems extends StatelessWidget {
             height: 10.h,
           ),
           _CustomDrawer(
+            title: Strings.aboutUs.tr(),
+            icon: IconManager.about,
+            onTap: () {
+              MagicRouter.goBack();
+            },
+          ),
+
+          SizedBox(
+            height: 10.h,
+          ),
+          _CustomDrawer(
             title: Strings.signOut.tr(),
             icon: IconManager.signOut,
             iconColor: Colors.red,
             onTap: () {
               MagicRouter.goBack(); // To close the drawer
-              MagicRouter.navigateTo(const Text("signOut"));
+              MagicRouter.navigateTo(const LoginView());
             },
           ),
 

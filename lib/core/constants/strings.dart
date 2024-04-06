@@ -164,6 +164,8 @@ class Strings{
   static String manageAndViewByIdChats = "manageAndViewByIdChats";
   //noPreviousChatsMessage
   static String noPreviousChatsMessage = "noPreviousChatsMessage";
+  // type_your_message_here
+  static String typeYourMessageHere = "type_your_message_here";
 
 
 

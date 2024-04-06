@@ -40,57 +40,76 @@ class _MostPopular extends StatelessWidget {
                   ? SizedBox(
                       width: 8.w,
                     )
-                  : Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 3.w),
-                      child: Stack(
-                        children: [
-                          CachedNetworkImage(
-                            imageUrl:
-                                'https://th.bing.com/th/id/R.c67155bfea060771b09cf143de4cf32b?rik=nc%2bWauxDF5EoGg&pid=ImgRaw&r=0',
-                            imageBuilder: (context, imageProvider) =>
-                                Container(
-                              height: 136.h,
-                              width: 150.w,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(Dimensions.buttonRadius),
-                                image: DecorationImage(
-                                  image: imageProvider,
-                                  fit: BoxFit.fill,
+                  : InkWell(
+                      onTap: () {
+                        MagicRouter.navigateTo(const BlogScreen());
+                        // Navigate to article details
+                      },
+                    child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 3.w),
+                        child: Stack(
+                          children: [
+                            CachedNetworkImage(
+                              imageUrl:
+                                  'https://th.bing.com/th/id/R.c67155bfea060771b09cf143de4cf32b?rik=nc%2bWauxDF5EoGg&pid=ImgRaw&r=0',
+                              imageBuilder: (context, imageProvider) =>
+                                  Container(
+                                height: 136.h,
+                                width: 150.w,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(Dimensions.buttonRadius),
+                                  image: DecorationImage(
+                                    image: imageProvider,
+                                    fit: BoxFit.fill,
+                                  ),
+                                ),
+                              ),
+                              placeholder: (context, url) =>  Shimmer(gradient: const LinearGradient(
+                                    begin: Alignment.topLeft,
+                                    end: Alignment.bottomRight,
+                                    colors: [
+                                      ColorManager.primaryColor,
+                                      Colors.white,
+                                    ],
+                                  ),child:
+                                  Container(
+                                    height: 136.h,
+                                    width: 150.w,
+                                    decoration: BoxDecoration(
+                                      color: Colors.grey,
+                                      borderRadius: BorderRadius.circular(Dimensions.buttonRadius),
+                                    ),
+                                  ),),
+                              errorWidget: (context, url, error) =>
+                                  const Icon(Icons.error),
+                            ),
+                            Positioned(
+                              bottom: 25.h,
+                              left: 0,
+                              right: 0,
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 10.w),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      context.locale.languageCode == 'en'
+                                          ? 'Lawyers'
+                                          : 'المحاماة',
+                                      style: AppTextStyle.h3.copyWith(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ),
-                            placeholder: (context, url) => const Center(
-                              child: CircularProgressIndicator(),
-                            ),
-                            errorWidget: (context, url, error) =>
-                                const Icon(Icons.error),
-                          ),
-                          Positioned(
-                            bottom: 25.h,
-                            left: 0,
-                            right: 0,
-                            child: Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 10.w),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    context.locale.languageCode == 'en'
-                                        ? 'Lawyers'
-                                        : 'المحاماة',
-                                    style: AppTextStyle.h3.copyWith(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
-                    );
+                  );
             },
           ),
         ),

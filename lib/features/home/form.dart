@@ -11,12 +11,15 @@ import 'package:rayik/core/theme/fonts_style.dart';
 import 'package:rayik/features/categories_view/form.dart';
 import 'package:rayik/features/home/utils/categories_widget.dart';
 import 'package:rayik/features/home/utils/top_consultants.dart';
+import 'package:rayik/features/login/form.dart';
 import 'package:rayik/features/my_appoints_view/form.dart';
 import 'package:rayik/widgets/custom_text_field.dart';
+import 'package:shimmer/shimmer.dart';
 import '../../core/constants/color_manager.dart';
 import '../../core/constants/strings.dart';
 import '../../widgets/back_button.dart';
 import '../all_consultants_view/form.dart';
+import '../blog_screen/form.dart';
 import '../blogs/form.dart';
 import '../contact_us/form.dart';
 import '../edit_profile/form.dart';
@@ -27,6 +30,7 @@ part 'utils/view_all_row.dart';
 part 'utils/image_drawer.dart';
 part 'utils/custom_drawer.dart';
 part 'utils/drawer_items.dart';
+part 'utils/most_popular_articles.dart';
 
 class MainScreenForm extends StatelessWidget {
   const MainScreenForm({Key? key}) : super(key: key);
@@ -42,7 +46,7 @@ class MainScreenForm extends StatelessWidget {
               SizedBox(
                 height: 18.h,
               ),
-              const _SearchArea(),
+              //const _SearchArea(),
               SizedBox(
                 height: 3.h,
               ),
@@ -71,7 +75,22 @@ class MainScreenForm extends StatelessWidget {
                     SizedBox(
                       height: 5.h,
                     ),
-                    const TopConsultantsListView()
+                    const TopConsultantsListView(),
+                    SizedBox(
+                      height: 12.h,
+                    ),
+                    _ViewAllRow(
+                      title: Strings.mostPopularArticles.tr(),
+                      route: const BlogsForm(),
+                    ),
+                    SizedBox(
+                      height: 5.h,
+                    ),
+                    const _MostPopular(),
+                    SizedBox(
+                      height: 12.h,
+                    ),
+
                   ],
                 ),
               ),

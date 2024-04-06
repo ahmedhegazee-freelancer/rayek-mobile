@@ -49,7 +49,7 @@ class _Categories extends StatelessWidget {
       ),
         shrinkWrap: true,
         physics: const BouncingScrollPhysics(),
-        itemCount: 12,
+        itemCount: 8,
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () {

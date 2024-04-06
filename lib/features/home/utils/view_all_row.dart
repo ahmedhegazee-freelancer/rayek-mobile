@@ -1,4 +1,4 @@
-part of '../main_screen_form.dart';
+part of '../form.dart';
 
 class _ViewAllRow extends StatelessWidget {
   final String? title;

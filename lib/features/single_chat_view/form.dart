@@ -8,6 +8,7 @@ import 'package:rayik/core/theme/fonts_style.dart';
 import 'package:shimmer/shimmer.dart';
 
 import '../../core/constants/color_manager.dart';
+import '../../core/constants/strings.dart';
 import '../../widgets/back_button.dart';
 
 
@@ -129,7 +130,7 @@ class SingleChatFrom extends StatelessWidget {
                               padding: const EdgeInsets.all(3.0),
                               child: TextField(
                                 decoration: InputDecoration(
-                                  hintText: context.locale.languageCode == 'ar' ? 'اكتب رسالتك هنا' : 'Type your message here',
+                                  hintText: Strings.typeYourMessageHere.tr(),
                                   hintStyle: AppTextStyle.h5.copyWith(color: ColorManager.greyTextColor),
                                   border: InputBorder.none,
                                   contentPadding: EdgeInsets.only(left: 10.w),

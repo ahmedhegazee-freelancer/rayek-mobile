@@ -141,5 +141,6 @@
   "noPreviousCallsMessage": "You have no calls. Tap the button below to find an expert to start!",
   "chats": "Chats",
   "manageAndViewByIdChats": "Manage and view your chat history",
-  "noPreviousChatsMessage": "You have no chats. Tap the button below to find an expert to start!"
+  "noPreviousChatsMessage": "You have no chats. Tap the button below to find an expert to start!",
+  "type_your_message_here": "Type your message here"
 }

@@ -2,9 +2,8 @@ part of '../form.dart';
 
 
 class _CallItem extends StatelessWidget {
-  const _CallItem({
-    super.key,
-  });
+  // key
+  const _CallItem({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,52 +22,14 @@ class _CallItem extends StatelessWidget {
               color: ColorManager.greyTextColor,
             ),
           ),
-          trailing: Container(
-            height: 23.h,
-            width: 19.w,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              // border color
-              border: Border.all(
-                color: ColorManager.primaryColor,
-                width: 1.w,
-              ),
+          trailing: SvgPicture.asset(
+            IconManager.about,
+            colorFilter: const ColorFilter.mode(
+              ColorManager.primaryColor,
+              BlendMode.srcIn,
             ),
-            child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  SizedBox(
-                    height: .5.h,
-                  ),
-                  Text(
-                    '!',
-                    style: AppTextStyle.h4Black.copyWith(
-                      color: ColorManager.primaryColor,
-                    ),
-                  ),
-                  SizedBox(
-                    height: .5.h,
-                  ),
-                ],
-              ),
-            ),
-
+            width: 22.w,
           ),
-          //index % 2 == 0
-          //     ? SvgPicture.asset(
-          //   IconManager.video,
-          //   colorFilter: const ColorFilter.mode(
-          //     ColorManager.blackTextColor,
-          //     BlendMode.srcIn,
-          //   ),
-          //   width: 22.w,
-          // )
-          //     : Icon(
-          //   Icons.call,
-          //   color: ColorManager.blackTextColor,
-          //   size: 22.5.sp,
-          // ),
           leading: Container(
             width: 50.w,
             height: 50.h,

@@ -38,11 +38,11 @@ class CustomSliverPage extends StatelessWidget {
                     padding: const EdgeInsets.all(0.0),
                     child: CircleAvatar(
                       radius: 15.r,
-                      backgroundColor: ColorManager.whiteTextColor.withOpacity(.2),
+                      backgroundColor: ColorManager.primaryColor.withOpacity(.4),
                       child: Center(
                         child: CustomBackButton(
                           size: 15.sp,
-                          color: ColorManager.blackTextColor,
+                          color: ColorManager.whiteTextColor,
                           isColored: true,
                           iosOnly: true,
                         ),

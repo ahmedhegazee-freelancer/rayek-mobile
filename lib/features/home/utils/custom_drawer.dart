@@ -1,4 +1,4 @@
-part of '../main_screen_form.dart';
+part of '../form.dart';
 
 class _CustomDrawer extends StatelessWidget {
   final Function? onTap;
@@ -16,7 +16,7 @@ class _CustomDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return InkWell(
       onTap: () {
         onTap!();
       },

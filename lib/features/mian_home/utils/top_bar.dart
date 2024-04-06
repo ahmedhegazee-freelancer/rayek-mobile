@@ -8,50 +8,61 @@ class _TopHomeBar extends StatelessWidget {
   const _TopHomeBar({this.scaffoldKey, this.index});
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.all(Dimensions.defaultPadding),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          GestureDetector(
-            onTap: () {
-              index == 0
-                  ? scaffoldKey!.currentState!.openDrawer()
-                  : MagicRouter.navigateTo(
-                      const SearchForm(),
-                    );
-            },
-            child: index == 0
-                ? Icon(
-                    Icons.menu,
-                    color: ColorManager.greyTextColor,
-                    size: 25.sp,
-                  )
-                : CircleAvatar(
-                    radius: 20.r,
-                    backgroundColor: Colors.transparent,
-                    child: Center(
-                      child: SvgPicture.asset(
-                        IconManager.searchIcon,
-                        colorFilter: const ColorFilter.mode(
-                          ColorManager.primaryColor,
-                          BlendMode.srcIn,
+    return Container(
+      color: Colors.white,
+      height: 180.h,
+      width: 1.sw,
+      child: Padding(
+        padding: EdgeInsets.all(Dimensions.defaultPadding),
+        child: Column(
+          children: [
+
+            SizedBox(
+              height: 60.h,
+            ),
+            Padding(
+                padding:
+                    EdgeInsets.symmetric(horizontal: Dimensions.defaultPadding),
+                child: Column(children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        Strings.searchAbout.tr(),
+                        style: AppTextStyle.h3.copyWith(
+                          color: ColorManager.greyTextColor,
                         ),
-                        width: 20.w,
                       ),
-                    ),
+                    ],
                   ),
-          ),
-          SvgPicture.asset(IconManager.notification,
-              width: 22.w,
-              height: 22.h,
-              colorFilter: ColorFilter.mode(
-                index == 0
-                    ? ColorManager.greyTextColor
-                    : ColorManager.primaryColor,
-                BlendMode.srcIn,
-              ))
-        ],
+                  SizedBox(
+                    height: 4.h,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        Strings.yourConsultant.tr(),
+                        style: AppTextStyle.h1,
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 10.h,
+                  ),
+                  CustomTextField(
+                    hintText: Strings.searchHere.tr(),
+                    obscure: false,
+                    hasPrefix: false,
+                    svgIconSuffix: IconManager.searchIcon,
+                    readonly: true,
+                    onTap: () {
+                      MagicRouter.navigateTo(const SearchForm());
+                    },
+                  )
+                ]))
+          ],
+        ),
       ),
     );
   }
