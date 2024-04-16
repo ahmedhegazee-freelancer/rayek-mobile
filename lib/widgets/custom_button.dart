@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:rayik/core/constants/dimensions.dart';
 
 import '../../core/constants/color_manager.dart';
+import '../core/bloc/dark_light_bloc/cubit.dart';
 import 'custom_text.dart';
 
 class CustomButton extends StatelessWidget {
@@ -41,6 +43,7 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final themeState = context.watch<ThemeCubit>().state;
     return InkWell(
       onTap: onTap,
       child: Container(
@@ -48,14 +51,15 @@ class CustomButton extends StatelessWidget {
           height: height ?? 47.h,
           decoration: BoxDecoration(
               color: isColored!
-                  ? color == null
-                      ? ColorManager.blackTextColor
-                      : color ?? ColorManager.blackTextColor
+                  ? color ??
+                      (themeState == ThemeState.dark
+                          ? ColorManager.whiteTextColor
+                          : ColorManager.blackTextColor)
                   : Colors.white,
               borderRadius:
                   BorderRadius.circular(radius ?? Dimensions.buttonRadius),
               border: Border.all(
-                width:borderWidth?? 1,
+                width: borderWidth ?? 1,
                 color: borderColor ?? Colors.transparent,
               )),
           child: Center(
@@ -70,12 +74,14 @@ class CustomButton extends StatelessWidget {
                   text: text,
                   style: textStyle,
                   color: txtColor ??
-                      (isColored! ? Colors.white : ColorManager.primaryColor),
+                      (isColored!
+                          ? (themeState == ThemeState.dark
+                              ? ColorManager.blackTextColor
+                              : ColorManager.whiteTextColor)
+                          : ColorManager.primaryColor),
                   fontSize: fontSize ?? 16.sp,
                 ),
-                iconData == null
-                    ? const SizedBox()
-                    : iconData!,
+                iconData == null ? const SizedBox() : iconData!,
               ],
             ),
           ))),

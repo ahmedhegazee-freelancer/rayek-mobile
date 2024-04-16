@@ -84,15 +84,17 @@ class LoginView extends StatelessWidget {
               SizedBox(
                 height: 25.h,
               ),
-              CustomButton(onTap: () {
+              CustomButton(
+                  onTap: () {
                 MagicRouter.navigateTo(const MainProvider());
               }, text: Strings.login.tr()),
+              //
+              // SizedBox(
+              //   height: 15.h,
+              // ),
+              // const SocialSign(),
               SizedBox(
-                height: 15.h,
-              ),
-              const SocialSign(),
-              SizedBox(
-                height: 10.h,
+                height: 30.h,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -117,7 +119,7 @@ class LoginView extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: 10.h,
+                height: 5.h,
               ),
               const TermsAndConditions(),
             ],

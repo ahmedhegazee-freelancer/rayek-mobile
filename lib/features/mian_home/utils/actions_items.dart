@@ -15,26 +15,26 @@ class _ActionItems extends StatelessWidget {
       width: .9.sw,
       height: 60.h,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          GestureDetector(
-            onTap: () {
-              scaffoldKey.currentState!.openDrawer();
-            },
-            // child: index == 0
-            //     ?
-            child: CircleAvatar(
-              radius: 20.r,
-              backgroundColor: Colors.transparent
-                  ,
-              child: Icon(
-                Icons.menu,
-                color: ColorManager.primaryColor
-                    .withOpacity(.8),
-                size: 30.sp,
-              ),
-            ),
-          ),
+          // GestureDetector(
+          //   onTap: () {
+          //     scaffoldKey.currentState!.openDrawer();
+          //   },
+          //   // child: index == 0
+          //   //     ?
+          //   child: CircleAvatar(
+          //     radius: 20.r,
+          //     backgroundColor: Colors.transparent
+          //         ,
+          //     child: Icon(
+          //       Icons.menu,
+          //       color: ColorManager.primaryColor
+          //           .withOpacity(.8),
+          //       size: 30.sp,
+          //     ),
+          //   ),
+          // ),
           Row(
             children: [
 

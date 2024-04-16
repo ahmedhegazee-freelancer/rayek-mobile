@@ -105,6 +105,26 @@ class DrawerItems extends StatelessWidget {
             },
           ),
 
+          Center(
+            child: BlocBuilder<ThemeCubit, ThemeState>(
+              builder: (context, state) {
+                return Switch(
+                  value: state == ThemeState.dark,
+                  onChanged: (value) {
+                    if (value) {
+                      context.read<ThemeCubit>().toDarkTheme();
+                    } else {
+                      context.read<ThemeCubit>().toLightTheme();
+                    }
+                  },
+                );
+              },
+            ),
+          ),
+
+
+
+
           SizedBox(
             height: 10.h,
           ),

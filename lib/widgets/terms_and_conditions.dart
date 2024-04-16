@@ -25,7 +25,9 @@ class TermsAndConditions extends StatelessWidget {
             isLogin ?? true
                 ? Strings.loginAgreement.tr()
                 : Strings.bySigningUp.tr(),
-            style: AppTextStyle.h6,
+            style: AppTextStyle.h6.copyWith(
+              color: ColorManager.greyTextColor,
+            ),
           ),
           SizedBox(
             width: 5.w,
@@ -37,7 +39,7 @@ class TermsAndConditions extends StatelessWidget {
               style: TextStyle(
                 fontSize: 12.sp,
                 decoration: TextDecoration.underline,
-                color: ColorManager.blackTextColor,
+                //color: ColorManager.primaryColor,
               ),
             ),
           ),

@@ -19,7 +19,6 @@ class PinCodeWidget extends StatelessWidget {
       // Input Type
       keyboardType: TextInputType.number,
 
-
       pinTheme: PinTheme(
         shape: PinCodeFieldShape.box,
         borderRadius: BorderRadius.circular(Dimensions.buttonRadius),
@@ -35,7 +34,7 @@ class PinCodeWidget extends StatelessWidget {
       enablePinAutofill: true,
 
       animationDuration: const Duration(milliseconds: 300),
-      backgroundColor: Colors.white,
+      //backgroundColor: Colors.white,
 
       enableActiveFill: false,
       boxShadows: const [

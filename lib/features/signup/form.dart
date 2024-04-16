@@ -11,7 +11,6 @@ import '../../widgets/custom_button.dart';
 import '../../widgets/custom_text_field.dart';
 import '../../widgets/terms_and_conditions.dart';
 import '../login/form.dart';
-import '../login/utils/social_sign.dart';
 
 part 'utils/signup_form.dart';
 
@@ -29,10 +28,10 @@ class SignUpForm extends StatelessWidget {
             // hide keyboard when user taps outside the text field
             FocusScope.of(context).unfocus();
           },
-          child: ListView(
+          child: Column(
             children: [
               SizedBox(
-                height: 25.h,
+                height: 50.h,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -47,51 +46,65 @@ class SignUpForm extends StatelessWidget {
               SizedBox(
                 height: 10.h,
               ),
-              Text(
-                Strings.signupNowAndStart.tr(),
-                style: AppTextStyle.subtitleStyle,
-              ),
-              SizedBox(
-                height: 25.h,
-              ),
-              const SelectUserType(),
-              const _SignUpDataForm(),
-              SizedBox(
-                height: 25.h,
-              ),
-              CustomButton(onTap: () {}, text: Strings.signUp.tr()),
-              SizedBox(
-                height: 15.h,
-              ),
-              const SocialSign(isLogin: false),
-              SizedBox(
-                height: 15.h,
-              ),
-
               Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Text(
-                    Strings.alreadyHaveAccount.tr(),
-                    style: AppTextStyle.h3,
-                  ),
-                  SizedBox(
-                    width: 5.w,
-                  ),
-                  InkWell(
-                    onTap: () {
-                      MagicRouter.navigateTo(const LoginView());
-                    },
-                    child: Text(
-                      Strings.login.tr(),
-                      style: AppTextStyle.subtitleStyle,
-                    ),
+                    Strings.signupNowAndStart.tr(),
+                    style: AppTextStyle.subtitleStyle,
                   ),
                 ],
               ),
-              const TermsAndConditions(isLogin: false),
-            ],
+              Expanded(
+                child: ListView(
+                  children: [
+                    SizedBox(
+                      height: 15.h,
+                    ),
+                    const SelectUserType(),
+                    SizedBox(
+                      height: 15.h,
+                    ),
+                    const _SignUpDataForm(),
+                    SizedBox(
+                      height: 25.h,
+                    ),
+                    CustomButton(onTap: () {}, text: Strings.signUp.tr()),
+                    // SizedBox(
+                    //   height: 15.h,
+                    // ),
+                    // const SocialSign(isLogin: false),
+                    SizedBox(
+                      height: 30.h,
+                    ),
 
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          Strings.alreadyHaveAccount.tr(),
+                          style: AppTextStyle.h3,
+                        ),
+                        SizedBox(
+                          width: 5.w,
+                        ),
+                        InkWell(
+                          onTap: () {
+                            MagicRouter.navigateTo(const LoginView());
+                          },
+                          child: Text(
+                            Strings.login.tr(),
+                            style: AppTextStyle.subtitleStyle,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const TermsAndConditions(isLogin: false),
+                  ],
+
+                ),
+              ),
+            ],
           ),
         ),
       ),
