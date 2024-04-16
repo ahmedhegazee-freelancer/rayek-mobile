@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../constants/app_constants.dart';
 import '../constants/color_manager.dart';
 
 class AppTextStyle {
@@ -15,6 +16,8 @@ class AppTextStyle {
     fontWeight: FontWeight.bold,
     //color: Colors.black,
   );
+
+
 
   static TextStyle subtitleStyle = TextStyle(
     fontSize: 13.0.sp,
@@ -87,5 +90,13 @@ class AppTextStyle {
     fontSize: 10.0.sp,
     fontWeight: FontWeight.w400,
     //color: ColorManager.blackTextColor,
+  );
+
+  // splash Font Style
+  static TextStyle splashFontStyle = TextStyle(
+    fontSize: 120.sp,
+    fontWeight: FontWeight.bold,
+    fontFamily: AppConstants.englishFont,
+    color: ColorManager.whiteTextColor,
   );
 }

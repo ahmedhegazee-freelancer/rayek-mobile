@@ -8,6 +8,9 @@ class AppConstants{
 
   AppConstants({this.context});
 
+  /// App Name
+  static const String appName = 'Rayik';
+
   ///CONSTANTS
   static  const String currencyCoin='currency_coin';
 
@@ -21,6 +24,10 @@ class AppConstants{
 
   // Bloc
   static ThemeCubit themeBloc = ThemeCubit();
+
+  // Fonts
+  static const String arabicFont = 'Arb';
+  static const String englishFont = 'UberMove';
 
   /// Device Info
   static  const LocalPlatform  platform= LocalPlatform();
