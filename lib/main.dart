@@ -67,8 +67,20 @@ class MyApp extends StatelessWidget {
                         .map(Locale.new),
                     title: 'Rayik Consulting App',
                     theme: themeState == ThemeState.light
-                        ? lightTheme
-                        : darkTheme,
+                        ? lightTheme.copyWith(
+                            textTheme: lightTheme.textTheme.apply(
+                              fontFamily: context.locale == const Locale('ar')
+                                  ? 'Arb'
+                                  : 'UberMove',
+                            ),
+                          )
+                        : darkTheme.copyWith(
+                            textTheme: darkTheme.textTheme.apply(
+                              fontFamily: context.locale == const Locale('ar')
+                                  ? 'Arb'
+                                  : 'UberMove',
+                            ),
+                          ),
                     localizationsDelegates: context.localizationDelegates,
                     locale: context.locale,
                     builder: DevicePreview.appBuilder,

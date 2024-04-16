@@ -4,8 +4,6 @@ import '../constants/dimensions.dart';
 
 ThemeData lightTheme = ThemeData(
   scaffoldBackgroundColor: Colors.white,
-  fontFamily: "UberMove",
-
   colorScheme: const ColorScheme.light(
     primary: Color(0xFF090817),
     secondary: Color(0xFFf8f8ff),
@@ -21,7 +19,6 @@ ThemeData lightTheme = ThemeData(
 
 ThemeData darkTheme = ThemeData(
   scaffoldBackgroundColor: const Color(0xFF090817),
-  fontFamily: "UberMove",
   colorScheme: const ColorScheme.dark(
     primary: Color(0xFFf8f8ff),
     secondary: Color(0xFF090817),

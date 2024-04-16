@@ -125,6 +125,16 @@ flutter:
            weight: 600
 
 
+     - family: Arb
+       fonts:
+         - asset: assets/fonts/arabicFont/ArbFONTS-GE-SS-Text-Bold_26.otf
+         - asset: assets/fonts/arabicFont/ArbFONTS-GE-SS-Text-Light-Italic_24.otf
+         - asset: assets/fonts/arabicFont/ArbFONTS-GE-SS-Text-Medium_26.otf
+         - asset: assets/fonts/arabicFont/ArbFONTS-GE-SS-Three-Light_19.otf
+         - asset: assets/fonts/arabicFont/ArbFONTS-GE-SS-TV-Light_10.otf
+         - asset: assets/fonts/arabicFont/ArbFONTS-GE-SS-Two-Light_28.otf
+           weight: 600
+
 
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf
