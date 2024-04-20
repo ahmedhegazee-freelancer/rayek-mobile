@@ -1,6 +1,5 @@
 part of '../form.dart';
 
-
 class _CallItem extends StatelessWidget {
   // key
   const _CallItem({Key? key}) : super(key: key);
@@ -11,9 +10,7 @@ class _CallItem extends StatelessWidget {
       children: [
         ListTile(
           title: Text(
-            context.locale.toString() == 'ar'
-                ? 'دعاء رياض'
-                : 'Doaa Reyad',
+            context.locale.toString() == 'ar' ? 'دعاء رياض' : 'Doaa Reyad',
             style: AppTextStyle.h3,
           ),
           subtitle: Text(
@@ -40,7 +37,7 @@ class _CallItem extends StatelessWidget {
               borderRadius: BorderRadius.circular(50.r),
               child: CachedNetworkImage(
                 imageUrl:
-                'https://th.bing.com/th/id/R.58f60f6b81ae6d054b6b4910a9771fbf?rik=%2fKjN%2fqPR7wXaUw&pid=ImgRaw&r=0',
+                    'https://th.bing.com/th/id/R.58f60f6b81ae6d054b6b4910a9771fbf?rik=%2fKjN%2fqPR7wXaUw&pid=ImgRaw&r=0',
                 placeholder: (context, url) => Shimmer(
                   gradient: const LinearGradient(
                     begin: Alignment.topLeft,
@@ -59,22 +56,20 @@ class _CallItem extends StatelessWidget {
                     ),
                   ),
                 ),
-                errorWidget: (context, url, error) =>
-                const Icon(Icons.error),
+                errorWidget: (context, url, error) => const Icon(Icons.error),
               ),
             ),
           ),
         ),
         Padding(
           padding: EdgeInsets.only(
-            left: context.locale.toString() == 'ar'
-                ? 20.0
-                : 70.0,
-            right: context.locale.toString() == 'ar'
-                ? 70.0
-                : 20.0,
+            left: context.locale.toString() == 'ar' ? 20.0 : 70.0,
+            right: context.locale.toString() == 'ar' ? 70.0 : 20.0,
           ),
-          child: const Divider(),
+          child: const Divider(
+            color: ColorManager.greyTextColor,
+            thickness: 0.5,
+          ),
         ),
       ],
     );

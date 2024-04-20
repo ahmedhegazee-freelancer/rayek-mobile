@@ -1,6 +1,5 @@
 part of '../form.dart';
 
-
 class EmptyAppoints extends StatelessWidget {
   const EmptyAppoints({
     super.key,
@@ -8,10 +7,11 @@ class EmptyAppoints extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ThemeState themeState = context.watch<ThemeCubit>().state;
     return Container(
-      height: 250.h,
+      height: 275.h,
       width: 1.sw,
-      decoration: containerDecoration(),
+      decoration: containerDecoration(context),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -21,8 +21,11 @@ class EmptyAppoints extends StatelessWidget {
           ),
           SvgPicture.asset(
             IconManager.calender,
-            colorFilter: const ColorFilter.mode(
-                ColorManager.blackTextColor, BlendMode.srcIn),
+            colorFilter: ColorFilter.mode(
+                themeState == ThemeState.dark
+                    ? ColorManager.whiteTextColor
+                    : ColorManager.blackTextColor,
+                BlendMode.srcIn),
             width: 40.w,
             height: 40.h,
           ),

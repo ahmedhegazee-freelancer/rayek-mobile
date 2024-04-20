@@ -17,7 +17,7 @@ class EmptyChats extends StatelessWidget {
         Container(
           height: 250.h,
           width: 1.sw,
-          decoration: containerDecoration(),
+          decoration: containerDecoration(context),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,

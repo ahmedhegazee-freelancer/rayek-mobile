@@ -1,7 +1,6 @@
 part of '../form.dart';
 
 class _BookButton extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return CustomButton(
@@ -24,14 +23,15 @@ class _BookButton extends StatelessWidget {
 }
 
 class BackIconInButton extends StatelessWidget {
-  const BackIconInButton({
-    super.key,
-  });
+  const BackIconInButton({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    ThemeState themeState = context.watch<ThemeCubit>().state;
     return CircleAvatar(
-      backgroundColor: Colors.white.withOpacity(.2),
+      backgroundColor: themeState == ThemeState.dark
+          ? ColorManager.darkContainerColor.withOpacity(.4)
+          : Colors.white.withOpacity(.2),
       radius: 15.r,
       child: Icon(
         context.locale == const Locale('en')

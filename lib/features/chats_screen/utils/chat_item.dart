@@ -20,7 +20,7 @@ class _ChatItem extends StatelessWidget {
             child: Center(
               child: CachedNetworkImage(
                 imageUrl:
-                'https://www.sbusinesslondon.ac.uk/blog/wp-content/uploads/2020/07/Consultant-scaled.jpg',
+                'https://th.bing.com/th/id/OIP.kUE2yev9qd2Y5zbI0lg4AgAAAA?w=468&h=468&rs=1&pid=ImgDetMain',
                 imageBuilder: (context, imageProvider) => CircleAvatar(
                   radius: 25.r,
                   backgroundImage: imageProvider,

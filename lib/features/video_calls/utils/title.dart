@@ -1,4 +1,4 @@
-part of'../form.dart';
+part of '../form.dart';
 
 class _Title extends StatelessWidget {
   const _Title({Key? key}) : super(key: key);
@@ -6,9 +6,12 @@ class _Title extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 200.h,
-      color: Colors.white,
+      color: Theme.of(context).scaffoldBackgroundColor,
       child: Padding(
-        padding: EdgeInsets.only(left: Dimensions.defaultPadding, right: Dimensions.defaultPadding, top: 50.h),
+        padding: EdgeInsets.only(
+            left: Dimensions.defaultPadding,
+            right: Dimensions.defaultPadding,
+            top: 50.h),
         child: Column(
           children: [
             SizedBox(
@@ -35,7 +38,6 @@ class _Title extends StatelessWidget {
                   style: AppTextStyle.h4Grey,
                 ),
                 SizedBox(width: 10.w),
-
               ],
             ),
             SizedBox(height: 20.h),
@@ -51,9 +53,8 @@ class _Title extends StatelessWidget {
             //   },
             // ),
             // SizedBox(height: 20.h),
-
-
-          ],),
+          ],
+        ),
       ),
     );
   }

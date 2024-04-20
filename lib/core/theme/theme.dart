@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:rayik/core/bloc/dark_light_bloc/cubit.dart';
+import 'package:rayik/core/constants/color_manager.dart';
 
 import '../constants/dimensions.dart';
 
@@ -32,9 +35,12 @@ ThemeData darkTheme = ThemeData(
   ),
 );
 
-BoxDecoration containerDecoration() {
+BoxDecoration containerDecoration(BuildContext context) {
+  ThemeState themeState = context.read<ThemeCubit>().state;
   return BoxDecoration(
-    color: Colors.white,
+    color: themeState == ThemeState.dark
+        ?  ColorManager.darkContainerColor
+        : Theme.of(context).scaffoldBackgroundColor,
     borderRadius: BorderRadius.circular(Dimensions.buttonRadius),
     boxShadow: [
       BoxShadow(

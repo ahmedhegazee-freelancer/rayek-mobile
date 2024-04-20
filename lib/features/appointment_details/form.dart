@@ -55,7 +55,6 @@ class AppointmentDetailsForm extends StatelessWidget {
                       SizedBox(height: 10.h),
                       Container(
                           decoration: BoxDecoration(
-                            color: ColorManager.whiteTextColor,
                             borderRadius: BorderRadius.circular(Dimensions.buttonRadius),
                             boxShadow: [
                               BoxShadow(
@@ -126,7 +125,6 @@ class AppointmentDetailsForm extends StatelessWidget {
                       SizedBox(height: 10.h),
                       Container(
                           decoration: BoxDecoration(
-                            color: ColorManager.whiteTextColor,
                             borderRadius: BorderRadius.circular(Dimensions.buttonRadius),
                             boxShadow: [
                               BoxShadow(

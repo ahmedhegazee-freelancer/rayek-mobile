@@ -35,33 +35,33 @@ class MainScreenPage extends StatelessWidget {
 
     return Scaffold(
       key: scaffoldKey,
-      drawer: Drawer(
-        width: 1.sw,
-        child: LayoutBuilder(
-          builder: (context, constraints) {
-            return AnimatedContainer(
-              width: constraints.maxWidth,
-              duration: const Duration(seconds: 2),
-              curve: Curves.fastOutSlowIn,
-              decoration: const BoxDecoration(
-                color: Colors.black,
-                borderRadius: BorderRadius.only(
-                  topRight: Radius.circular(0),
-                  bottomRight: Radius.circular(0),
-                ),
-                // image: DecorationImage(
-                //   image: AssetImage(ImageManager.backDrawer),
-                //   fit: BoxFit.cover,
-                // ),
-              ),
-              child: Padding(
-                padding: EdgeInsets.all(Dimensions.defaultPadding),
-                child: const DrawerItems(),
-              ),
-            );
-          },
-        ),
-      ),
+      // drawer: Drawer(
+      //   width: 1.sw,
+      //   child: LayoutBuilder(
+      //     builder: (context, constraints) {
+      //       return AnimatedContainer(
+      //         width: constraints.maxWidth,
+      //         duration: const Duration(seconds: 2),
+      //         curve: Curves.fastOutSlowIn,
+      //         decoration: const BoxDecoration(
+      //           color: Colors.black,
+      //           borderRadius: BorderRadius.only(
+      //             topRight: Radius.circular(0),
+      //             bottomRight: Radius.circular(0),
+      //           ),
+      //           // image: DecorationImage(
+      //           //   image: AssetImage(ImageManager.backDrawer),
+      //           //   fit: BoxFit.cover,
+      //           // ),
+      //         ),
+      //         child: Padding(
+      //           padding: EdgeInsets.all(Dimensions.defaultPadding),
+      //           child: const DrawerItems(),
+      //         ),
+      //       );
+      //     },
+      //   ),
+      // ),
       body: BlocBuilder<NavigationBloc, NavigationStates>(
           builder: (context, state) {
         return Scaffold(
@@ -103,7 +103,7 @@ class MainScreenPage extends StatelessWidget {
               } else if (navigationState is CallPageState) {
                 screen = const VideoCallsForm();
               } else if (navigationState is SettingsPageState) {
-                screen = const Center(child: Text('Settings Page'));
+                screen = const Center(child: DrawerItems());
               }
               return AnimatedSwitcher(
                 duration: const Duration(milliseconds: 300),

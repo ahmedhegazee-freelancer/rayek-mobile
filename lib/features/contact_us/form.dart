@@ -1,7 +1,9 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:rayik/core/bloc/dark_light_bloc/cubit.dart';
 import 'package:rayik/core/constants/dimensions.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -23,6 +25,7 @@ class ContactUsForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ThemeState themeState = context.watch<ThemeCubit>().state;
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.all(Dimensions.defaultPadding),
@@ -56,6 +59,10 @@ class ContactUsForm extends StatelessWidget {
                 CustomButton(
                   text: Strings.send.tr(),
                   onTap: () {},
+                  // color: themeState == ThemeState.dark
+                  //     ? ColorManager.darkContainerColor
+                  //     : ColorManager.whiteTextColor,
+                  // txtColor: themeState == ThemeState.dark ? ColorManager.whiteTextColor : ColorManager.blackTextColor,
                   isGap: true,
                   width: .9.sw,
                   height: 46.h,

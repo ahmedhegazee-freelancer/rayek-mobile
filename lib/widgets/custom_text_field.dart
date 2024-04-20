@@ -210,7 +210,8 @@ class CustomTextField extends StatelessWidget {
 
                     labelStyle: TextStyle(
                         color: ColorManager.lightGreyColor, fontSize: 12.sp),
-                    hintStyle: AppTextStyle.hintTextField,
+                    hintStyle: AppTextStyle.hintTextField.copyWith(
+                        color: ColorManager.lightGreyColor),
                     labelText: labelText,
                     floatingLabelBehavior: FloatingLabelBehavior.always,
 

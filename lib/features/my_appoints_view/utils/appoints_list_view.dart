@@ -20,7 +20,14 @@ class AppointsListView extends StatelessWidget {
                       return const AppointsContainer();
                     },
                   )
-                  : const EmptyAppoints();
+                  : Column(
+                    children: [
+                      const EmptyAppoints(),
+                      SizedBox(
+                        height: 100.h,
+                      ),
+                    ],
+                  );
             },
             listener: (context, s) {}),
       ),

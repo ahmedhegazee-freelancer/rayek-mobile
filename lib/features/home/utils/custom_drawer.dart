@@ -16,6 +16,7 @@ class _CustomDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ThemeState themeState = context.watch<ThemeCubit>().state;
     return InkWell(
       onTap: () {
         onTap!();
@@ -24,25 +25,31 @@ class _CustomDrawer extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SvgPicture.asset(icon ?? '',
-                  width: 20.w,
-                  height: 20.h,
-                  colorFilter: ColorFilter.mode(
-                      iconColor ?? Colors.white, BlendMode.srcIn)),
-              SizedBox(
-                width: 15.w,
-              ),
-              Text(
-                title ?? '',
-                style: AppTextStyle.h3.copyWith(
-                  color: Colors.white,
-                  fontSize: 14.sp,
+          Padding(
+            padding:
+                EdgeInsets.symmetric(horizontal: Dimensions.defaultPadding),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                SvgPicture.asset(icon ?? '',
+                    width: 20.w,
+                    height: 20.h,
+                    colorFilter: ColorFilter.mode(
+                        iconColor ?? (themeState == ThemeState.light ? Colors.black : Colors.white),
+                        BlendMode.srcIn
+                    )
                 ),
-              ),
-            ],
+                SizedBox(
+                  width: 15.w,
+                ),
+                Text(
+                  title ?? '',
+                  style: AppTextStyle.h3.copyWith(
+                    fontSize: 14.sp,
+                  ),
+                ),
+              ],
+            ),
           ),
           SizedBox(
             height: 10.h,

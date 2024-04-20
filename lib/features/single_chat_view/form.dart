@@ -2,7 +2,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:rayik/core/bloc/dark_light_bloc/cubit.dart';
 import 'package:rayik/core/constants/dimensions.dart';
 import 'package:rayik/core/theme/fonts_style.dart';
 import 'package:shimmer/shimmer.dart';
@@ -17,6 +19,7 @@ class SingleChatFrom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ThemeState themeState = context.read<ThemeCubit>().state;
     return Scaffold(
       body:
       Padding(
@@ -58,7 +61,7 @@ class SingleChatFrom extends StatelessWidget {
                         backgroundColor: ColorManager.primaryColor.withOpacity(.2),
                         child: Center(
                           child: CachedNetworkImage(
-                            imageUrl: 'https://www.sbusinesslondon.ac.uk/blog/wp-content/uploads/2020/07/Consultant-scaled.jpg',
+                            imageUrl: 'https://th.bing.com/th/id/OIP.kUE2yev9qd2Y5zbI0lg4AgAAAA?w=468&h=468&rs=1&pid=ImgDetMain',
                             imageBuilder: (context, imageProvider) => Container(
                               width: 70.0.w,
                               height: 70.0.h,
@@ -117,11 +120,15 @@ class SingleChatFrom extends StatelessWidget {
                 children: [
                   Expanded(
                     child: Container(
-                      height: 47.h,
+                      height: 40.h,
                       decoration: BoxDecoration(
                         color: ColorManager.whiteTextColor,
-                        borderRadius: BorderRadius.circular(Dimensions.defaultPadding),
-                        border: Border.all(color: ColorManager.greyTextColor),
+                        borderRadius: BorderRadius.circular(Dimensions.buttonRadius),
+                        border: Border.all(color:
+                            themeState ==
+                        ThemeState.dark ? ColorManager.primaryColor : ColorManager.greyTextColor,
+                          width: 2.w,
+                        ),
                       ),
                       child: Row(
                         children: [
@@ -133,13 +140,14 @@ class SingleChatFrom extends StatelessWidget {
                                   hintText: Strings.typeYourMessageHere.tr(),
                                   hintStyle: AppTextStyle.h5.copyWith(color: ColorManager.greyTextColor),
                                   border: InputBorder.none,
-                                  contentPadding: EdgeInsets.only(left: 10.w),
+                                  contentPadding: EdgeInsets.only(left: 10.w,bottom: 14.h),
                                 ),
                               ),
                             ),
                           ),
                           IconButton(
-                            icon: const Icon(Icons.send),
+                            icon: const Icon(Icons.send
+                            ,color: ColorManager.primaryColor,),
                             onPressed: () {},
                           ),
                         ],

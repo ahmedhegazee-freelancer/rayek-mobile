@@ -7,6 +7,7 @@ class _ContactSettings extends StatelessWidget {
   const _ContactSettings({Key? key, this.phone, this.email}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    ThemeState themeState = context.watch<ThemeCubit>().state;
     return Column(
       children: [
         // Contact Us Email
@@ -16,7 +17,9 @@ class _ContactSettings extends StatelessWidget {
           },
           child: Container(
             decoration: BoxDecoration(
-              color: ColorManager.blackTextColor,
+              color: themeState == ThemeState.dark
+                  ? ColorManager.darkContainerColor
+                  : ColorManager.blackTextColor,
               borderRadius: BorderRadius.circular(Dimensions.buttonRadius),
             ),
             child: Padding(
@@ -68,7 +71,9 @@ class _ContactSettings extends StatelessWidget {
           },
           child: Container(
             decoration: BoxDecoration(
-              color: ColorManager.blackTextColor,
+              color: themeState == ThemeState.dark
+                  ? ColorManager.darkContainerColor
+                  : ColorManager.blackTextColor,
               borderRadius: BorderRadius.circular(Dimensions.buttonRadius),
             ),
             child: Padding(

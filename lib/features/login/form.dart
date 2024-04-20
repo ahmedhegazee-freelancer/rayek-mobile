@@ -6,7 +6,6 @@ import 'package:rayik/core/constants/dimensions.dart';
 import 'package:rayik/core/router/router.dart';
 import 'package:rayik/core/theme/fonts_style.dart';
 import 'package:rayik/features/login/utils/select_user_type.dart';
-import 'package:rayik/features/login/utils/social_sign.dart';
 import 'package:rayik/features/signup/form.dart';
 import 'package:rayik/widgets/custom_button.dart';
 import '../../core/constants/strings.dart';

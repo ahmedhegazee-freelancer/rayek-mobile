@@ -1,6 +1,5 @@
 part of '../form.dart';
 
-
 class _UploadFileForm extends StatefulWidget {
   const _UploadFileForm({Key? key}) : super(key: key);
 
@@ -47,19 +46,33 @@ class _UploadFileFormState extends State<_UploadFileForm> {
         ),
         SizedBox(height: 20.h),
         ..._pickedFiles.map((file) => ListTile(
-          title: Text(file.files.single.name),
-          trailing: IconButton(
-            icon: const Icon(Icons.close),
-            onPressed: () {
-              setState(() {
-                _pickedFiles.remove(file);
-              });
-            },
-          ),
-        )),
+              title: Text(file.files.single.name),
+              trailing: IconButton(
+                icon: const Icon(Icons.close),
+                onPressed: () {
+                  setState(() {
+                    _pickedFiles.remove(file);
+                  });
+                },
+              ),
+            )),
         InkWell(
           onTap: () async {
-            final result = await FilePicker.platform.pickFiles(allowedExtensions: ['pdf', 'doc', 'docx', 'ppt', 'pptx', 'xls', 'xlsx', 'txt', 'jpg', 'jpeg', 'png' ]);
+            final result = await FilePicker.platform.pickFiles(
+                type: FileType.custom,
+                allowedExtensions: [
+                  'pdf',
+                  'doc',
+                  'docx',
+                  'ppt',
+                  'pptx',
+                  'xls',
+                  'xlsx',
+                  'txt',
+                  'jpg',
+                  'jpeg',
+                  'png'
+                ]);
             try {
               if (result != null) {
                 setState(() {
@@ -106,11 +119,7 @@ class _UploadFileFormState extends State<_UploadFileForm> {
           "PDF, DOC, DOCX, PPT, PPTX, XLS, XLSX, TXT, JPG, JPEG, PNG",
           style: AppTextStyle.h6,
         ),
-        SizedBox(
-          height: 20.h
-        ),
-
-
+        SizedBox(height: 20.h),
       ],
     );
   }
