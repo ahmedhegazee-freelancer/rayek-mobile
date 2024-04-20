@@ -63,7 +63,11 @@ class _Categories extends StatelessWidget {
                   ),
                   color: state == ThemeState.dark
                       ? ColorManager.darkContainerColor
-                      : ColorManager.whiteTextColor,
+                      :
+                  index == 0
+                      ? ColorManager.blackTextColor
+                      :
+                  ColorManager.whiteTextColor,
                   boxShadow: state == ThemeState.dark
                       ? [
                           BoxShadow(
