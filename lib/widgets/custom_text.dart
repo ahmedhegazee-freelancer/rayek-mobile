@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart' hide TextDirection;
 import 'package:flutter/material.dart';
+import 'package:rayik/core/constants/app_constants.dart';
 import '../core/constants/color_manager.dart';
 
 class CustomText extends StatelessWidget {
@@ -42,7 +43,9 @@ class CustomText extends StatelessWidget {
             fontWeight: fontWeight,
             color: color ?? ColorManager.optionTextColor,
             overflow: textOverFlow,
-            fontFamily: 'Cairo',
+            fontFamily: context.locale == const Locale('ar')
+                ? AppConstants.arabicFont
+                : AppConstants.englishFont,
           ),
       maxLines: lines,
       //overflow: TextOverflow.ellipsis,

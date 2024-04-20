@@ -1,8 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:rayik/core/bloc/dark_light_bloc/cubit.dart';
 import 'package:rayik/core/constants/dimensions.dart';
 import 'package:rayik/core/constants/icon_manager.dart';
 import 'package:rayik/core/router/router.dart';
@@ -32,6 +34,7 @@ class ConsultantContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ThemeState themeState = context.watch<ThemeCubit>().state;
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: InkWell(
@@ -42,9 +45,16 @@ class ConsultantContainer extends StatelessWidget {
           height: 210.h,
           width: 241.w,
           decoration: BoxDecoration(
-            color: ColorManager.whiteTextColor,
+            color:
+            themeState == ThemeState.dark
+                ? ColorManager.darkContainerColor
+                : ColorManager.whiteTextColor,
             borderRadius: BorderRadius.circular(Dimensions.buttonRadius),
-            boxShadow: [
+            boxShadow:
+            themeState == ThemeState.dark
+                ? []
+                :
+            [
               BoxShadow(
                 color: ColorManager.greyTextColor.withOpacity(0.5),
                 spreadRadius: 1,
@@ -70,14 +80,20 @@ class ConsultantContainer extends StatelessWidget {
                   //   fit: BoxFit.fill,
                   // ),
                 ),
-                child: CachedNetworkImage(
-                  imageUrl:
-                      consultantImage ??
-                      "https://www.sbusinesslondon.ac.uk/blog/wp-content/uploads/2020/07/Consultant-scaled.jpg",
-                  fit: BoxFit.fill,
-                  placeholder: (context, url) =>
-                      const Center(child: CircularProgressIndicator()),
-                  errorWidget: (context, url, error) => const Icon(Icons.error),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(Dimensions.buttonRadius),
+                    topRight: Radius.circular(Dimensions.buttonRadius),
+                  ),
+                  child: CachedNetworkImage(
+                    imageUrl:
+                        consultantImage ??
+                        "https://www.sbusinesslondon.ac.uk/blog/wp-content/uploads/2020/07/Consultant-scaled.jpg",
+                    fit: BoxFit.fill,
+                    placeholder: (context, url) =>
+                        const Center(child: CircularProgressIndicator()),
+                    errorWidget: (context, url, error) => const Icon(Icons.error),
+                  ),
                 ),
               ),
               Expanded(

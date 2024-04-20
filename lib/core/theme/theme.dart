@@ -10,17 +10,18 @@ ThemeData lightTheme = ThemeData(
     onPrimary: Color(0xFF44b1c2),
     onSecondary: Color(0xFF5a5b61),
     surface: Color(0xFFc0c1c7),
-
-  ),
-  datePickerTheme: const DatePickerThemeData(
-    // header bg color
+    primaryContainer: Color(0xFF090817),
   ),
 );
 
 ThemeData darkTheme = ThemeData(
+
+
+
   scaffoldBackgroundColor: const Color(0xFF090817),
   colorScheme: const ColorScheme.dark(
-    primary: Color(0xFFf8f8ff),
+    primary: Color(0xFF090817),
+    primaryContainer: Colors.white,
     secondary: Color(0xFF090817),
     onPrimary: Color(0xFF44b1c2),
     onSecondary: Color(0xFF5a5b61),

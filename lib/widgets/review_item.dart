@@ -2,8 +2,11 @@
 
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:rayik/core/bloc/dark_light_bloc/cubit.dart';
+import 'package:rayik/core/constants/color_manager.dart';
 
 import '../core/constants/dimensions.dart';
 import '../core/constants/hexa_color.dart';
@@ -14,11 +17,14 @@ class ReviewItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ThemeState themeState = context.watch<ThemeCubit>().state;
     return Column(
       children: [
         Container(
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: themeState == ThemeState.dark
+                ? HexColor("#1A1A1A")
+                : ColorManager.whiteTextColor,
             borderRadius: BorderRadius.circular(Dimensions.buttonRadius),
             boxShadow: [
               BoxShadow(

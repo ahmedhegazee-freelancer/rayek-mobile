@@ -91,4 +91,12 @@ class IconManager {
   static const String noCalls = '${baseBase}noCalls.svg';
   // noChats
   static const String noChats = '${baseBase}chats.svg';
+  // date_onb_ar_1
+  static const String dateOnbAr1 = '${baseBase}date_onb_ar_1.svg';
+  // date_onb_ar_2
+  static const String dateOnbAr2 = '${baseBase}date_onb_ar_2.svg';
+  // date_onb_en_1
+  static const String dateOnbEn1 = '${baseBase}date_onb_en_1.svg';
+  // date_onb_en_2
+  static const String dateOnbEn2 = '${baseBase}date_onb_en_2.svg';
 }

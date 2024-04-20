@@ -7,7 +7,7 @@ class _Title extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 60.h,
-      color: ColorManager.whiteTextColor,
+      color: Theme.of(context).scaffoldBackgroundColor,
       child: Padding(
         padding:  EdgeInsets.only(left: Dimensions.defaultPadding, right: Dimensions.defaultPadding),
         child: Column(children: [

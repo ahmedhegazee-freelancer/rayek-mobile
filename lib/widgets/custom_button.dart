@@ -80,6 +80,8 @@ class CustomButton extends StatelessWidget {
                               : ColorManager.whiteTextColor)
                           : ColorManager.primaryColor),
                   fontSize: fontSize ?? 16.sp,
+
+
                 ),
                 iconData == null ? const SizedBox() : iconData!,
               ],

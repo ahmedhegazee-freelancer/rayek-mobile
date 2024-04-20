@@ -25,6 +25,7 @@ class AppConstants{
   // Bloc
   static ThemeCubit themeBloc = ThemeCubit();
 
+
   // Fonts
   static const String arabicFont = 'Arb';
   static const String englishFont = 'UberMove';

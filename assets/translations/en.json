@@ -142,5 +142,12 @@
   "chats": "Chats",
   "manageAndViewByIdChats": "Manage and view your chat history",
   "noPreviousChatsMessage": "You have no chats. Tap the button below to find an expert to start!",
-  "type_your_message_here": "Type your message here"
+  "type_your_message_here": "Type your message here",
+  "starting_at": "Starting at",
+  "book_a_call": "Book a call",
+  "saving_time_and_effort": "Saving time and effort",
+  "biggest_community": "Biggest community",
+  "easy_to_use": "Easy to use",
+  "get_started": "Get started",
+  "explore_app": "Explore app"
 }

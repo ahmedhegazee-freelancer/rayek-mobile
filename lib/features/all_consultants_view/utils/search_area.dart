@@ -7,7 +7,7 @@ class _SearchArea extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: ColorManager.whiteTextColor,
+      color: Theme.of(context).scaffoldBackgroundColor,
       child: Padding(
           padding: EdgeInsets.symmetric(horizontal: Dimensions.defaultPadding),
           child: Column(

@@ -141,8 +141,35 @@
   "chats": "الدردشات",
   "manageAndViewByIdChats": "إدارة وعرض سجل الدردشات الخاص بك",
   "noPreviousChatsMessage": "ليس لديك أي دردشات . اضغط على الزر أدناه للعثور على خبير للبدء!",
-  "type_your_message_here": "اكتب رسالتك هنا"
-
+  "type_your_message_here": "اكتب رسالتك هنا",
+"starting_at": "ابتداء من",
+  "book_a_call": "حجز مكالمة",
+  "saving_time_and_effort": "توفير الوقت والجهد",
+  "biggest_community": "أكبر مجتمع للمستشارين",
+  "easy_to_use": "سهل الاستخدام",
+ "get_started": "ابدأ",
+  "no_internet": "لا يوجد اتصال بالإنترنت",
+  "try_again": "حاول مرة أخرى",
+  "no_data": "لا توجد بيانات",
+  "no_notifications": "لا توجد إشعارات",
+  "no_messages": "لا توجد رسائل",
+  "no_calls": "لا توجد مكالمات",
+  "no_chats": "لا توجد دردشات",
+  "no_appointments": "لا توجد مواعيد",
+  "no_articles_found": "لم يتم العثور على مقالات",
+  "no_consultants_found": "لم يتم العثور على مستشارين",
+  "no_categories_found": "لم يتم العثور على اقسام",
+  "no_experts_found": "لم يتم العثور على خبراء",
+  "no_services_found": "لم يتم العثور على خدمات",
+  "no_appointments_found": "لم يتم العثور على مواعيد",
+  "no_calls_found": "لم يتم العثور على مكالمات",
+  "no_chats_found": "لم يتم العثور على دردشات",
+  "no_messages_found": "لم يتم العثور على رسائل",
+  "no_notifications_found": "لم يتم العثور على إشعارات",
+  "no_files_found": "لم يتم العثور على ملفات",
+  "no_topics_found": "لم يتم العثور على مواضيع",
+  "no_reviews_found": "لم يتم العثور على تقييمات",
+  "explore_app" : "استكشف التطبيق"
 
 
 

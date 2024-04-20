@@ -22,7 +22,11 @@ class SignUpForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Scaffold(
       body: Padding(
-        padding:  EdgeInsets.all(Dimensions.defaultPadding),
+        padding:  EdgeInsets.only(
+          left: Dimensions.defaultPadding.w,
+          right: Dimensions.defaultPadding.w,
+          top: Dimensions.defaultPadding.h,
+        ),
         child: GestureDetector(
           onTap: () {
             // hide keyboard when user taps outside the text field

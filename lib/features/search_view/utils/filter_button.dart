@@ -16,7 +16,7 @@ class _FilterButton extends StatelessWidget {
               height: 45.h,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(Dimensions.buttonRadius),
-                  border: Border.all(color: Colors.grey.withOpacity(0.5), width: 2.w, style: BorderStyle.solid),
+                  border: Border.all(color: ColorManager.fadeGreyBorderColor, width: 2.w, style: BorderStyle.solid),
               ),
               child: Padding(
                 padding: const EdgeInsets.all(10.0),

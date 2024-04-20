@@ -166,6 +166,15 @@ class Strings{
   static String noPreviousChatsMessage = "noPreviousChatsMessage";
   // type_your_message_here
   static String typeYourMessageHere = "type_your_message_here";
+  static String startingAt = "starting_at";
+  static String savingTimeAndEffort = "saving_time_and_effort";
+  static String biggestCommunity = "biggest_community";
+  static String easyToUse = "easy_to_use";
+  static String getStarted = "get_started";
+static String bookACall = "book_a_call";
+// Explore App
+static String exploreApp = "explore_app";
+
 
 
 
