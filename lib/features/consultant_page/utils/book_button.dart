@@ -15,32 +15,39 @@ class _BookButton extends StatelessWidget {
           child:               Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Container(
-                height: 60.h,
-                width: .42.sw,
-                decoration: BoxDecoration(
-                  color: themeState == ThemeState.light
-                      ? ColorManager.blackTextColor
-                      : ColorManager.whiteTextColor,
-                  borderRadius:
-                  BorderRadius.circular(Dimensions.buttonRadius),
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      Strings.bookACall.tr(),
-                      style: AppTextStyle.h3.copyWith(
-                        color: themeState == ThemeState.light
-                            ? ColorManager.whiteTextColor
-                            : ColorManager.blackTextColor,
+              InkWell(
+                onTap: () {
+                  MagicRouter.navigateTo(
+                    const BookServiceForm(),
+                  );
+                },
+                child: Container(
+                  height: 60.h,
+                  width: .42.sw,
+                  decoration: BoxDecoration(
+                    color: themeState == ThemeState.light
+                        ? ColorManager.blackTextColor
+                        : ColorManager.whiteTextColor,
+                    borderRadius:
+                    BorderRadius.circular(Dimensions.buttonRadius),
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        Strings.bookACall.tr(),
+                        style: AppTextStyle.h3.copyWith(
+                          color: themeState == ThemeState.light
+                              ? ColorManager.whiteTextColor
+                              : ColorManager.blackTextColor,
+                        ),
                       ),
-                    ),
-                    Text(
-                      "(\$ 90 / 30 min)",
-                      style: AppTextStyle.h4Grey,
-                    ),
-                  ],
+                      Text(
+                        "(\$ 90 / 30 min)",
+                        style: AppTextStyle.h4Grey,
+                      ),
+                    ],
+                  ),
                 ),
               ),
               Container(

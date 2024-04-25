@@ -1,8 +1,16 @@
 part of '../form.dart';
 
-Widget _buildServiceContainer(BuildContext context, String serviceType, String iconPath, String textLabel,
-    bool isSelected) {
-  Color colorFilter = isSelected ? Colors.white : Colors.black;
+Widget _buildServiceContainer(BuildContext context, String serviceType,
+    String iconPath, String textLabel, bool isSelected) {
+  ThemeState themeState = context.watch<ThemeCubit>().state;
+
+  Color colorFilter = isSelected
+      ? themeState == ThemeState.light
+          ? Colors.white
+          : Colors.black
+      : themeState == ThemeState.light
+          ? Colors.black
+          : Colors.white;
 
   return GestureDetector(
     onTap: () {
@@ -21,7 +29,13 @@ Widget _buildServiceContainer(BuildContext context, String serviceType, String i
     child: Container(
       height: 70.h,
       decoration: BoxDecoration(
-        color: isSelected ? Colors.black : Colors.white,
+        color: isSelected
+            ? themeState == ThemeState.light
+                ? Colors.black
+                : Colors.white
+            : themeState == ThemeState.light
+                ? Colors.white
+                : ColorManager.darkGreyColor,
         borderRadius: BorderRadius.circular(Dimensions.buttonRadius),
         boxShadow: [
           BoxShadow(
@@ -35,8 +49,7 @@ Widget _buildServiceContainer(BuildContext context, String serviceType, String i
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
-          mainAxisAlignment:
-          MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Row(
               children: [
@@ -44,19 +57,20 @@ Widget _buildServiceContainer(BuildContext context, String serviceType, String i
                   iconPath,
                   height: 20.h,
                   width: 20.w,
-                  colorFilter:
-                  ColorFilter.mode(colorFilter, BlendMode.srcIn),
+                  colorFilter: ColorFilter.mode(colorFilter, BlendMode.srcIn),
                 ),
                 SizedBox(width: 5.w),
                 Text(
                   textLabel.tr(),
-                  style:
-                  AppTextStyle.h4Grey.copyWith(color: colorFilter,),
+                  style: AppTextStyle.h4Grey.copyWith(
+                    color: colorFilter,
+                  ),
                 ),
               ],
             ),
             SizedBox(height: 10.h),
-            Text("KWD 100",
+            Text(
+              "KWD 100",
               style: AppTextStyle.h3.copyWith(
                 fontWeight: FontWeight.w700,
                 color: colorFilter,

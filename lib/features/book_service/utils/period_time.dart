@@ -10,10 +10,11 @@ class _PeriodTime extends StatefulWidget {
 }
 
 class _PeriodTimeState extends State<_PeriodTime> {
-   int?  selectedSlot ;
+  int? selectedSlot;
 
   @override
   Widget build(BuildContext context) {
+    ThemeState themeState = context.watch<ThemeCubit>().state;
     return BlocProvider(
       create: (context) => ServiceCubit(),
       child: Column(
@@ -36,7 +37,6 @@ class _PeriodTimeState extends State<_PeriodTime> {
                   state is PeriodSelected
                       ? SizedBox(
                           height: 70.h,
-
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: SizedBox(
@@ -54,7 +54,6 @@ class _PeriodTimeState extends State<_PeriodTime> {
                                   return GestureDetector(
                                     onTap: () {
                                       setState(() {
-
                                         selectedSlot = index;
                                       });
                                     },
@@ -62,11 +61,11 @@ class _PeriodTimeState extends State<_PeriodTime> {
                                       height: 20.h,
                                       decoration: BoxDecoration(
                                         color: selectedSlot == index
-                                            ? HexColor('#FFA3A3').withOpacity(.7)
+                                            ? HexColor('#FFA3A3')
+                                                .withOpacity(.7)
                                             : Colors.transparent,
                                         // shape: BoxShape.circle,
-                                        borderRadius: BorderRadius.circular(
-                                            30),
+                                        borderRadius: BorderRadius.circular(30),
                                       ),
                                       child: Center(
                                         child: Padding(
@@ -74,10 +73,17 @@ class _PeriodTimeState extends State<_PeriodTime> {
                                           child: Text('10:00 AM',
                                               style: AppTextStyle.h3.copyWith(
                                                   color: selectedSlot == index
-                                                      ? Colors.white
-                                                      : Colors.black,
+                                                      ? themeState ==
+                                                              ThemeState.light
+                                                          ? Colors.white
+                                                          : Colors.white
+                                                      : themeState ==
+                                                              ThemeState.light
+                                                          ? Colors.black
+                                                          : Colors.white,
                                                   fontSize: 12.sp,
-                                                  fontWeight: FontWeight.normal)),
+                                                  fontWeight:
+                                                      FontWeight.normal)),
                                         ),
                                       ),
                                     ),
@@ -99,8 +105,9 @@ class _PeriodTimeState extends State<_PeriodTime> {
                           isGap: true,
                           iconData: const BackIconInButton(),
                         )
-                      : SizedBox(height: 10.h,),
-
+                      : SizedBox(
+                          height: 10.h,
+                        ),
                   SizedBox(height: 20.h),
                 ],
               );
@@ -115,14 +122,27 @@ class _PeriodTimeState extends State<_PeriodTime> {
       String iconPath, String textLabel, ServiceState state) {
     bool isSelected = state is PeriodSelected &&
         periodName == state.period.toString().split('.').last;
-    Color colorFilter = isSelected ? Colors.white : Colors.black;
+    ThemeState themeState = context.watch<ThemeCubit>().state;
+
+    Color colorFilter = isSelected
+        ? themeState == ThemeState.light
+            ? Colors.white
+            : ColorManager.primaryColor
+        : themeState == ThemeState.light
+            ? Colors.black
+            : Colors.white;
 
     return InkWell(
       onTap: () => context.read<ServiceCubit>().selectTime(periodName),
       child: Container(
         width: 100.w,
         decoration: BoxDecoration(
-          color: isSelected ? ColorManager.primaryColor : Colors.white,
+          color: isSelected ?
+          themeState == ThemeState.light ?
+          ColorManager.primaryColor : Colors.white
+          : themeState == ThemeState.light
+              ? Colors.white
+              : ColorManager.darkGreyColor,
           borderRadius: BorderRadius.circular(Dimensions.buttonRadius),
           boxShadow: [
             BoxShadow(
@@ -144,7 +164,11 @@ class _PeriodTimeState extends State<_PeriodTime> {
                       height: 30.h,
                       width: 30.w,
                       colorFilter:
-                          const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+                           ColorFilter.mode(
+                              themeState == ThemeState.light
+                                  ? Colors.white
+                                  : ColorManager.primaryColor,
+                               BlendMode.srcIn),
                     )
                   : SvgPicture.asset(
                       iconPath,
