@@ -169,7 +169,10 @@
   "no_files_found": "لم يتم العثور على ملفات",
   "no_topics_found": "لم يتم العثور على مواضيع",
   "no_reviews_found": "لم يتم العثور على تقييمات",
-  "explore_app" : "استكشف التطبيق"
+  "explore_app" : "استكشف التطبيق",
+  "top_questions": "أهم الأسئلة",
+  "frequently_asked_questions": "الأسئلة المتكررة",
+  "top_answers": "أفضل الإجابات"
 
 
 

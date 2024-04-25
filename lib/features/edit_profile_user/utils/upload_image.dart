@@ -22,6 +22,7 @@ class _UploadContainerState extends State<_UploadContainer> {
 
   @override
   Widget build(BuildContext context) {
+    ThemeState themeState = context.watch<ThemeCubit>().state;
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 50.w),
       child: GestureDetector(
@@ -29,33 +30,44 @@ class _UploadContainerState extends State<_UploadContainer> {
           showModalBottomSheet(
               context: context,
               builder: (BuildContext bc) {
-                return Wrap(
-                  children: <Widget>[
-                    ListTile(
-                      leading: const Icon(
-                        Icons.photo_library_outlined,
-                        color: ColorManager.blackTextColor,
+                return Container(
+                  color: themeState == ThemeState.light
+                      ? ColorManager.whiteTextColor
+                      : ColorManager.darkContainerColor,
+                  child: Wrap(
+
+                    children: <Widget>[
+                      ListTile(
+                        leading: Icon(
+                          Icons.photo_library_outlined,
+                          color: themeState == ThemeState.light
+                              ? ColorManager.blackTextColor
+                              : ColorManager.whiteTextColor,
+                        ),
+                        title:
+                            Text(Strings.gallery.tr(), style: AppTextStyle.h3),
+                        onTap: () {
+                          getImage(ImageSource.gallery);
+                          Navigator.of(context).pop();
+                        },
                       ),
-                      title:
-                          Text(Strings.gallery.tr(), style: AppTextStyle.h3),
-                      onTap: () {
-                        getImage(ImageSource.gallery);
-                        Navigator.of(context).pop();
-                      },
-                    ),
-                    ListTile(
-                      leading: const Icon(
-                        Icons.photo_camera_outlined,
-                        color: ColorManager.blackTextColor,
+                      ListTile(
+                        leading: Icon(
+                          Icons.photo_camera_outlined,
+                          color:
+                          themeState == ThemeState.light
+                              ? ColorManager.blackTextColor
+                              : ColorManager.whiteTextColor,
+                        ),
+                        title:
+                            Text(Strings.camera.tr(), style: AppTextStyle.h3),
+                        onTap: () {
+                          getImage(ImageSource.camera);
+                          Navigator.of(context).pop();
+                        },
                       ),
-                      title:
-                          Text(Strings.camera.tr(), style: AppTextStyle.h3),
-                      onTap: () {
-                        getImage(ImageSource.camera);
-                        Navigator.of(context).pop();
-                      },
-                    ),
-                  ],
+                    ],
+                  ),
                 );
               });
         },
@@ -81,6 +93,11 @@ class _UploadContainerState extends State<_UploadContainer> {
                             IconManager.uploadImage,
                             height: 24.h,
                             width: 24.w,
+                            colorFilter: ColorFilter.mode(
+                              themeState == ThemeState.light
+                                  ? ColorManager.blackTextColor
+                                  : ColorManager.primaryColor.withOpacity(.5),
+                                BlendMode.srcIn)
                           ),
                         ),
                         SizedBox(height: 5.h),

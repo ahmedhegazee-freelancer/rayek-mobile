@@ -10,23 +10,23 @@ class _MyAppointsTitle extends StatelessWidget {
       child: Column(
         children: [
 
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              CircleAvatar(
-                radius: 15.r,
-                backgroundColor: ColorManager.primaryColor.withOpacity(.2),
-                child: Center(
-                  child:  CustomBackButton(
-                    size: 15.sp,
-                    color: ColorManager.primaryColor,
-                    isColored: true,
-                    iosOnly: true,
-                  ),
-                ),
-              ),
-            ],
-          ),
+          // Row(
+          //   mainAxisAlignment: MainAxisAlignment.end,
+          //   children: [
+          //     CircleAvatar(
+          //       radius: 15.r,
+          //       backgroundColor: ColorManager.primaryColor.withOpacity(.2),
+          //       child: Center(
+          //         child:  CustomBackButton(
+          //           size: 15.sp,
+          //           color: ColorManager.primaryColor,
+          //           isColored: true,
+          //           iosOnly: true,
+          //         ),
+          //       ),
+          //     ),
+          //   ],
+          // ),
           SizedBox(
             height: 10.h,
           ),

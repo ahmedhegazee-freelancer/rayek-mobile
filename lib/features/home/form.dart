@@ -10,6 +10,7 @@ import 'package:rayik/core/constants/icon_manager.dart';
 import 'package:rayik/core/router/router.dart';
 import 'package:rayik/core/theme/fonts_style.dart';
 import 'package:rayik/features/categories_view/form.dart';
+import 'package:rayik/features/consultants_view/form.dart';
 import 'package:rayik/features/home/utils/categories_widget.dart';
 import 'package:rayik/features/home/utils/top_consultants.dart';
 import 'package:rayik/features/login/form.dart';
@@ -21,9 +22,8 @@ import '../../core/constants/color_manager.dart';
 import '../../core/constants/strings.dart';
 import '../all_consultants_view/form.dart';
 import '../blog_screen/form.dart';
-import '../blogs/form.dart';
 import '../contact_us/form.dart';
-import '../edit_profile/form.dart';
+import '../edit_profile_user/form.dart';
 import '../mian_home/page.dart';
 import '../search_view/form.dart';
 import '../select_language_form/form.dart';
@@ -43,8 +43,6 @@ class MainScreenForm extends StatelessWidget {
         children: [
           Column(
             children: [
-
-
               SizedBox(
                 height: 18.h,
               ),
@@ -56,12 +54,9 @@ class MainScreenForm extends StatelessWidget {
                 child: ListView(
                   physics: const BouncingScrollPhysics(),
                   children: [
-
-
                     _ViewAllRow(
                       title: Strings.categories.tr(),
                       route: const CategoriesView(isFromDrawer: true),
-
                     ),
                     SizedBox(
                       height: 5.h,
@@ -82,17 +77,24 @@ class MainScreenForm extends StatelessWidget {
                       height: 12.h,
                     ),
                     _ViewAllRow(
-                      title: Strings.mostPopularArticles.tr(),
-                      route: const BlogsForm(),
+                      title: Strings.sports.tr(),
+                      route: const ConsultantsView(),
                     ),
                     SizedBox(
                       height: 5.h,
                     ),
-                    const _MostPopular(),
+                    const TopConsultantsListView(),
                     SizedBox(
                       height: 12.h,
                     ),
-
+                    _ViewAllRow(
+                      title: Strings.law.tr(),
+                      route: const ConsultantsView(),
+                    ),
+                    SizedBox(
+                      height: 5.h,
+                    ),
+                    const TopConsultantsListView(),
                   ],
                 ),
               ),
@@ -103,5 +105,3 @@ class MainScreenForm extends StatelessWidget {
     );
   }
 }
-
-

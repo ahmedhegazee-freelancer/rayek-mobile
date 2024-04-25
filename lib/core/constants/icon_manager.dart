@@ -99,4 +99,10 @@ class IconManager {
   static const String dateOnbEn1 = '${baseBase}date_onb_en_1.svg';
   // date_onb_en_2
   static const String dateOnbEn2 = '${baseBase}date_onb_en_2.svg';
+  // verified
+  static const String verified = '${baseBase}verified.svg';
+  // chat_filled
+  static const String chatFilled = '${baseBase}chat_filled.svg';
+  // verify
+  static const String verify = '${baseBase}verify.svg';
 }

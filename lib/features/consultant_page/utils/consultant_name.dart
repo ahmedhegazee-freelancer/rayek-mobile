@@ -14,12 +14,17 @@ class _ConsultantName extends StatelessWidget {
     return Column(
       children: [
         Row(
-          mainAxisAlignment: MainAxisAlignment.start,
+          //mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
               name ?? '',
               style: AppTextStyle.h1,
             ),
+            SizedBox(width: 5.w),
+            Image.asset(
+              ImageManager.verify,
+              height: 25.h,
+              width: 25.w,)
           ],
         ),
         SizedBox(height: 10.h),

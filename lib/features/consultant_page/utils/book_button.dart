@@ -3,21 +3,72 @@ part of '../form.dart';
 class _BookButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return CustomButton(
-      onTap: () {
-        MagicRouter.navigateTo(const BookServiceTitle());
-      },
-      text: Strings.bookConsultation.tr(),
-      textStyle: AppTextStyle.buttonBlackStyle,
-      color: Colors.black,
-      txtColor: Colors.white,
-      radius: Dimensions.buttonRadius,
-      width: 1.sw,
-      height: 47.h,
-      borderWidth: 0.0,
-      borderColor: Colors.transparent,
-      iconData: const BackIconInButton(),
-      isGap: true,
+    ThemeState themeState = context.watch<ThemeCubit>().state;
+    return Container(
+      color: themeState == ThemeState.light
+          ? ColorManager.whiteTextColor
+          : ColorManager.blackTextColor,
+      child: Padding(
+          padding: EdgeInsets.all(
+            Dimensions.defaultPadding,
+          ),
+          child:               Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Container(
+                height: 60.h,
+                width: .42.sw,
+                decoration: BoxDecoration(
+                  color: themeState == ThemeState.light
+                      ? ColorManager.blackTextColor
+                      : ColorManager.whiteTextColor,
+                  borderRadius:
+                  BorderRadius.circular(Dimensions.buttonRadius),
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      Strings.bookACall.tr(),
+                      style: AppTextStyle.h3.copyWith(
+                        color: themeState == ThemeState.light
+                            ? ColorManager.whiteTextColor
+                            : ColorManager.blackTextColor,
+                      ),
+                    ),
+                    Text(
+                      "(\$ 90 / 30 min)",
+                      style: AppTextStyle.h4Grey,
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                height: 60.h,
+                width: .42.sw,
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: ColorManager.greyTextColor,
+                    width: 1,
+                  ),
+                  borderRadius:
+                  BorderRadius.circular(Dimensions.buttonRadius),
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(Strings.message.tr(), style: AppTextStyle.h3),
+                    Text(
+                      "${Strings.startingAt.tr()}  10 \$",
+                      style: AppTextStyle.h4Grey,
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          )
+
+      ),
     );
   }
 }

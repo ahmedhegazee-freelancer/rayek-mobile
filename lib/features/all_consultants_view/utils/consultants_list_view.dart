@@ -1,32 +1,32 @@
 part of '../form.dart';
 
-class _ConsultantsListView extends StatelessWidget {
-  final int? itemCount;
-  const _ConsultantsListView({Key? key, this.itemCount}) : super(key: key);
+class ConsultantListView extends StatelessWidget {
+  final double? height ;
+  final double? width ;
 
+  const ConsultantListView({
+    Key? key,
+    this.height,
+    this.width,
+  }) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding:  EdgeInsets.only(left: Dimensions.defaultPadding, right: Dimensions.defaultPadding),
-      child: SizedBox(
-        height: .7.sh,
-        width: 1.sw,
-        child: GridView.builder(
-            itemCount: itemCount??6,
-            shrinkWrap: true,
-            scrollDirection: Axis.vertical,
-            physics: const BouncingScrollPhysics(),
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                childAspectRatio: .55,
-                crossAxisSpacing: 0.w,
-                mainAxisSpacing: 5.h),
-            itemBuilder: (context, index) {
-              return const ConsultantContainer(
-                isTopConsultant: false, // Using the same container for top and normal consultants to make name with h3 text style
-              );
-            }),
-      ),
-    );
+    return SizedBox(
+        height: height ?? .7.sh,
+        width: width ?? 1.sw,
+        child: ListView.builder(
+          itemCount: 5,
+          itemBuilder: (context, index) {
+            return Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: InkWell(
+                onTap: () {
+                  // MagicRouter.navigateTo(const ConsultantForm());
+                },
+                child: const ConsultantContainerV(),
+              ),
+            );
+          },
+        ));
   }
 }

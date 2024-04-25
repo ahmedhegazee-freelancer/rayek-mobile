@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:rayik/features/all_consultants_view/form.dart';
 
 import '../../core/constants/color_manager.dart';
 import '../../core/constants/dimensions.dart';
@@ -23,43 +24,61 @@ class ConsultantsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: EdgeInsets.
-        only(
-          left: Dimensions.defaultPadding,
-          right: Dimensions.defaultPadding,
-          top: Dimensions.defaultPadding,
-        ),
-        child: Column(
-          children: [
-            SizedBox(height: 20.h),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                CircleAvatar(
-                  radius: 15.r,
-                  backgroundColor: ColorManager.primaryColor.withOpacity(.2),
-                  child: Center(
-                    child:  CustomBackButton(
-                      size: 15.sp,
-                      color: ColorManager.primaryColor,
-                      isColored: true,
-                      iosOnly: true,
+      body: NestedScrollView(
+        headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+          return <Widget>[
+            SliverAppBar(
+              expandedHeight: 190.h,
+              backgroundColor: ColorManager.primaryColor,
+              flexibleSpace: FlexibleSpaceBar(
+                background: Container(
+                  height: 150.h,
+                  color: Theme.of(context).scaffoldBackgroundColor,
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: 80.h,
+                      ),
+                      const _SearchArea(),
+                      SizedBox(
+                        height: 10.h,
+                      ),
+                    ],
+                  ),
+                ),
+                collapseMode: CollapseMode.parallax,
+              ),
+              pinned: true,
+              automaticallyImplyLeading: false,
+              actions: [
+                Padding(
+                  padding: EdgeInsets.only(
+                    left: Dimensions.defaultPadding,
+                    right: Dimensions.defaultPadding,
+                  ),
+                  child: CircleAvatar(
+                    radius: 15.r,
+                    backgroundColor: ColorManager.primaryColor.withOpacity(.45),
+                    child: Center(
+                      child: Center(
+                        child: CustomBackButton(
+                          size: 15.sp,
+                          color: ColorManager.whiteTextColor,
+                          isColored: true,
+                          iosOnly: true,
+                        ),
+                      ),
                     ),
                   ),
                 ),
               ],
             ),
-            SizedBox(
-              height: 10.h,
-            ),
-            const _SearchArea(),
-            SizedBox(
-              height: 20.h,
-            ),
-            const _ConsultantsListView(),
-          ],
-        ),
+          ];
+        },
+        body:  Scaffold(
+            body: ConsultantListView(
+              height: 1.sh,
+            ),),
       ),
     );
   }

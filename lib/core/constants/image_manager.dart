@@ -10,4 +10,7 @@ class ImageManager{
   static const String onboarding3 = '${baseBase}on_b3.jpg';
   static const String onboarding4 = '${baseBase}on-b4.jpg';
 
+  // verify
+  static const String verify = '${baseBase}verify.png';
+
 }

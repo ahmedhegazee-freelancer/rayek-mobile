@@ -174,6 +174,12 @@ class Strings{
 static String bookACall = "book_a_call";
 // Explore App
 static String exploreApp = "explore_app";
+// Top Questions
+static String topQuestions = "top_questions";
+// frequently_asked_questions
+static String frequentlyAskedQuestions = "frequently_asked_questions";
+// top_answers
+static String topAnswers = "top_answers";
 
 
 
