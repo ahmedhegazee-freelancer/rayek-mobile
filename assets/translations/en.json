@@ -61,6 +61,7 @@
   "online": "Online",
     "offline": "Offline",
   "update_profile": "Update Profile",
+  "next_step": "Next step",
   "create_your_profile": "Create your profile",
   "upload_image": "Upload your profile image",
   "hide_status": "Hide profile ",
@@ -152,5 +153,6 @@
   "explore_app": "Explore app",
   "top_questions": "Top Questions",
   "frequently_asked_questions": "Frequently Asked Questions",
-  "top_answers": "Top Answers"
+  "top_answers": "Top Answers",
+  "edit_profile": "Edit Profile"
 }

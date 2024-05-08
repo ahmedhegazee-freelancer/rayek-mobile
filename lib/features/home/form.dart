@@ -17,22 +17,25 @@ import 'package:rayik/features/login/form.dart';
 import 'package:rayik/features/my_appoints_view/form.dart';
 import 'package:rayik/widgets/custom_text_field.dart';
 import 'package:shimmer/shimmer.dart';
+
 import '../../core/bloc/dark_light_bloc/cubit.dart';
 import '../../core/constants/color_manager.dart';
 import '../../core/constants/strings.dart';
 import '../all_consultants_view/form.dart';
 import '../blog_screen/form.dart';
 import '../contact_us/form.dart';
+import '../edit_profile_settings/edit_profile_setting.dart';
 import '../edit_profile_user/form.dart';
 import '../mian_home/page.dart';
 import '../search_view/form.dart';
 import '../select_language_form/form.dart';
-part 'utils/search_area.dart';
-part 'utils/view_all_row.dart';
-part 'utils/image_drawer.dart';
+
 part 'utils/custom_drawer.dart';
 part 'utils/drawer_items.dart';
+part 'utils/image_drawer.dart';
 part 'utils/most_popular_articles.dart';
+part 'utils/search_area.dart';
+part 'utils/view_all_row.dart';
 
 class MainScreenForm extends StatelessWidget {
   const MainScreenForm({Key? key}) : super(key: key);

@@ -1,19 +1,15 @@
 part of '../form.dart';
 
-
 class DrawerItems extends StatelessWidget {
   // key
   const DrawerItems({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-
     List<Widget> drawerItems = [
-
       SizedBox(
         height: 50.h,
       ),
       const _ImageDrawer(),
-
       SizedBox(
         height: 60.h,
       ),
@@ -36,18 +32,36 @@ class DrawerItems extends StatelessWidget {
               icon: IconManager.categories,
               onTap: () {
                 MagicRouter.goBack();
-                MagicRouter.navigateTo(const CategoriesView(isFromDrawer: true,));
+                MagicRouter.navigateTo(const CategoriesView(
+                  isFromDrawer: true,
+                ));
               },
             ),
             SizedBox(
               height: 10.h,
             ),
+
             _CustomDrawer(
               title: Strings.appoints.tr(),
               icon: IconManager.appoints,
               onTap: () {
                 MagicRouter.goBack(); // To close the drawer
                 MagicRouter.navigateTo(const MyAppointsView());
+              },
+            ),
+            SizedBox(
+              height: 10.h,
+            ),
+            SizedBox(
+              height: 10.h,
+            ),
+
+            _CustomDrawer(
+              title: Strings.editProfile.tr(),
+              icon: IconManager.editProfile,
+              onTap: () {
+                MagicRouter.goBack(); // To close the drawer
+                MagicRouter.navigateTo(const EditProfileSettingScreen());
               },
             ),
             SizedBox(
@@ -116,19 +130,14 @@ class DrawerItems extends StatelessWidget {
                 MagicRouter.navigateTo(const LoginView());
               },
             ),
-
-
           ],
         ),
       )
-
     ];
-
 
     return ListView(
       padding: EdgeInsets.zero,
-      children:
-      drawerItems,
+      children: drawerItems,
     );
   }
 }
