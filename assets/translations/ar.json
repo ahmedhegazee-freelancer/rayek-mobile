@@ -179,8 +179,16 @@
   "dashboard": "لوحة القيادة",
   "hello": "مرحبا بك,",
   "total_appointments": "إجمالي المواعيد",
-  "total_earnings": "إجمالي الأرباح"
-  "edit_profile": "تعديل الملف الشخصي"
+  "total_earnings": "إجمالي الأرباح",
+  "edit_profile": "تعديل الملف الشخصي",
+  "quick_question": "سؤال سريع",
+  "text_audio_answer": "الإجابة النصية أو الصوتية",
+  "video_answer": "مكالمة فيديو",
+  "Quickly ask a text question and choose the response format you want." : "اسأل سؤال نصي بسرعة واختر تنسيق الرد الذي تريده.",
+  "Get a text or audio response to a text question." : "احصل على رد نصي أو صوتي على سؤال نصي.",
+  "Get a video response to a text question." : "احصل على رد فيديو على سؤال نصي.",
+  "Book a time for us to have a one on one call for the most personalized advice." : "احجز وقتًا لنجري مكالمة واحدة واحدة للحصول على أفضل النصائح.",
+  "15 minutes minimum. Extend time available in call." : "15 دقيقة كحد أدنى. تمديد الوقت المتاح في المكالمة."
 
 
 

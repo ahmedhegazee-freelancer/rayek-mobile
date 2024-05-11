@@ -1,6 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../core/bloc/dark_light_bloc/cubit.dart';
 import '../../core/constants/color_manager.dart';
 import '../../core/constants/dimensions.dart';
 import '../../core/constants/strings.dart';
@@ -16,25 +18,26 @@ class AppointmentDetailsForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ThemeState themeState = context.watch<ThemeCubit>().state;
     return Scaffold(
       body: NestedScrollView(
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return <Widget>[
             SliverAppBar(
               expandedHeight: 145.h,
-              backgroundColor: ColorManager.primaryColor,
+              backgroundColor: themeState == ThemeState.dark
+                  ? ColorManager.newDarkGrey
+                  : ColorManager.primaryColor.withOpacity(.4),
               flexibleSpace: FlexibleSpaceBar(
                 background: Container(
-                  height: 60.h,
-                  color: Theme.of(context).scaffoldBackgroundColor,
-                  child: Column(
-                    children: [
+                    height: 60.h,
+                    color: Theme.of(context).scaffoldBackgroundColor,
+                    child: Column(children: [
                       SizedBox(
                         height: 50.h,
                       ),
-                      const _MyAppointsTitle() ] )
-
-                ),
+                      const _MyAppointsTitle()
+                    ])),
                 collapseMode: CollapseMode.parallax,
               ),
               pinned: true,
@@ -47,7 +50,9 @@ class AppointmentDetailsForm extends StatelessWidget {
                   ),
                   child: CircleAvatar(
                     radius: 15.r,
-                    backgroundColor: ColorManager.primaryColor.withOpacity(.45),
+                    backgroundColor: themeState == ThemeState.dark
+                        ? ColorManager.newDarkGrey
+                        : ColorManager.primaryColor.withOpacity(.4),
                     child: Center(
                       child: Center(
                         child: CustomBackButton(
@@ -64,22 +69,19 @@ class AppointmentDetailsForm extends StatelessWidget {
             ),
           ];
         },
-        body:  Padding(
+        body: Padding(
           padding: EdgeInsets.only(
             top: Dimensions.defaultPadding,
             left: Dimensions.defaultPadding,
             right: Dimensions.defaultPadding,
           ),
-          child:
-          Stack(
+          child: Stack(
             children: [
               Column(
                 children: [
-
                   Expanded(
                     child: ListView(
                       children: [
-
                         // Appointment Details
                         Row(
                           mainAxisAlignment: MainAxisAlignment.start,
@@ -93,7 +95,8 @@ class AppointmentDetailsForm extends StatelessWidget {
                         SizedBox(height: 10.h),
                         Container(
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(Dimensions.buttonRadius),
+                              borderRadius: BorderRadius.circular(
+                                  Dimensions.buttonRadius),
                               boxShadow: [
                                 BoxShadow(
                                   color: Colors.grey.withOpacity(0.2),
@@ -111,7 +114,8 @@ class AppointmentDetailsForm extends StatelessWidget {
                                     height: 20.h,
                                   ),
                                   Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
                                     children: [
                                       _CustomColumn(
                                         title: Strings.date.tr(),
@@ -131,7 +135,8 @@ class AppointmentDetailsForm extends StatelessWidget {
                                     height: 15.h,
                                   ),
                                   Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
                                     children: [
                                       _CustomColumn(
                                         title: Strings.service.tr(),
@@ -142,7 +147,6 @@ class AppointmentDetailsForm extends StatelessWidget {
                                   SizedBox(
                                     height: 10.h,
                                   ),
-
                                 ],
                               ),
                             )),
@@ -163,7 +167,8 @@ class AppointmentDetailsForm extends StatelessWidget {
                         SizedBox(height: 10.h),
                         Container(
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(Dimensions.buttonRadius),
+                              borderRadius: BorderRadius.circular(
+                                  Dimensions.buttonRadius),
                               boxShadow: [
                                 BoxShadow(
                                   color: Colors.grey.withOpacity(0.2),
@@ -181,13 +186,15 @@ class AppointmentDetailsForm extends StatelessWidget {
                                     height: 20.h,
                                   ),
                                   Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
                                     children: [
                                       _CustomColumn(
                                         title: Strings.name.tr(),
-                                        value: context.locale == const Locale('en')
-                                            ? 'Dr. Ahmed'
-                                            : 'د. أحمد',
+                                        value:
+                                            context.locale == const Locale('en')
+                                                ? 'Dr. Ahmed'
+                                                : 'د. أحمد',
                                       ),
                                       _CustomColumn(
                                         title: Strings.sex.tr(),
@@ -203,7 +210,8 @@ class AppointmentDetailsForm extends StatelessWidget {
                                     height: 20.h,
                                   ),
                                   Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
                                     children: [
                                       _CustomColumn(
                                         title: Strings.dateOfSubmission.tr(),
@@ -214,7 +222,6 @@ class AppointmentDetailsForm extends StatelessWidget {
                                         title: Strings.ratings.tr(),
                                         value: '4.5',
                                       ),
-
                                     ],
                                   ),
                                 ],
@@ -238,8 +245,8 @@ class AppointmentDetailsForm extends StatelessWidget {
                         SizedBox(height: 10.h),
                         Container(
                             decoration: BoxDecoration(
-
-                              borderRadius: BorderRadius.circular(Dimensions.buttonRadius),
+                              borderRadius: BorderRadius.circular(
+                                  Dimensions.buttonRadius),
                               boxShadow: [
                                 BoxShadow(
                                   color: Colors.grey.withOpacity(0.2),
@@ -260,7 +267,8 @@ class AppointmentDetailsForm extends StatelessWidget {
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
                                       Expanded(
-                                        child: Text(context.locale == const Locale('en')
+                                        child: Text(context.locale ==
+                                                const Locale('en')
                                             ? 'Can you tell me about your symptoms?'
                                             : 'هل يمكنك أن تخبرني عن أعراضك؟'),
                                       ),
@@ -271,18 +279,12 @@ class AppointmentDetailsForm extends StatelessWidget {
                                   SizedBox(
                                     height: 20.h,
                                   ),
-
-
-
                                 ],
                               ),
                             )),
                         SizedBox(
                           height: 80.h,
                         ),
-
-
-
                       ],
                     ),
                   ),

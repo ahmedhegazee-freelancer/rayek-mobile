@@ -24,7 +24,7 @@ import '../../core/constants/strings.dart';
 import '../all_consultants_view/form.dart';
 import '../blog_screen/form.dart';
 import '../contact_us/form.dart';
-import '../edit_profile_settings/edit_profile_setting.dart';
+import '../edit_profile_settings/form.dart';
 import '../edit_profile_user/form.dart';
 import '../mian_home/page.dart';
 import '../search_view/form.dart';

@@ -23,8 +23,8 @@ class ReviewItem extends StatelessWidget {
         Container(
           decoration: BoxDecoration(
             color: themeState == ThemeState.dark
-                ? HexColor("#1A1A1A")
-                : ColorManager.whiteTextColor,
+                ? HexColor("#383838")
+                : Colors.white.withOpacity(0.9),
             borderRadius: BorderRadius.circular(Dimensions.buttonRadius),
             boxShadow: [
               BoxShadow(

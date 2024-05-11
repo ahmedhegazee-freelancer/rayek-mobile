@@ -111,4 +111,18 @@ class IconManager {
   static const String lineCR = '${baseBase}lineCR.svg';
   // lineCL
   static const String lineCL = '${baseBase}lineCL.svg';
+  // linkedin
+  static const String linkedin = '${baseBase}linkedin.svg';
+  // x
+  static const String x = '${baseBase}x.svg';
+  // insta
+  static const String insta = '${baseBase}insta.svg';
+  // website
+  static const String website = '${baseBase}website.svg';
+  // chat_icon
+  static const String chatIcon = '${baseBase}chat_icon.svg';
+  // video_call
+  static const String videoCall = '${baseBase}video_call.svg';
+  // video_icon
+  static const String videoIcon = '${baseBase}video_icon.svg';
 }

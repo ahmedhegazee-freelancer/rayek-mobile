@@ -48,7 +48,7 @@
   "settings": "Settings",
   "call": "Call",
   "chat": "Chat",
-  "description": "Description",
+  "description": "About",
   "reviews": "Reviews",
   "experience": "Experience",
   "consultations": "Consultations",
@@ -152,13 +152,21 @@
   "get_started": "Get started",
   "explore_app": "Explore app",
   "top_questions": "Top Questions",
-  "frequently_asked_questions": "Frequently Asked Questions",
+  "frequently_asked_questions": "Frequently asked questions",
   "top_answers": "Top Answers",
   "appointment_booked_successfully": "Appointment booked successfully",
   "congratulations": "Congratulations",
   "dashboard": "Dashboard",
   "hello": "Hello,",
   "total_appointments": "Total appointments",
-  "total_earnings": "Total earnings"
-  "edit_profile": "Edit Profile"
+  "total_earnings": "Total earnings",
+  "edit_profile": "Edit Profile",
+  "quick_question": "Quick Question",
+  "text_audio_answer": "Text / Audio Answer",
+    "video_answer": "Video Answer",
+  "Quickly ask a text question and choose the response format you want." : "Quickly ask a text question and choose the response format you want.",
+  "Get a text or audio response to a text question." : "Get a text or audio response to a text question.",
+  "Get a video response to a text question." : "Get a video response to a text question.",
+  "Book a time for us to have a one on one call for the most personalized advice." : "Book a time for us to have a one on one call for the most personalized advice.",
+  "15 minutes minimum. Extend time available in call." :  "15 minutes minimum. Extend time available in call."
 }
