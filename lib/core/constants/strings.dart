@@ -193,8 +193,7 @@ static String hello = "hello";
 static String totalEarnings = "total_earnings";
 // total appointments
 static String totalAppointments = "total_appointments";
-  static String topAnswers = "top_answers";
-  static String editProfile = "edit_profile";
+static String editProfile = "edit_profile";
 
 
 
