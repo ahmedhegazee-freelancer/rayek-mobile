@@ -23,7 +23,7 @@
  "by_signing_up": "بالتسجيل ، فإنك توافق على",
  "retrieve_password": "استعادة كلمة المرور",
     "enter_email": "أدخل البريد الإلكتروني",
- "the_reset_link": "سيتم إرسال رابط إعادة تعيين كلمة المرور إلى بريدك الإلكتروني",
+ "the_reset_link": "سيتم إرسال كود التحقق الي رقم الواتساب الخاص بك",
  "skip": "تخطى",
  "confirm": "تأكيد",
  "enter_pin": "أدخل رمز التحقق",
@@ -172,7 +172,14 @@
   "explore_app" : "استكشف التطبيق",
   "top_questions": "أهم الأسئلة",
   "frequently_asked_questions": "الأسئلة المتكررة",
-  "top_answers": "أفضل الإجابات"
+  "top_answers": "أفضل الإجابات",
+  "appointment_booked_successfully": "تم حجز الموعد بنجاح",
+  "congratulations": "تهانينا",
+  "dashboard": "لوحة القيادة",
+  "hello": "مرحبا بك,",
+  "total_appointments": "إجمالي المواعيد",
+  "total_earnings": "إجمالي الأرباح"
+
 
 
 

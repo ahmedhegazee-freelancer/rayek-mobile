@@ -23,7 +23,7 @@
   "by_signing_up": "By signing up, you agree to our",
   "retrieve_password": "Retrieve Password",
   "enter_email": "Enter your email to retrieve your password",
-  "the_reset_link": "The reset link will be sent to your email",
+  "the_reset_link": "The bin code will be sent to your whatsapp number",
   "skip": "Skip",
   "confirm": "Confirm",
   "enter_pin": "Enter PIN",
@@ -152,5 +152,11 @@
   "explore_app": "Explore app",
   "top_questions": "Top Questions",
   "frequently_asked_questions": "Frequently Asked Questions",
-  "top_answers": "Top Answers"
+  "top_answers": "Top Answers",
+  "appointment_booked_successfully": "Appointment booked successfully",
+  "congratulations": "Congratulations",
+  "dashboard": "Dashboard",
+  "hello": "Hello,",
+  "total_appointments": "Total appointments",
+  "total_earnings": "Total earnings"
 }

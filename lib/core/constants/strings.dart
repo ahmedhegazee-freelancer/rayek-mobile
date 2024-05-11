@@ -180,7 +180,18 @@ static String topQuestions = "top_questions";
 static String frequentlyAskedQuestions = "frequently_asked_questions";
 // top_answers
 static String topAnswers = "top_answers";
-
+// تم حجز الموعد بنحاج
+static String appointmentBookedSuccessfully = "appointment_booked_successfully";
+// تهانينا
+static String congratulations = "congratulations";
+// dashboard
+static String dashboard = "dashboard";
+//hello
+static String hello = "hello";
+// total earnings
+static String totalEarnings = "total_earnings";
+// total appointments
+static String totalAppointments = "total_appointments";
 
 
 

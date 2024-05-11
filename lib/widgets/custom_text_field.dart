@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:rayik/core/constants/dimensions.dart';
 import 'package:rayik/core/theme/fonts_style.dart';
-
+import 'package:rayik/widgets/phone_code_picker.dart';
 import '../../core/constants/color_manager.dart';
 import '../core/bloc/obsecure_text/obsecure_cubit.dart';
 
@@ -37,7 +37,7 @@ class CustomTextField extends StatelessWidget {
   final String? svgIconSuffix;
   final String? value;
   final double? width;
-
+  final bool? isPhone;
 
   const CustomTextField(
       {super.key,
@@ -45,6 +45,7 @@ class CustomTextField extends StatelessWidget {
       this.topText,
       this.isTopText,
       this.width,
+      this.isPhone,
       this.gapTopText,
       this.heightOfTextField,
       this.borderRadius,
@@ -62,7 +63,6 @@ class CustomTextField extends StatelessWidget {
       this.hasPrefix = true,
       this.maxLines,
       this.suffixIcon,
-
       this.textAlign,
       this.borderColor,
       this.borderWidth,
@@ -106,7 +106,6 @@ class CustomTextField extends StatelessWidget {
                   maxLines: maxLines ?? 1,
                   onFieldSubmitted: onFieldSubmitted,
                   controller: controller,
-
                   obscureText: obscure ? !secure : false,
                   onSaved: onSaved,
                   validator: validate,
@@ -131,7 +130,9 @@ class CustomTextField extends StatelessWidget {
                                       padding: EdgeInsets.all(0.0.sp),
                                       child: SvgPicture.asset(
                                         svgIconPrefix ?? "",
-                                        color: ColorManager.lightGreyColor,
+                                        colorFilter: const ColorFilter.mode(
+                                            ColorManager.lightGreyColor,
+                                            BlendMode.srcIn),
                                         width: 20.w,
                                         height: 20.h,
                                       ),
@@ -173,45 +174,47 @@ class CustomTextField extends StatelessWidget {
                                   ],
                                 ),
                               )
-                        : const SizedBox(),
-                    suffixIcon:
-
-
-                    SizedBox(
+                        : isPhone ?? false
+                            ? BlocProvider(
+                        create: (context) => PhonePickerBloc(),
+                        child: const PhonePicker())
+                            : const SizedBox(),
+                    suffixIcon: SizedBox(
                       height: 8.76.h,
                       width: 14.02.w,
                       child: GestureDetector(
-                        onTap: () {
-                          context.read<ObscureTextCubit>().toggle();
-                        },
-                        child: obscure
-                            ? suffixIcon ??
-                                Icon(
-                                  Icons.remove_red_eye_outlined,
-                                  color: !secure
-                                      ? ColorManager.lightGreyColor
-                                      : ColorManager.primaryColor
-                                          .withOpacity(.5),
-                                )
-                            : svgIconSuffix != null
-                                ? Padding(
-                                  padding: const EdgeInsets.all(12.0),
-                                  child: SvgPicture.asset(
-                                      svgIconSuffix ?? "",
-                                      color: ColorManager.lightGreyColor,
-                                      width: 10.w,
-                                      height: 10.h,
-                                    ),
-                                )
-                                : const SizedBox()
-                      ),
+                          onTap: () {
+                            context.read<ObscureTextCubit>().toggle();
+                          },
+                          child: obscure
+                              ? suffixIcon ??
+                                  Icon(
+                                    Icons.remove_red_eye_outlined,
+                                    color: !secure
+                                        ? ColorManager.lightGreyColor
+                                        : ColorManager.primaryColor
+                                            .withOpacity(.5),
+                                  )
+                              : svgIconSuffix != null
+                                  ? Padding(
+                                      padding: const EdgeInsets.all(12.0),
+                                      child: SvgPicture.asset(
+                                        svgIconSuffix ?? "",
+                                        colorFilter: const ColorFilter.mode(
+                                            ColorManager.lightGreyColor,
+                                            BlendMode.srcIn),
+                                        width: 10.w,
+                                        height: 10.h,
+                                      ),
+                                    )
+                                  : const SizedBox()),
                     ),
                     hintText: hintText,
 
                     labelStyle: TextStyle(
                         color: ColorManager.lightGreyColor, fontSize: 12.sp),
-                    hintStyle: AppTextStyle.hintTextField.copyWith(
-                        color: ColorManager.lightGreyColor),
+                    hintStyle: AppTextStyle.hintTextField
+                        .copyWith(color: ColorManager.lightGreyColor),
                     labelText: labelText,
                     floatingLabelBehavior: FloatingLabelBehavior.always,
 
@@ -229,3 +232,16 @@ class CustomTextField extends StatelessWidget {
     );
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+// Bloc

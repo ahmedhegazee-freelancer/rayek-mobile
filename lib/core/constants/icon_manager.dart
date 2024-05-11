@@ -105,4 +105,10 @@ class IconManager {
   static const String chatFilled = '${baseBase}chat_filled.svg';
   // verify
   static const String verify = '${baseBase}verify.svg';
+  // doneIcon
+  static const String doneIcon = '${baseBase}doneIcon.svg';
+  // lineCR
+  static const String lineCR = '${baseBase}lineCR.svg';
+  // lineCL
+  static const String lineCL = '${baseBase}lineCL.svg';
 }

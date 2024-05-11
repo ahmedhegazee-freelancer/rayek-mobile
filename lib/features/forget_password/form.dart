@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:rayik/core/constants/dimensions.dart';
 import 'package:rayik/core/router/router.dart';
@@ -13,6 +14,7 @@ import 'package:rayik/core/theme/fonts_style.dart';
 import 'package:rayik/widgets/custom_button.dart';
 import '../../widgets/back_button.dart';
 import '../../widgets/custom_text_field.dart';
+import '../../widgets/phone_code_picker.dart';
 
 class ForgetPasswordForm extends StatelessWidget {
   const ForgetPasswordForm({super.key});
@@ -49,16 +51,20 @@ class ForgetPasswordForm extends StatelessWidget {
               SizedBox(
                 height: 25.h,
               ),
-              CustomTextField(
-                topText: Strings.email.tr(),
-                isTopText: true,
-                hintText: Strings.email.tr(),
-                svgPrefix: false,
-                obscure: false,
-                controller: null,
-                textAlign: TextAlign.start,
-                keyboardType: TextInputType.emailAddress,
-                hasPrefix: false,
+              BlocProvider(
+                create: (context) => PhonePickerBloc(),
+                child: CustomTextField(
+                  topText: Strings.phoneNumber.tr(),
+                  isTopText: true,
+                  hintText: Strings.phoneNumber.tr(),
+                  svgPrefix: true,
+                  obscure: false,
+                  controller: null,
+                  isPhone: true,
+                  textAlign: TextAlign.start,
+                  keyboardType: TextInputType.phone,
+                  hasPrefix: false,
+                ),
               ),
               SizedBox(
                 height: 25.h,
