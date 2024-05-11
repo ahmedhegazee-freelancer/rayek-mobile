@@ -1,4 +1,4 @@
-class Strings{
+class Strings {
   /////////// Auth Screens ///////////
   static String enterDetails = "enter_details";
   static String loginAgreement = "login_agreement";
@@ -62,6 +62,7 @@ class Strings{
   static String online = "online";
   static String offline = "offline";
   static String updateProfile = "update_profile";
+  static String nextStep = "next_step";
   static String createYourProfile = "create_your_profile";
   static String uploadImage = "upload_image";
   static String hideStatus = "hide_status";
@@ -146,9 +147,9 @@ class Strings{
   static String cancelAppointment = "cancel_appointment";
   // nationality
   static String nationality = "nationality";
- // ratings
- static String ratings = "ratings";
- static String explorePopularArticles = "explore_popular_articles";
+  // ratings
+  static String ratings = "ratings";
+  static String explorePopularArticles = "explore_popular_articles";
   static String mostPopularArticles = "most_popular_articles";
   static String forYou = "for_you";
   static String noArticles = "no_articles";
@@ -171,13 +172,13 @@ class Strings{
   static String biggestCommunity = "biggest_community";
   static String easyToUse = "easy_to_use";
   static String getStarted = "get_started";
-static String bookACall = "book_a_call";
+  static String bookACall = "book_a_call";
 // Explore App
-static String exploreApp = "explore_app";
+  static String exploreApp = "explore_app";
 // Top Questions
-static String topQuestions = "top_questions";
+  static String topQuestions = "top_questions";
 // frequently_asked_questions
-static String frequentlyAskedQuestions = "frequently_asked_questions";
+  static String frequentlyAskedQuestions = "frequently_asked_questions";
 // top_answers
 static String topAnswers = "top_answers";
 // تم حجز الموعد بنحاج
@@ -192,11 +193,12 @@ static String hello = "hello";
 static String totalEarnings = "total_earnings";
 // total appointments
 static String totalAppointments = "total_appointments";
-
-
-
+  static String topAnswers = "top_answers";
+  static String editProfile = "edit_profile";
 
 
 
 
 }
+
+

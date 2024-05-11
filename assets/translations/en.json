@@ -61,6 +61,7 @@
   "online": "Online",
     "offline": "Offline",
   "update_profile": "Update Profile",
+  "next_step": "Next step",
   "create_your_profile": "Create your profile",
   "upload_image": "Upload your profile image",
   "hide_status": "Hide profile ",
@@ -159,4 +160,5 @@
   "hello": "Hello,",
   "total_appointments": "Total appointments",
   "total_earnings": "Total earnings"
+  "edit_profile": "Edit Profile"
 }

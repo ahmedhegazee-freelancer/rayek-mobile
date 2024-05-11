@@ -60,6 +60,7 @@
  "online": "متصل",
     "offline": "غير متصل",
  "update_profile": "تحديث الملف الشخصي",
+ "next_step": "الخطوه التاليه",
  "create_your_profile": "أنشئ ملفك الشخصي",
  "upload_image": "تحميل صورة ملفك الشخصي",
  "hide_status": "إخفاء الملف الشخصي",
@@ -179,7 +180,7 @@
   "hello": "مرحبا بك,",
   "total_appointments": "إجمالي المواعيد",
   "total_earnings": "إجمالي الأرباح"
-
+  "edit_profile": "تعديل الملف الشخصي"
 
 
 
