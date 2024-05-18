@@ -64,9 +64,9 @@ class ConsultantForm extends StatelessWidget {
                           name: context.locale.toString() == 'ar'
                               ? 'محمد احمد'
                               : 'Mohamed Ahmed',
-                          specialty: context.locale.toString() == 'ar'
-                              ? 'استشاري نفسي'
-                              : 'Psychological Consultant',
+                          specialty: context.locale.toString() == 'en'
+                              ? 'Psychological Consultant'
+                              :'استشاري نفسي'  ,
                         ),
                         SizedBox(height: 20.h),
                         Row(
