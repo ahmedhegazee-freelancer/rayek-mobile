@@ -9,20 +9,7 @@ class _SignUpDataForm extends StatelessWidget {
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       children: [
-        CustomTextField(
-          topText: Strings.email.tr(),
-          isTopText: true,
-          hintText: Strings.email.tr(),
-          svgPrefix: false,
-          obscure: false,
-          controller: null,
-          textAlign: TextAlign.start,
-          keyboardType: TextInputType.emailAddress,
-          hasPrefix: false,
-        ),
-        SizedBox(
-          height: 5.h,
-        ),
+
         CustomTextField(
           topText: Strings.firstName.tr(),
           isTopText: true,
@@ -48,6 +35,34 @@ class _SignUpDataForm extends StatelessWidget {
           keyboardType: TextInputType.emailAddress,
           hasPrefix: false,
         ),
+        CustomTextField(
+          topText: Strings.email.tr(),
+          isTopText: true,
+          hintText: Strings.email.tr(),
+          svgPrefix: false,
+          obscure: false,
+          controller: null,
+          textAlign: TextAlign.start,
+          keyboardType: TextInputType.emailAddress,
+          hasPrefix: false,
+        ),
+        CustomTextField(
+          topText: Strings.phoneNumber.tr(),
+          isTopText: true,
+          hintText: Strings.phoneNumber.tr(),
+          svgPrefix: true,
+          obscure: false,
+          controller: null,
+          isPhone: true,
+          textAlign: TextAlign.start,
+          keyboardType: TextInputType.phone,
+          hasPrefix: false,
+        ),
+
+
+
+
+
         CustomTextField(
           topText: Strings.password.tr(),
           isTopText: true,

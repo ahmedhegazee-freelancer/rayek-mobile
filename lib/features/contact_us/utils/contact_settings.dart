@@ -150,3 +150,12 @@ Future<void> _sendEmail(String email) async {
     debugPrint(e.toString());
   }
 }
+
+// launchUrl
+Future<void> launchUrl(Uri launchUri) async {
+  if (await canLaunch(launchUri.toString())) {
+    await launch(launchUri.toString());
+  } else {
+    throw 'Could not launch $launchUri';
+  }
+}

@@ -15,13 +15,10 @@ class SelectUserType extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => UserTypeCubit(),
-      child: BlocBuilder<UserTypeCubit, UserType>(
-        builder: (context, state) {
-          return _buildUserTypeButtons(context, state);
-        },
-      ),
+    return BlocBuilder<UserTypeCubit, UserType>(
+      builder: (context, state) {
+        return _buildUserTypeButtons(context, state);
+      },
     );
   }
 

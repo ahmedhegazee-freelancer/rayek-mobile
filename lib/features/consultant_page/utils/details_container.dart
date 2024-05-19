@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:rayik/core/theme/fonts_style.dart';
+import '../../../core/bloc/dark_light_bloc/cubit.dart';
 import '../../../core/constants/color_manager.dart';
 
 class DetailsContainer extends StatelessWidget {
@@ -18,11 +20,16 @@ class DetailsContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ThemeState themeState = context.read<ThemeCubit>().state;
     return Container(
       width: 100.w,
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: ColorManager.primaryColor.withOpacity(0.1),
+        color:
+             themeState == ThemeState.dark
+                  ? ColorManager.newDarkGrey
+                  :
+        ColorManager.primaryColor.withOpacity(0.1),
         borderRadius: BorderRadius.circular(10),
       ),
       child: SingleChildScrollView(

@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:rayik/core/router/router.dart';
 import 'package:rayik/features/chats_screen/form.dart';
+import 'package:rayik/features/consultant_home/form.dart';
 import 'package:rayik/features/home/form.dart';
 import 'package:rayik/features/search_view/form.dart';
 
@@ -25,7 +26,8 @@ part 'utils/top_bar.dart';
 part 'utils/actions_items.dart';
 
 class MainScreenPage extends StatelessWidget {
-  const MainScreenPage({super.key});
+  final bool? isConsultant;
+  const MainScreenPage({super.key, this.isConsultant});
 
   @override
   Widget build(BuildContext context) {
@@ -69,7 +71,12 @@ class MainScreenPage extends StatelessWidget {
             builder: (context, navigationState) {
               Widget? screen;
               if (navigationState is HomePageState) {
-                screen = Scaffold(
+                screen =
+
+                    isConsultant == true
+                        ? const ConsultantHome()
+                        :
+                    Scaffold(
                     body: NestedScrollView(
                   headerSliverBuilder:
                       (BuildContext context, bool innerBoxIsScrolled) {

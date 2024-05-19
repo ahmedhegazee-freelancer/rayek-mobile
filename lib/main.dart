@@ -9,6 +9,7 @@ import 'package:rayik/core/bloc/dark_light_bloc/cubit.dart';
 import 'package:rayik/features/splash/form.dart';
 import 'core/bloc/language_cubit/language_cubit.dart';
 import 'core/bloc/language_cubit/language_states.dart';
+import 'core/bloc/user_type/user_type.dart';
 import 'core/helper/cache_helper.dart';
 import 'core/router/router.dart';
 import 'package:fl_country_code_picker/fl_country_code_picker.dart' as flc;
@@ -32,6 +33,9 @@ void main() async {
           BlocProvider<LanguageCubit>(
             create: (context) => LanguageCubit(),
           ),
+          BlocProvider<UserTypeCubit>(
+            create: (context) => UserTypeCubit(),
+          ),
           BlocProvider<ThemeCubit>(
             create:  (context) {
               final themeCubit = ThemeCubit();
@@ -39,6 +43,7 @@ void main() async {
               return themeCubit;
             },
           ),
+
         ],
         child: const MyApp(),
       )));

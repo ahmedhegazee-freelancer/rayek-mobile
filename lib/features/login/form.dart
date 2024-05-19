@@ -1,6 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:rayik/core/bloc/user_type/user_type.dart';
 import 'package:rayik/core/constants/color_manager.dart';
 import 'package:rayik/core/constants/dimensions.dart';
 import 'package:rayik/core/router/router.dart';
@@ -43,7 +45,6 @@ class LoginView extends StatelessWidget {
                     style: AppTextStyle.titleStyle,
                   ),
                   const SkipButton(),
-
                 ],
               ),
               SizedBox(
@@ -85,8 +86,17 @@ class LoginView extends StatelessWidget {
               ),
               CustomButton(
                   onTap: () {
-                MagicRouter.navigateTo(const MainProvider());
-              }, text: Strings.login.tr()),
+                    debugPrint(
+                        'UserType: ${context.read<UserTypeCubit>().state.name}');
+                    MagicRouter.navigateTo(MainProvider(
+                      isConsultant: context.read<UserTypeCubit>().state ==
+                              UserType.consultant
+                          ? true
+                          : false,
+                    ));
+                  },
+                  text: Strings.login.tr()),
+
               //
               // SizedBox(
               //   height: 15.h,
@@ -103,7 +113,8 @@ class LoginView extends StatelessWidget {
                     style: AppTextStyle.h3,
                   ),
                   SizedBox(
-                    width: 5.w,),
+                    width: 5.w,
+                  ),
                   GestureDetector(
                     onTap: () {
                       MagicRouter.navigateTo(const SignUpForm());
@@ -128,4 +139,3 @@ class LoginView extends StatelessWidget {
     );
   }
 }
-

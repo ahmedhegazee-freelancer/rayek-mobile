@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:rayik/core/constants/app_constants.dart';
-import 'package:rayik/core/router/router.dart';
-import 'package:rayik/core/theme/fonts_style.dart';
-import 'package:rayik/features/login/form.dart';
-import 'package:rayik/features/on_boarding/utils/page_model01.dart';
-import 'package:rayik/features/on_boarding/utils/page_model02.dart';
-import 'package:rayik/features/on_boarding/utils/page_model03.dart';
+import '../../core/constants/app_constants.dart';
+import '../../core/router/router.dart';
+import '../../core/theme/fonts_style.dart';
+import '../login/form.dart';
+import 'utils/page_model01.dart';
+import 'utils/page_model02.dart';
+import 'utils/page_model03.dart';
 
 import '../../core/constants/color_manager.dart';
 
@@ -119,7 +119,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
           SizedBox(
             height: .83.sh,
             width: 1.sw,
-            child: ListView.builder(
+            child: PageView.builder(
                 physics: const BouncingScrollPhysics(),
                 scrollDirection: Axis.horizontal,
                 controller: _controller,

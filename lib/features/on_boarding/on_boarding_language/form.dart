@@ -84,6 +84,10 @@ class LanguageOnBoardingView extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
+                SizedBox(
+                  height: 5.h,
+                  width: 6.w,
+                ),
                 Text(
                   Strings.selectLanguage.tr(),
                   style: AppTextStyle.h1,

@@ -1,8 +1,12 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../core/theme/fonts_style.dart';
+import '../../../widgets/custom_text_field.dart';
 
 import '../../../core/constants/color_manager.dart';
+import '../../../core/theme/theme.dart';
 import '../../../widgets/custom_button.dart';
 import '../../../widgets/drop_down_widget.dart';
 import '../../../widgets/text_form_field_widget.dart';
@@ -17,7 +21,8 @@ class BodyFiveWidget extends StatefulWidget {
 }
 
 class _BodyFiveWidgetState extends State<BodyFiveWidget> {
-  TextEditingController universityController = TextEditingController();
+  TextEditingController bankController = TextEditingController(),
+      ibanController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -32,56 +37,119 @@ class _BodyFiveWidgetState extends State<BodyFiveWidget> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: 16.h,
+              height: 20.h,
             ),
-            const Text(
-              "معلومات الحساب",
-              style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w600,
-                  color: Color(0xff232232)),
-            ),
+            Text("معلومات الحساب", style: AppTextStyle.h3),
             SizedBox(
-              height: 16.h,
+              height: 20.h,
             ),
-            DropDownItem(
-              options: const [
-                "البنك الاهلي",
-                "البنك المصري",
-                "البنك العربي",
-                "البنك الاهلي",
-              ],
-              onChanged: (e) {},
-              hint: "البنك ",
-            ),
-            SizedBox(
-              height: 16.h,
-            ),
-            TextFormFieldWidget(
-              hintText: "رقم الحساب",
-              borderColor: ColorManager.whiteTextColor,
-              activeBorderColor: ColorManager.whiteTextColor,
-              controller: universityController,
-            ),
-            SizedBox(
-              height: 16.h,
-            ),
-            TextFormFieldWidget(
-              hintText: "رقم الايبان",
-              borderColor: ColorManager.whiteTextColor,
-              activeBorderColor: ColorManager.whiteTextColor,
-              controller: universityController,
-            ),
-            SizedBox(height: .15.sh),
-            ButtonSave(
-              onTap: () {
-                if (currentIndex != 4) {
-                  currentIndex++;
-                }
+            Container(
+              decoration: containerDecoration(context),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                child: DropdownButtonFormField<String>(
+                  // remove border
+                  decoration: const InputDecoration(
+                    border: InputBorder.none,
+                  ),
+                  hint: Text(
+                    "البنك",
+                    style: AppTextStyle.hintTextField
+                        .copyWith(color: ColorManager.lightGreyColor),
+                  ),
+                  // value: selectedGender,
 
-                cubit.changeCurrentIndex(currentIndex);
-              },
-            )
+                  items: [
+                    "البنك الاهلي",
+                    "البنك المصري",
+                    "البنك العربي",
+                    "البنك الاهلي",
+                  ].map((String value) {
+                    return DropdownMenuItem<String>(
+                      value: value.tr(),
+                      child: Text(value.tr()),
+                    );
+                  }).toList() /*  context.locale == const Locale('ar')
+                              ? ["اعزب", "متزوج"].map((String value) {
+                                  return DropdownMenuItem<String>(
+                                    value: value.tr(),
+                                    child: Text(value.tr()),
+                                  );
+                                }).toList()
+                              : ["اعزب", "متزوج"].map((String value) {
+                                  return DropdownMenuItem<String>(
+                                    value: value.tr(),
+                                    child: Row(
+                                      children: [
+                                        SizedBox(width: 10.w),
+                                        Text(value.tr()),
+                                        SizedBox(width: 10.w),
+                                      ],
+                                    ),
+                                  );
+                                }).toList() */
+                  ,
+                  onChanged: (value) {
+                    // setState(() {
+                    //   selectedGender = value!;
+                    // });
+                  },
+                ),
+              ),
+            ),
+            // DropDownItem(
+            //   options: const [
+            //     "البنك الاهلي",
+            //     "البنك المصري",
+            //     "البنك العربي",
+            //     "البنك الاهلي",
+            //   ],
+            //   onChanged: (e) {},
+            //   hint: "البنك ",
+            // ),
+            SizedBox(
+              height: 20.h,
+            ),
+            // TextFormFieldWidget(
+            //   hintText: "رقم الحساب",
+            //   borderColor: ColorManager.whiteTextColor,
+            //   activeBorderColor: ColorManager.whiteTextColor,
+            //   controller: universityController,
+            // ),
+            Container(
+              decoration: containerDecoration(context),
+              child: Center(
+                child: CustomTextField(
+                  heightOfTextField: 46.h,
+                  hintText: "رقم الحساب",
+                  hasPrefix: false,
+                  controller: bankController,
+                  borderColor: Colors.transparent,
+                ),
+              ),
+            ),
+
+            SizedBox(
+              height: 20.h,
+            ),
+            // TextFormFieldWidget(
+            //   hintText: "رقم الايبان",
+            //   borderColor: ColorManager.whiteTextColor,
+            //   activeBorderColor: ColorManager.whiteTextColor,
+            //   controller: universityController,
+            // ),
+            Container(
+              decoration: containerDecoration(context),
+              child: Center(
+                child: CustomTextField(
+                  heightOfTextField: 46.h,
+                  hintText: "رقم الايبان",
+                  hasPrefix: false,
+                  controller: ibanController,
+                  borderColor: Colors.transparent,
+                ),
+              ),
+            ),
           ],
         );
       },

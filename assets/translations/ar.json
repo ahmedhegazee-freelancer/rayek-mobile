@@ -23,7 +23,7 @@
  "by_signing_up": "بالتسجيل ، فإنك توافق على",
  "retrieve_password": "استعادة كلمة المرور",
     "enter_email": "أدخل البريد الإلكتروني",
- "the_reset_link": "سيتم إرسال رابط إعادة تعيين كلمة المرور إلى بريدك الإلكتروني",
+ "the_reset_link": "سيتم إرسال كود التحقق الي رقم الواتساب الخاص بك",
  "skip": "تخطى",
  "confirm": "تأكيد",
  "enter_pin": "أدخل رمز التحقق",
@@ -174,7 +174,21 @@
   "top_questions": "أهم الأسئلة",
   "frequently_asked_questions": "الأسئلة المتكررة",
   "top_answers": "أفضل الإجابات",
-  "edit_profile": "تعديل الملف الشخصي"
+  "appointment_booked_successfully": "تم حجز الموعد بنجاح",
+  "congratulations": "تهانينا",
+  "dashboard": "لوحة القيادة",
+  "hello": "مرحبا بك,",
+  "total_appointments": "إجمالي المواعيد",
+  "total_earnings": "إجمالي الأرباح",
+  "edit_profile": "تعديل الملف الشخصي",
+  "quick_question": "سؤال سريع",
+  "text_audio_answer": "الإجابة النصية أو الصوتية",
+  "video_answer": "مكالمة فيديو",
+  "Quickly ask a text question and choose the response format you want." : "اسأل سؤال نصي بسرعة واختر تنسيق الرد الذي تريده.",
+  "Get a text or audio response to a text question." : "احصل على رد نصي أو صوتي على سؤال نصي.",
+  "Get a video response to a text question." : "احصل على رد فيديو على سؤال نصي.",
+  "Book a time for us to have a one on one call for the most personalized advice." : "احجز وقتًا لنجري مكالمة واحدة واحدة للحصول على أفضل النصائح.",
+  "15 minutes minimum. Extend time available in call." : "15 دقيقة كحد أدنى. تمديد الوقت المتاح في المكالمة."
 
 
 

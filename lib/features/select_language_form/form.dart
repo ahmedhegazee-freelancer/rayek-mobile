@@ -3,9 +3,9 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:rayik/core/constants/dimensions.dart';
-import 'package:rayik/core/router/router.dart';
-import 'package:rayik/features/splash/form.dart';
+import '../../core/constants/dimensions.dart';
+import '../../core/router/router.dart';
+import '../splash/form.dart';
 
 import '../../core/bloc/language_cubit/language_cubit.dart';
 import '../../core/bloc/language_cubit/language_states.dart';

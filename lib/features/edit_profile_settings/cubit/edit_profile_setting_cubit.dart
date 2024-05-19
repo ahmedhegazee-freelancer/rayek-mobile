@@ -8,8 +8,8 @@ class EditProfileSettingCubit extends Cubit<EditProfileSettingState> {
   static EditProfileSettingCubit get(context) => BlocProvider.of(context);
 
   int currentIndex = 0;
-  changeCurrentIndex(int index) {
-    currentIndex = index;
+  changeCurrentIndex() {
+    // currentIndex = index;
     emit(EditProfileSettingChangeIndex());
   }
 }

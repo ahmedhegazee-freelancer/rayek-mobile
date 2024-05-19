@@ -180,6 +180,40 @@ class Strings {
 // frequently_asked_questions
   static String frequentlyAskedQuestions = "frequently_asked_questions";
 // top_answers
-  static String topAnswers = "top_answers";
-  static String editProfile = "edit_profile";
+static String topAnswers = "top_answers";
+// تم حجز الموعد بنحاج
+static String appointmentBookedSuccessfully = "appointment_booked_successfully";
+// تهانينا
+static String congratulations = "congratulations";
+// dashboard
+static String dashboard = "dashboard";
+//hello
+static String hello = "hello";
+// total earnings
+static String totalEarnings = "total_earnings";
+// total appointments
+static String totalAppointments = "total_appointments";
+static String editProfile = "edit_profile";
+//quick_question
+static String quickQuestion = "quick_question";
+//text_audio_answer
+static String textAudioAnswer = "text_audio_answer";
+//video_answer
+static String videoAnswer = "video_answer";
+//Quickly ask a text question and choose the response format you want.
+static String quicklyAskATextQuestionAndChooseTheResponseFormatYouWant = "Quickly ask a text question and choose the response format you want.";
+//Get a text or audio response to a text question.
+static String getTextOrAudioResponseToATextQuestion = "Get a text or audio response to a text question.";
+// Get a video response to a text question
+static String getAVideoResponseToATextQuestion = "Get a video response to a text question";
+// Book a time for us to have a one on one call for the most personalized advice.
+static String bookATimeForUsToHaveAOneOnOneCallForTheMostPersonalizedAdvice = "Book a time for us to have a one on one call for the most personalized advice.";
+// 15 minutes minimum. Extend time available in call
+static String minutesMinimumExtendTimeAvailableInCall = "15 minutes minimum. Extend time available in call";
+
+
+
+
 }
+
+
