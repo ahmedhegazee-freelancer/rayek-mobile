@@ -1,4 +1,4 @@
-part of'../form.dart';
+part of '../form.dart';
 
 class _ImageDrawer extends StatelessWidget {
   final String? image;
@@ -24,8 +24,11 @@ class _ImageDrawer extends StatelessWidget {
               Center(
                 child: GestureDetector(
                   onTap: () {
-                    MagicRouter.goBack();
-                    MagicRouter.navigateTo(const EditProfileForm());
+                    MagicRouter.goBack(); // To close the drawer
+                    MagicRouter.navigateTo(
+                        GeneralUtils.userType == UserType.user
+                            ? const EditProfileForm()
+                            : const EditProfileSettingScreen());
                   },
                   child: Container(
                     // shape circle
@@ -33,10 +36,8 @@ class _ImageDrawer extends StatelessWidget {
                       shape: BoxShape.circle,
                     ),
                     child: CachedNetworkImage(
-                      imageUrl:
-
-                      image ??
-      'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fHww',
+                      imageUrl: image ??
+                          'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fHww',
                       imageBuilder: (context, imageProvider) => Container(
                         width: 55.w,
                         height: 55.h,
@@ -48,8 +49,10 @@ class _ImageDrawer extends StatelessWidget {
                           ),
                         ),
                       ),
-                      placeholder: (context, url) => const CircularProgressIndicator(),
-                      errorWidget: (context, url, error) => const Icon(Icons.error),
+                      placeholder: (context, url) =>
+                          const CircularProgressIndicator(),
+                      errorWidget: (context, url, error) =>
+                          const Icon(Icons.error),
                     ),
                   ),
                 ),
@@ -62,15 +65,14 @@ class _ImageDrawer extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Text(
-                        name ?? 'Doaa Reyad',
-                        style: AppTextStyle.h3),
+                      Text(name ?? 'Doaa Reyad', style: AppTextStyle.h3),
                     ],
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Text(email??'email@gmail.com', style: AppTextStyle.h4Grey),
+                      Text(email ?? 'email@gmail.com',
+                          style: AppTextStyle.h4Grey),
                     ],
                   ),
                 ],
@@ -91,8 +93,7 @@ class _ImageDrawer extends StatelessWidget {
                   icon: SvgPicture.asset(
                     state == ThemeState.light
                         ? IconManager.moon
-                        :
-                    IconManager.morning,
+                        : IconManager.morning,
                     width: 20.w,
                     height: 20.h,
                     color: state == ThemeState.light

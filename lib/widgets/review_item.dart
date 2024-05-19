@@ -1,13 +1,9 @@
-
-
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:rayik/core/bloc/dark_light_bloc/cubit.dart';
-import 'package:rayik/core/constants/color_manager.dart';
-
+import '../core/bloc/dark_light_bloc/cubit.dart';
 import '../core/constants/dimensions.dart';
 import '../core/constants/hexa_color.dart';
 import '../core/theme/fonts_style.dart';
@@ -43,7 +39,8 @@ class ReviewItem extends StatelessWidget {
                   children: [
                     CircleAvatar(
                       radius: 20.r,
-                      backgroundImage: const NetworkImage('https://th.bing.com/th/id/OIP.fFXk1pO4lPpkEKMLKKq2lwHaHa?w=1000&h=1000&rs=1&pid=ImgDetMain'),
+                      backgroundImage: const NetworkImage(
+                          'https://th.bing.com/th/id/OIP.fFXk1pO4lPpkEKMLKKq2lwHaHa?w=1000&h=1000&rs=1&pid=ImgDetMain'),
                     ),
                     SizedBox(width: 10.w),
                     Column(
@@ -52,15 +49,13 @@ class ReviewItem extends StatelessWidget {
                         Text(
                           context.locale.toString() == 'en'
                               ? 'Ahmed Ali'
-                              :
-                          'احمد علي',
+                              : 'احمد علي',
                           style: AppTextStyle.h3,
                         ),
                         Text(
                           context.locale.toString() == 'en'
                               ? 'Since 3 days'
-                              :
-                          'منذ 3 ايام',
+                              : 'منذ 3 ايام',
                           style: AppTextStyle.h4Grey,
                         ),
                       ],
@@ -94,8 +89,7 @@ class ReviewItem extends StatelessWidget {
                 Text(
                   context.locale.toString() == 'en'
                       ? 'This text is an example of text that can be replaced in the same space, this text was generated from the Arabic text generator'
-                      :
-                  'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى',
+                      : 'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى',
                   style: AppTextStyle.h4Grey,
                 ),
                 SizedBox(height: 20.h),

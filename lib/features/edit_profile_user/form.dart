@@ -9,14 +9,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:rayik/core/bloc/dark_light_bloc/cubit.dart';
-import 'package:rayik/core/constants/color_manager.dart';
-import 'package:rayik/core/constants/dimensions.dart';
-import 'package:rayik/core/constants/icon_manager.dart';
-import 'package:rayik/core/theme/fonts_style.dart';
-import 'package:rayik/widgets/back_button.dart';
-import 'package:rayik/widgets/custom_button.dart';
-import 'package:rayik/widgets/custom_text_field.dart';
+import '../../core/bloc/dark_light_bloc/cubit.dart';
+import '../../core/constants/color_manager.dart';
+import '../../core/constants/dimensions.dart';
+import '../../core/constants/icon_manager.dart';
+import '../../core/theme/fonts_style.dart';
+import '../../widgets/back_button.dart';
+import '../../widgets/custom_button.dart';
+import '../../widgets/custom_text_field.dart';
 import '../../core/constants/strings.dart';
 import '../consultant_page/form.dart';
 
@@ -45,7 +45,7 @@ class EditProfileForm extends StatelessWidget {
                       padding: EdgeInsets.all(Dimensions.defaultPadding),
                       child: Column(children: [
                         SizedBox(
-                          height: 70.h,
+                          height: 60.h,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.start,
@@ -112,7 +112,7 @@ class EditProfileForm extends StatelessWidget {
                         const _HideStatus(),
                         SizedBox(height: 20.h),
                         _ProfileForm(),
-                        SizedBox(height: 20.h),
+                        SizedBox(height: 30.h),
                       ],
                     ),
                   ),
@@ -120,7 +120,7 @@ class EditProfileForm extends StatelessWidget {
               ),
               Positioned(
                 bottom: 10.h,
-                child: _ButtonSave(),
+                child: const _ButtonSave(),
               )
             ],
           ),

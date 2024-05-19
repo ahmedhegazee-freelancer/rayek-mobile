@@ -49,21 +49,21 @@ class DrawerItems extends StatelessWidget {
                 MagicRouter.navigateTo(const MyAppointsView());
               },
             ),
-            SizedBox(
-              height: 10.h,
-            ),
-            SizedBox(
-              height: 10.h,
-            ),
 
-            _CustomDrawer(
-              title: Strings.editProfile.tr(),
-              icon: IconManager.editProfile,
-              onTap: () {
-                MagicRouter.goBack(); // To close the drawer
-                MagicRouter.navigateTo(const EditProfileSettingScreen());
-              },
-            ),
+            // SizedBox(
+            //   height: 10.h,
+            // ),
+
+            // _CustomDrawer(
+            //   title: Strings.editProfile.tr(),
+            //   icon: IconManager.editProfile,
+            //   onTap: () {
+            //     MagicRouter.goBack(); // To close the drawer
+            //     MagicRouter.navigateTo(GeneralUtils.userType == UserType.user
+            //         ? const EditProfileForm()
+            //         : const EditProfileSettingScreen());
+            //   },
+            // ),
             SizedBox(
               height: 10.h,
             ),
@@ -75,9 +75,9 @@ class DrawerItems extends StatelessWidget {
                 MagicRouter.navigateTo(const Text("cash"));
               },
             ),
-            SizedBox(
-              height: 10.h,
-            ),
+            // SizedBox(
+            //   height: 10.h,
+            // ),
             // _CustomDrawer(
             //   title: Strings.blog.tr(),
             //   icon: IconManager.blog,

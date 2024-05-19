@@ -35,9 +35,7 @@ class _Categories extends StatelessWidget {
     //   IconManager.education,
     // ];
     return BlocBuilder<ThemeCubit, ThemeState>(builder: (context, state) {
-      return SizedBox(
-        height: .73.sh,
-        width: 1.sw,
+      return Expanded(
         child: GridView.builder(
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
@@ -63,11 +61,9 @@ class _Categories extends StatelessWidget {
                   ),
                   color: state == ThemeState.dark
                       ? ColorManager.darkContainerColor
-                      :
-                  index == 0
-                      ? ColorManager.blackTextColor
-                      :
-                  ColorManager.whiteTextColor,
+                      : index == 0
+                          ? ColorManager.blackTextColor
+                          : ColorManager.whiteTextColor,
                   boxShadow: state == ThemeState.dark
                       ? [
                           BoxShadow(
