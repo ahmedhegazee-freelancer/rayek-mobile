@@ -1,8 +1,9 @@
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class Dimensions{
 
-  static const double defaultPadding=20;
-
-  static const double buttonRadius=15;
+  static double defaultPadding=16.sp;
+  static double buttonRadius=8.sp;
 
 
 
